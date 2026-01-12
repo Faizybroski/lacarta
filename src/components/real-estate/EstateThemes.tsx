@@ -2,13 +2,18 @@
 import { Badge } from "@/components/ui/badge";
 import fishImg from "../../assets/fish.png";
 
+const featured = {
+  id: "collection",
+  title: "COLLECTION™ Projects",
+  image: fishImg,
+  tag: "COLLECTION",
+};
 const themes = [
   {
     id: "collection",
     title: "COLLECTION™ Projects",
     image: fishImg,
     tag: "COLLECTION",
-    featured: true,
   },
   {
     id: "sale",
@@ -55,8 +60,8 @@ const themes = [
 ];
 
 export default function EstateThemes() {
-  const featured = themes.find((t) => t.featured);
-  const others = themes.filter((t) => !t.featured);
+  // const featured = themes.find((t) => t.featured)
+  // const others = themes.filter((t) => !t.featured)
 
   return (
     <section className="py-12 md:py-16 lg:py-20 bg-muted/30">
@@ -65,9 +70,9 @@ export default function EstateThemes() {
           Real estate projects by theme
         </h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+        <div className="grid bg-dark grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
           {/* LEFT – Big featured card */}
-          {featured && (
+          {
             <div className="relative rounded-2xl overflow-hidden shadow-2xl group aspect-[4/3] lg:aspect-auto lg:h-[520px]">
               <img
                 src={featured.image}
@@ -87,11 +92,11 @@ export default function EstateThemes() {
                 </h3>
               </div>
             </div>
-          )}
+          }
 
           {/* RIGHT – Smaller cards */}
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 md:gap-5">
-            {others.map((theme) => (
+            {themes.map((theme) => (
               <div
                 key={theme.id}
                 className="group relative overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-all duration-300"
