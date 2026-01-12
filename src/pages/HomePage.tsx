@@ -36,6 +36,8 @@ import {
 import HowToDoCartagena from "@/components/HowToCartagena";
 import TopNewsCartagena from "@/components/TopNewsCartagena";
 import ConciergeCTA from "@/components/ConciergeCTA";
+import CartagenaNews from "@/components/cartagenaNews";
+
 // Category Color Map to replace c1, c2, c3 etc.
 const catColors = {
   green: "bg-[#20bb59]",
@@ -45,6 +47,15 @@ const catColors = {
   teal: "bg-[#5bc7c1]",
   red: "bg-[#f52929]",
 };
+
+const NAV_LINKS = [
+  { label: "Beaches", path: "/beaches" },
+  { label: "Accommodations", path: "/hotels" },
+  { label: "Boating", path: "/boating" },
+  { label: "Tours", path: "/tours" },
+  { label: "Activities", path: "/activities" },
+  { label: "Gastronomy", path: "/gastronomy" },
+];
 
 const HomePage = () => {
   return (
@@ -61,20 +72,13 @@ const HomePage = () => {
           </h1>
 
           <nav className="lg:flex hidden flex-wrap justify-center gap-3 mb-10">
-            {[
-              "Beaches",
-              "Accommodations",
-              "Boating",
-              "Tours",
-              "Activities",
-              "Gastronomy",
-            ].map((tag) => (
+            {NAV_LINKS.map(({ label, path }) => (
               <Link
-                key={tag}
-                to="#"
+                key={label}
+                to={path}
                 className="bg-white text-black px-4 py-2 text-sm font-bold rounded-sm hover:bg-gray-200"
               >
-                {tag}
+                {label}
               </Link>
             ))}
           </nav>
@@ -343,35 +347,15 @@ transition"
         </div>
       </div>
 
-      <ConciergeCTA></ConciergeCTA>
+      <ConciergeCTA />
 
-      <HowToDoCartagena></HowToDoCartagena>
+      <HowToDoCartagena />
 
       {/* Carasole Section */}
-      <TopNewsCartagena></TopNewsCartagena>
+      <TopNewsCartagena />
 
       {/* Search Section */}
-      <div className="overlayed-pic container-fluid p-3 text-light p-relative">
-        <div className="overlay">
-          <div className="container col-lg-8 col-md-8 col-12 mb-4 py-5 mb-md-0 m-auto text-center text-white">
-            <h2 className="fs-1 fw-bold">CARTAGENA NEWSLETTER</h2>
-            <p className="fs-5 my-3">
-              Get the latest discounts, deals, coupons, news, & tips of
-              Cartagena.
-            </p>
-            <div className="flex max-w-2xl mx-auto bg-white rounded-md overflow-hidden p-1">
-              <input
-                className="flex-grow p-2 text-black outline-none"
-                type="email"
-                placeholder="Enter Your Email"
-              />
-              <Button className="text-white my-auto px-6 py-2 font-bold bg-[#d0a439] hover:bg-[#b88f30] transition-colors">
-                SUBSCRIBE
-              </Button>
-            </div>
-          </div>
-        </div>
-      </div>
+      <CartagenaNews />
     </div>
   );
 };
