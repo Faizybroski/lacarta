@@ -1,6 +1,6 @@
 const Card = ({ image, category, title, author, time, className = "" }) => (
   <div
-    className={`relative overflow-hidden shadow-lg group ${className}`}
+    className={`relative overflow-hidden rounded shadow-lg group ${className}`}
   >
     <img
       src={image}

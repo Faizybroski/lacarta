@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -16,6 +18,8 @@
     /* Dark theme base colors */
     --background: 0 0% 100%; /* pure white */
     --foreground: 0 0% 50%;
+    --yellow:     42, 62%, 51%;
+    --red:        1, 99%, 35%;
 
     --card: 0 14% 99%;
     --card-foreground: 0 0% 95%;

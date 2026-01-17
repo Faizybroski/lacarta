@@ -39,13 +39,21 @@ export default function HomeArea() {
   ];
 
   return (
-    <section className="mt-14 mx-5">
-      <h2 className="mb-4 text-lg font-bold text-black">Home in the area</h2>
-
-      <div
-        className="overflow-hidden rounded-xl border"
-        style={{ height: "340px" }}
-      >
+    <section className="w-full py-12 md:py-16 lg:py-20 bg-gradient-to-b from-slate-50 to-white">
+      <div className="container w-full md:max-w-7xl mx-auto">
+      
+      {/* Section Header */}
+        <div className="text-center mb-12">
+          <p className="text-xs uppercase tracking-widest text-muted-foreground mb-2">
+            FIND US
+          </p>
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-black">
+            Location & Getting There
+          </h2>
+        </div>
+      
+      
+      <div className="overflow-hidden rounded-xl border" style={{ height: "340px" }}>
         <MapContainer
           center={center}
           zoom={12}
@@ -72,6 +80,7 @@ export default function HomeArea() {
             </Marker>
           ))}
         </MapContainer>
+      </div>
       </div>
     </section>
   );

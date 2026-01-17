@@ -73,14 +73,14 @@ export default function HowToDoCartagena() {
                 className="h-48 w-full object-cover"
               />
 
-              {/* Badge */}
-              <Badge
-                className={`absolute top-0 right-1 px-3 py-2 
-                        text-white rounded-none border-0 ${card.color}`}
-              >
-                {card.category}
-              </Badge>
-            </CardHeader>
+          {/* Badge */}
+          <Badge
+            className={`absolute top-0 right-1 px-3 py-2 
+                        text-white rounded border-0 ${card.color}`}
+          >
+            {card.category}
+          </Badge>
+        </CardHeader>
 
             {/* Content */}
             <CardContent className="p-4 flex flex-col flex-grow">
@@ -99,17 +99,20 @@ export default function HowToDoCartagena() {
               </button>
             </CardContent>
 
-            {/* Footer stays at bottom */}
-            <CardFooter className="p-4 flex items-center gap-2">
-              <Avatar className="h-8 w-8">
-                <AvatarImage src="/images/avatar.png" />
-                <AvatarFallback>{card.author[0]}</AvatarFallback>
-              </Avatar>
-              <span className="text-sm fw-bold text-black">{card.author}</span>
-            </CardFooter>
-          </Card>
-        ))}
-      </div>
-    </section>
-  );
+        {/* Footer stays at bottom */}
+        <CardFooter className="px-4 flex items-center gap-2">
+          <Avatar className="h-8 w-8">
+            <AvatarImage src="/images/avatar.png" />
+            <AvatarFallback>
+              {card.author[0]}
+            </AvatarFallback>
+          </Avatar>
+          <span className="text-sm fw-bold text-black">{card.author}</span>
+        </CardFooter>
+      </Card>
+    ))}
+  </div>
+</section>
+
+  )
 }

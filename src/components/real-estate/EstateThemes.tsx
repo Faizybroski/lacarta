@@ -1,131 +1,108 @@
 // components/RealEstateThemes.tsx
-import { Badge } from "@/components/ui/badge";
-import fishImg from "../../assets/Fish.png";
+import { Badge } from "@/components/ui/badge"
+import fishImg from "../../assets/real-estate/Collection projects.png"
 
 const featured = {
   id: "collection",
-  title: "COLLECTION™ Projects",
-  image: fishImg,
-  tag: "COLLECTION",
-};
+    title: "COLLECTION™ Projects",
+    image: fishImg,
+    tag: "COLLECTION",
+}
 const themes = [
   {
     id: "collection",
     title: "COLLECTION™ Projects",
     image: fishImg,
+    image2: fishImg,
     tag: "COLLECTION",
+    orderClass:'1.7fr_2.3fr'
   },
   {
     id: "sale",
     title: "Homes For Sale",
     image: fishImg,
+    image2: fishImg,
     tag: "FOR SALE",
+    orderClass:'2.3fr_1.7fr'
   },
   {
     id: "rent",
     title: "Homes For Rent",
     image: fishImg,
+    image2: fishImg,
     tag: "FOR RENT",
+    orderClass:'1.7fr_2.3fr'
   },
-  {
-    id: "special",
-    title: "Special Offers",
-    image: fishImg,
-    tag: "OFFERS",
-  },
-  {
-    id: "pre",
-    title: "Pre-Construction",
-    image: fishImg,
-    tag: "NEW BUILD",
-  },
-  {
-    id: "historic",
-    title: "Historic Centre",
-    image: fishImg,
-    tag: "HERITAGE",
-  },
-  {
-    id: "beach",
-    title: "By The Beach",
-    image: fishImg,
-    tag: "BEACHFRONT",
-  },
-  {
-    id: "luxury",
-    title: "Luxury Collection",
-    image: fishImg,
-    tag: "PREMIUM",
-  },
-];
+]
 
 export default function EstateThemes() {
   // const featured = themes.find((t) => t.featured)
   // const others = themes.filter((t) => !t.featured)
 
   return (
-    <section className="py-12 md:py-16 lg:py-20 bg-muted/30">
-      <div className="container px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-10 md:mb-14">
-          Real estate projects by theme
-        </h2>
+   <section className="py-12 md:py-16 lg:py-20">
+  <div className="container px-4 sm:px-6 lg:px-8">
+    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-10 md:mb-14">
+      Real estate projects by theme
+    </h2>
 
-        <div className="grid bg-dark grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
-          {/* LEFT – Big featured card */}
-          {
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl group aspect-[4/3] lg:aspect-auto lg:h-[520px]">
-              <img
-                src={featured.image}
-                alt={featured.title}
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
-              <div className="absolute inset-0 p-6 md:p-8 lg:p-10 flex flex-col justify-end">
-                <Badge
-                  variant="secondary"
-                  className="mb-4 w-fit px-5 py-2 text-base bg-white/20 hover:bg-white/30 backdrop-blur-md border-0 text-white"
-                >
-                  {featured.tag}
-                </Badge>
-                <h3 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white drop-shadow-lg">
-                  {featured.title}
-                </h3>
-              </div>
-            </div>
-          }
-
-          {/* RIGHT – Smaller cards */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 md:gap-5">
-            {themes.map((theme) => (
-              <div
-                key={theme.id}
-                className="group relative overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-all duration-300"
-              >
-                <div className="relative aspect-[4/3] overflow-hidden">
-                  <img
-                    src={theme.image}
-                    alt={theme.title}
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </div>
-
-                <div className="absolute inset-x-0 bottom-0 p-4">
-                  <Badge
-                    variant="secondary"
-                    className="mb-2 w-fit bg-white/20 hover:bg-white/30 backdrop-blur-sm border-0 text-white text-xs sm:text-sm"
-                  >
-                    {theme.tag}
-                  </Badge>
-                  <h4 className="text-sm sm:text-base font-semibold text-white drop-shadow">
-                    {theme.title}
-                  </h4>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 lg:gap-2 lg:items-stretch">
+      {/* LEFT – Big featured card */}
+      <div className="relative rounded overflow-hidden shadow-2xl group aspect-[4/3] lg:aspect-auto lg:h-[520px]">
+        <img
+          src={featured.image}
+          alt={featured.title}
+          className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+            <div className="absolute bottom-4 left-4 font-['Inter'] w-full">
+                    <h3 className=" text-xl font-bold text-white drop-shadow-md">
+                      {featured.title}
+                    </h3>
+                  </div>
       </div>
-    </section>
-  );
+
+      {/* RIGHT – Smaller themed cards – now fills full height */}
+      <div className="grid gap-2 md:gap-2 lg:h-full">
+        {themes.map((item, index) => (
+          <div
+            key={index}
+            className={`grid grid-cols-2 overflow-hidden md:grid-cols-[${item.orderClass}] gap-2 group h-full`}
+          >
+            {/* Left image – stretch to fill */}
+            <div className="relative rounded overflow-hidden shadow-md transition-all duration-300 group-hover:shadow-xl">
+              <img
+                src={item.image || "https://images.pexels.com/photos/11729105/pexels-photo-11729105.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"}
+                alt={`${item.title || 'Theme'} - Left`}
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/40 to-transparent" />
+              <div className="absolute bottom-2 font-sarif  w-full text-center">
+                    <h3 className=" font-bold text-white drop-shadow-md">
+                      {item.tag}
+                    </h3>
+                  </div>
+            </div>
+
+            {/* Right image – stretch to fill */}
+            <div className="relative rounded overflow-hidden shadow-md transition-all duration-300 group-hover:shadow-xl">
+              <img
+                src={item.image2 || "https://media.architecturaldigest.com/photos/62a240a9591c098967e89725/16:9/w_2560,c_limit/1641_The%20Grid_KCAP_(c)Ossip_09_LR.jpg"}
+                alt={`${item.title || 'Theme'} - Right`}
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/40 to-transparent" />
+            <div className="absolute bottom-2 font-sarif w-full text-center">
+                    <h3 className=" font-bold text-white drop-shadow-md">
+                      {item.tag}
+                    </h3>
+                  </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+  )
 }
