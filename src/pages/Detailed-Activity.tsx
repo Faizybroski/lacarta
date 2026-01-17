@@ -9,7 +9,7 @@ import PlayaScondidaAbout from "@/components/detail/detailed-content";
 import KeyFeatures from "@/components/detail/key-Feature";
 import ServicesAmenities from "@/components/detail/services-Amenities";
 import ContactBooking from "@/components/detail/contact-Booking";
-import CartagenaNews from "@/components/layout/CartagenaNews";
+import CartagenaNews from "@/components/layout/cartagenaNews";
 
 
 export default function DetailedActivity() {
