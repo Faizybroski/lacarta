@@ -15,7 +15,7 @@ import DetailedBoating from "@/pages/Detailed-Boating";
 import DetailedGastronomy from "@/pages/Detailed-Gyst";
 
 import RealestatePage from "@/pages/Real-Estate-Page";
-import NotFound from "@/pages/NotFound"
+import NotFound from "@/pages/NotFound";
 
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
@@ -38,7 +38,7 @@ function App() {
               </Layout>
             }
           />
-           <Route
+          <Route
             path="/Activities"
             element={
               <Layout>
@@ -46,7 +46,7 @@ function App() {
               </Layout>
             }
           />
-           <Route
+          <Route
             path="/hotels"
             element={
               <Layout>
@@ -54,7 +54,7 @@ function App() {
               </Layout>
             }
           />
-           <Route
+          <Route
             path="/Gastronomy"
             element={
               <Layout>
@@ -62,7 +62,7 @@ function App() {
               </Layout>
             }
           />
-           <Route
+          <Route
             path="/Beaches"
             element={
               <Layout>
@@ -70,7 +70,7 @@ function App() {
               </Layout>
             }
           />
-           <Route
+          <Route
             path="/Boating"
             element={
               <Layout>
@@ -78,7 +78,7 @@ function App() {
               </Layout>
             }
           />
-           <Route
+          <Route
             path="/realState"
             element={
               <Layout>
@@ -86,7 +86,7 @@ function App() {
               </Layout>
             }
           />
-        
+
           <Route
             path="/real-Estate-detailed"
             element={
@@ -99,7 +99,7 @@ function App() {
             path="/Detailed-Boating"
             element={
               <Layout>
-                <DetailedBoating/>
+                <DetailedBoating />
               </Layout>
             }
           />
@@ -137,9 +137,11 @@ function App() {
           />
           <Route
             path="*"
-            element={<Layout>
+            element={
+              <Layout>
                 <NotFound />
-              </Layout>} 
+              </Layout>
+            }
           />
         </Routes>
       </BrowserRouter>

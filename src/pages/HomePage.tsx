@@ -48,6 +48,15 @@ const catColors = {
   red: "bg-[#f52929]",
 };
 
+const tagRoutes: Record<string, string> = {
+  Beaches: "/Beaches",
+  Accommodations: "/hotels",
+  Boating: "/Boating",
+  "Real Estate": "/realState",
+  Activities: "/Activities",
+  Gastronomy: "/Gastronomy",
+};
+
 const HomePage = () => {
   return (
     <div className="min-h-screen font-sans">
@@ -58,28 +67,30 @@ const HomePage = () => {
       >
         <div className="absolute inset-0 bg-black/30"></div>
         <div className="relative z-10 container mx-auto px-4 text-center text-white">
-          <h1 className="
+          <h1
+            className="
   text-6xl md:text-7xl lg:text-8xl
   font-['Bebas_Neue'] font-normal
   leading-none tracking-[-0.08em]
   mb-[100px] uppercase text-white
  
-">
-  EVERYTHING <br /> CARTAGENA
-</h1>
+"
+          >
+            EVERYTHING <br /> CARTAGENA
+          </h1>
 
           <nav className="lg:flex hidden flex-wrap justify-center gap-1 mt- mb-2">
             {[
               "Beaches",
               "Accommodations",
               "Boating",
-              "Tours",
+              "Real Estate",
               "Activities",
               "Gastronomy",
             ].map((tag) => (
               <Link
                 key={tag}
-                to="#"
+                to={tagRoutes[tag]}
                 className="bg-white text-black px-4 py-2 font-bold shadow-lg rounded hover:bg-gray-200"
               >
                 {tag}
@@ -111,15 +122,46 @@ const HomePage = () => {
       <div className="container mx-auto pb-20 px-10 md:px-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {[
-            { label: "Hotels", img: img1, color: "from-[#E6B65C] via-[#D4A74A] to-[#B8902F]" },
-            { label: "Beaches", img: img2, color: "from-[#3BCF8E] via-[#2EB872] to-[#1E9E5A]" },
-            { label: "Activities", img: img3, color: "from-[#C62828] via-[#B71C1C] to-[#8E0000]" },
-            { label: "Tours & Sightseeing", img: img4, color: "from-[#E6B65C] via-[#D4A74A] to-[#B8902F]" },
-            { label: "Boat Rentals", img: img5, color: "  from-[#3BCF8E] via-[#2EB872] to-[#1E9E5A]" },
-            { label: "Gastronomy", img: img6, color: "from-[#C62828] via-[#B71C1C] to-[#8E0000]" },
+            {
+              label: "Hotels",
+              img: img1,
+              color: "from-[#E6B65C] via-[#D4A74A] to-[#B8902F]",
+              href: "/hotels",
+            },
+            {
+              label: "Beaches",
+              img: img2,
+              color: "from-[#3BCF8E] via-[#2EB872] to-[#1E9E5A]",
+              href: "/Beaches",
+            },
+            {
+              label: "Activities",
+              img: img3,
+              color: "from-[#C62828] via-[#B71C1C] to-[#8E0000]",
+              href: "/Activities",
+            },
+            {
+              label: "Tours & Sightseeing",
+              img: img4,
+              color: "from-[#E6B65C] via-[#D4A74A] to-[#B8902F]",
+              href: "/realState",
+            },
+            {
+              label: "Boat Rentals",
+              img: img5,
+              color: "  from-[#3BCF8E] via-[#2EB872] to-[#1E9E5A]",
+              href: "/Boating",
+            },
+            {
+              label: "Gastronomy",
+              img: img6,
+              color: "from-[#C62828] via-[#B71C1C] to-[#8E0000]",
+              href: "/Gastronomy",
+            },
           ].map((item, idx) => (
-            <div
+            <Link
               key={idx}
+              to={item.href}
               className="relative rounded group overflow-hidden cursor-pointer"
             >
               <div
@@ -132,7 +174,7 @@ const HomePage = () => {
                 className="w-full h-110 object-cover transition-transform duration-500 group-hover:scale-110"
                 alt={item.label}
               />
-            </div>
+            </Link>
           ))}
         </div>
       </div>
@@ -227,9 +269,11 @@ const HomePage = () => {
                 Gringos.
               </p>
 
-              <Button className="px-6 py-3 text-white w-full font-bold rounded 
+              <Button
+                className="px-6 py-3 text-white w-full font-bold rounded 
 bg-gradient-to-r from-[#3BCF8E] via-[#2EB872] to-[#1E9E5A] hover:brightness-110
-transition">
+transition"
+              >
                 <a href="https://lacarta.co/cartagena/resources/">
                   https://lacarta.co/cartagena/resources/
                 </a>
@@ -259,74 +303,82 @@ transition">
               icon: <Headset />,
               label: "Tourist Service Center",
               color: "from-[#E6B65C] via-[#D4A74A] to-[#B8902F]",
-              paragraph : "If you ever need any help during your time in Cartagena!",
-              buttonTxt : "GO"
+              paragraph:
+                "If you ever need any help during your time in Cartagena!",
+              buttonTxt: "GO",
             },
             {
               icon: <MessageCircleMore />,
               label: "Catagena FAQs",
               color: "from-[#3BCF8E] via-[#2EB872] to-[#1E9E5A]",
-              paragraph : "Cartagena's Most Frequently Asked Questions",
-              buttonTxt : "Download"
+              paragraph: "Cartagena's Most Frequently Asked Questions",
+              buttonTxt: "Download",
             },
             {
               icon: <FileSpreadsheet />,
               label: "Cartagena Travel Checklists",
               color: "from-[#C62828] via-[#B71C1C] to-[#8E0000]",
-              paragraph : "Everything you must do before boarding your flight to Cartagena, Colombia!",
-              buttonTxt : "Checkoff"
+              paragraph:
+                "Everything you must do before boarding your flight to Cartagena, Colombia!",
+              buttonTxt: "Checkoff",
             },
-            { icon: <Plus />, label: "Cartagena Emergency Guides", color: "from-[#E6B65C] via-[#D4A74A] to-[#B8902F]"
-              ,paragraph : "Save our Emergency Guide with you at all times for all the police stations, hospitals, and medical services!",
-              buttonTxt : "Download"
-             },
-            { icon: <Music />, label: "Cartagena Spotify Playlists", color: "from-[#3BCF8E] via-[#2EB872] to-[#1E9E5A]" ,paragraph : "Enhance your Cartagena trip by immersing yourself to the Cartagena Carribean beats!",
-              buttonTxt : "Download"},
+            {
+              icon: <Plus />,
+              label: "Cartagena Emergency Guides",
+              color: "from-[#E6B65C] via-[#D4A74A] to-[#B8902F]",
+              paragraph:
+                "Save our Emergency Guide with you at all times for all the police stations, hospitals, and medical services!",
+              buttonTxt: "Download",
+            },
+            {
+              icon: <Music />,
+              label: "Cartagena Spotify Playlists",
+              color: "from-[#3BCF8E] via-[#2EB872] to-[#1E9E5A]",
+              paragraph:
+                "Enhance your Cartagena trip by immersing yourself to the Cartagena Carribean beats!",
+              buttonTxt: "Download",
+            },
           ].map((tool, i) => (
-                <div
-  key={i}
-  className="bg-white mt-5 rounded-2xl shadow-lg p-6 pt-12 relative text-start 
+            <div
+              key={i}
+              className="bg-white mt-5 rounded-2xl shadow-lg p-6 pt-12 relative text-start 
              flex flex-col h-auto"
->
-  <div
-    className={`absolute -top-8 left-1/2  -translate-x-1/2 
+            >
+              <div
+                className={`absolute -top-8 left-1/2  -translate-x-1/2 
               w-14 h-14 flex items-center border-4 border-white justify-center
               rounded-full text-white shadow-lg bg-gradient-to-r ${tool.color}`}
-  >
-    {tool.icon}
-  </div>
+              >
+                {tool.icon}
+              </div>
 
-  <h5 className="font-bold text-black">
-    {tool.label}
-  </h5>
+              <h5 className="font-bold text-black">{tool.label}</h5>
 
-  {/* This section will auto-adjust */}
-  <p className="text-xs fw-bold pt-3 text-gray-500 flex-grow">
-    {tool.paragraph}
-  </p>
+              {/* This section will auto-adjust */}
+              <p className="text-xs fw-bold pt-3 text-gray-500 flex-grow">
+                {tool.paragraph}
+              </p>
 
-  {/* Button always at bottom */}
-  <button
-    className={`w-full py-2 mt-6 rounded-lg text-white font-bold bg-gradient-to-r hover:brightness-110 ${tool.color}`}
-  >
-    {tool.buttonTxt}
-  </button>
-</div>
+              {/* Button always at bottom */}
+              <button
+                className={`w-full py-2 mt-6 rounded-lg text-white font-bold bg-gradient-to-r hover:brightness-110 ${tool.color}`}
+              >
+                {tool.buttonTxt}
+              </button>
+            </div>
           ))}
         </div>
       </div>
-      
 
-      <ConciergeCTA></ConciergeCTA>
+      <ConciergeCTA />
 
-      <HowToDoCartagena></HowToDoCartagena>
+      <HowToDoCartagena />
 
       {/* Carasole Section */}
-      <TopNewsCartagena></TopNewsCartagena>
+      <TopNewsCartagena />
 
       {/* Search Section */}
-      <CartagenaNews></CartagenaNews>
-
+      <CartagenaNews />
     </div>
   );
 };

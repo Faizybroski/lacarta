@@ -19,7 +19,7 @@ export default function DetailedHotel() {
     <div className="bg-[#f7f7f7] px-1 py-3 md:py-5 md:px-5">
       <div className="mx-auto max-w-7xl md:px-4">
       <PlayaScondidaCard />
-      <PaginationListing {...hotelData}></PaginationListing>
+      <PaginationListing {...hotelData} />
       <PlayaScondidaAbout />
       <HomeArea />
       <KeyFeatures />

@@ -1,5 +1,5 @@
 import React from 'react'
-import EstateHero from '../components/real-estate/realEstate-hero';
+import EstateHero from '../components/real-estate/realEstate-Hero';
 import EstateThemes from '../components/real-estate/EstateThemes';
 import Neighborhoods from '../components/real-estate/scroll-Images';
 import WaltSection from '../components/real-estate/Walt-Slider';

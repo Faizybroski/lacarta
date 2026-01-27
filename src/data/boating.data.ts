@@ -18,6 +18,7 @@ export const boatingData = {
       subtitle: "Private Day Cruises",
       image: img3,
       rating: 4.9,
+      href: "/Detailed-Boating",
     },
     {
       id: 2,
@@ -25,6 +26,7 @@ export const boatingData = {
       subtitle: "Full-Day Adventure",
       image: img3,
       rating: 4.8,
+      href: "/Detailed-Boating",
     },
     {
       id: 3,
@@ -32,6 +34,7 @@ export const boatingData = {
       subtitle: "Romantic Experience",
       image: img3,
       rating: 4.7,
+      href: "/Detailed-Boating",
     },
     {
       id: 4,
@@ -39,17 +42,18 @@ export const boatingData = {
       subtitle: "Explore at Your Own Pace",
       image: img3,
       rating: 4.6,
+      href: "/Detailed-Boating",
     },
   ],
 
   categories: [
-    { id: 1, title: "Yacht Charters", image: img3 },
-    { id: 2, title: "Boat Tours", image: img3 },
-    { id: 3, title: "Sunset Cruises", image: img3 },
-    { id: 4, title: "Fishing Trips", image: img3 },
-    { id: 5, title: "Island Hopping", image: img3 },
-    { id: 6, title: "Private Boats", image: img3 },
-    { id: 7, title: "Party Boats", image: img3 },
+    { id: 1, title: "Yacht Charters", image: img3, href: "/Detailed-Boating" },
+    { id: 2, title: "Boat Tours", image: img3, href: "/Detailed-Boating" },
+    { id: 3, title: "Sunset Cruises", image: img3, href: "/Detailed-Boating" },
+    { id: 4, title: "Fishing Trips", image: img3, href: "/Detailed-Boating" },
+    { id: 5, title: "Island Hopping", image: img3, href: "/Detailed-Boating" },
+    { id: 6, title: "Private Boats", image: img3, href: "/Detailed-Boating" },
+    { id: 7, title: "Party Boats", image: img3, href: "/Detailed-Boating" },
     { id: 8, title: "Sailing", image: img3 },
   ],
 };

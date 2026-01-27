@@ -18,6 +18,7 @@ export const beachesData = {
       subtitle: "Crystal Clear Waters",
       image: img3,
       rating: 4.6,
+      href: "/Detailed-Beach",
     },
     {
       id: 2,
@@ -25,6 +26,7 @@ export const beachesData = {
       subtitle: "Paradise Island Beaches",
       image: img3,
       rating: 4.9,
+      href: "/Detailed-Beach",
     },
     {
       id: 3,
@@ -32,12 +34,13 @@ export const beachesData = {
       subtitle: "City Beach Experience",
       image: img3,
       rating: 4.4,
+      href: "/Detailed-Beach",
     },
   ],
 
   categories: [
-    { id: 1, title: "Island Beaches", image: img3 },
-    { id: 2, title: "Public Beaches", image: img3 },
-    { id: 3, title: "Private Beaches", image: img3 },
+    { id: 1, title: "Island Beaches", image: img3, href: "/Detailed-Beach" },
+    { id: 2, title: "Public Beaches", image: img3, href: "/Detailed-Beach" },
+    { id: 3, title: "Private Beaches", image: img3, href: "/Detailed-Beach" },
   ],
 };

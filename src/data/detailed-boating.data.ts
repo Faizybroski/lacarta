@@ -34,12 +34,14 @@ premiumListings: [
       subtitle: "Best French Breakfast",
       image: img3,
       rating: 4.8,
+      href: '/Detailed-Boating'
     },{
       id: 1,
       title: "La Brioche Royal",
       subtitle: "Best French Breakfast",
       image: img3,
       rating: 4.8,
+      href: '/Detailed-Boating'
     },
     {
       id: 1,
@@ -47,6 +49,7 @@ premiumListings: [
       subtitle: "Best French Breakfast",
       image: img3,
       rating: 4.8,
+      href: '/Detailed-Boating'
     },
     {
       id: 1,
@@ -54,6 +57,7 @@ premiumListings: [
       subtitle: "Best French Breakfast",
       image: img3,
       rating: 4.8,
+      href: '/Detailed-Boating'
     },
   ]
 

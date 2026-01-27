@@ -1,12 +1,10 @@
-import { Heart } from "lucide-react"
-import { Badge } from "@/components/ui/badge"
+import { Heart } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 
-
-export default function AroundThisPlace({places}) {
+export default function AroundThisPlace({ places }) {
   return (
-   <section className="w-full py-12 md:py-16 lg:py-20 bg-gradient-to-b from-slate-50 to-white">
+    <section className="w-full py-12 md:py-16 lg:py-20 bg-gradient-to-b from-slate-50 to-white">
       <div className="container max-w-7xl mx-auto">
-
         {/* Section Header */}
         <div className="text-center mb-12">
           <p className="text-xs uppercase tracking-widest text-muted-foreground mb-2">
@@ -60,8 +58,7 @@ export default function AroundThisPlace({places}) {
             </div>
           ))}
         </div>
-
       </div>
     </section>
-  )
+  );
 }
