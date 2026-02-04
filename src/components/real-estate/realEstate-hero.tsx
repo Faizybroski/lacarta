@@ -1,7 +1,7 @@
 import React from 'react'
 import { Search } from 'lucide-react'
 import { Button } from '@/components/ui/button';
-import bgImage from '../../assets/real-estate/Rectangle 1000001778.png';
+import bgImage from '/assets/real-estate/Rectangle 1000001778.png';
 
 export default function EstateHero() {
   return (

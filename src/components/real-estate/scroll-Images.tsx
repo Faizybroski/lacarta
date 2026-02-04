@@ -8,7 +8,7 @@ import {
   CarouselPrevious,
   type CarouselApi,
 } from "@/components/ui/carousel"
-import img from '../../assets/real-estate/Historic Center.png'
+import img from '/assets/real-estate/Historic Center.png'
 
 const neighborhoods = [
   {

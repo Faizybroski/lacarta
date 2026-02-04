@@ -3,16 +3,18 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Star, Heart, Check, MapPin, BedDouble, Bath } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
-export default function EstateCard({ details = [], heading, columns }) {
+export default function EstateCard({ details = [], columns }) {
   return (
     <section className="w-full px-5 py-16">
       <h2 className="mb-8 text-2xl md:text-4xl text-black font-bold">
-        {heading}
+        Visit COLLECTION™ projects located nearby
       </h2>
 
       <div className={`${columns}`}>
         {details.map((item) => (
+          <Link to={item.href}>
           <Card key={item.id} className="shadow relative overflow-hidden">
             {/* Heart icon (right) */}
             <Button
@@ -26,7 +28,7 @@ export default function EstateCard({ details = [], heading, columns }) {
     hover:bg-gray-500/30
     transition"
             >
-              <Heart className="h-5 w-5 font-bold fill-white text-black" />
+              <Heart className="h-5 w-5 font-bold text-black" />
             </Button>
             <img
               src={item.image}
@@ -79,6 +81,7 @@ export default function EstateCard({ details = [], heading, columns }) {
               </Button>
             </CardContent>
           </Card>
+          </Link>
         ))}
       </div>
     </section>

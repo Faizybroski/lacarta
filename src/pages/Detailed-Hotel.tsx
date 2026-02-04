@@ -1,9 +1,9 @@
 import DetailedPage from "@/components/detail/detailsPage";
-import { hotelData } from "@/data/detailed-hotel.data";
+import { hotelData } from "@/data/detailed-hotel";
 import AroundThisPlace from "../components/card/DetailedPageCard";
 import HomeArea from "../components/HomeInArea";
 import FaqSection from "@/components/detail/faq-Section";
-import PaginationListing from "@/components/listings/PaginationListing";
+// import PaginationListing from "@/components/listings/PaginationListing";
 import PlayaScondidaCard from "@/components/detail/per-item-detail";
 import PlayaScondidaAbout from "@/components/detail/detailed-content";
 import KeyFeatures from "@/components/detail/key-Feature";
@@ -19,7 +19,7 @@ export default function DetailedHotel() {
     <div className="bg-[#f7f7f7] px-1 py-3 md:py-5 md:px-5">
       <div className="mx-auto max-w-7xl md:px-4">
       <PlayaScondidaCard />
-      <PaginationListing {...hotelData} />
+      {/* <PaginationListing {...hotelData}></PaginationListing> */}
       <PlayaScondidaAbout />
       <HomeArea />
       <KeyFeatures />

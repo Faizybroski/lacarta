@@ -1,6 +1,6 @@
-import img1 from "../assets/activitiesHero.png";
-import img2 from "../assets/Food.png";
-import img3 from "../assets/Fish.png";
+import img1 from "/assets/activitiesHero.png";
+import img2 from "/assets/Food.png";
+import img3 from "/assets/Fish.png";
 
 export const realEstateData = {
   hero: {

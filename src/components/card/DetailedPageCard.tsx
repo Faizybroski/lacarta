@@ -1,5 +1,6 @@
 import { Heart } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "../ui/button";
 
 export default function AroundThisPlace({ places }) {
   return (
@@ -33,9 +34,9 @@ export default function AroundThisPlace({ places }) {
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
 
               {/* Heart Button */}
-              <button className="absolute top-4 right-4 z-10 bg-yellow-400 rounded-full p-2">
+              <Button className="absolute top-4 right-4 z-10 bg-yellow-400 rounded-full p-2">
                 <Heart className="h-4 w-4 text-black" />
-              </button>
+              </Button>
 
               {/* Content */}
               <div className="absolute bottom-4 left-4 right-4 text-white z-10">

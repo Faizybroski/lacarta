@@ -1,4 +1,6 @@
-import carasolePic from "../assets/carasole.png";
+// import carasolePic from "../assets/carasole.png";
+import {ChevronRight ,ChevronLeft } from 'lucide-react';
+import carasolePic from "/assets/ncartagen.png";
 
 export default function TopNewsCartagena() {
   return (
@@ -15,26 +17,64 @@ export default function TopNewsCartagena() {
               data-bs-ride="carousel"
             >
               <div className="carousel-inner rounded overflow-hidden">
-                <div className="carousel-item active">
+                <div className="carousel-item active relative">
                   <img
                     src={carasolePic}
                     className="d-block w-100"
                     alt="Slide 1"
                   />
+
+                <div className="absolute inset-0 flex bg-gradient-to-t from-black/40 via-black/20 to-transparent items-end">
+  <div className="p-6 md:p-10 text-white">
+    <h2 className="text-3xl md:text-5xl font-semibold leading-tight">
+      The Most Luxurious Hotel <br />
+      Of Cartagena
+    </h2>
+
+    <p className="mt-3 text-sm tracking-widest uppercase opacity-90">
+      7 MIN READ
+    </p>
+  </div>
+</div>
+
                 </div>
-                <div className="carousel-item">
+                <div className="carousel-item relative">
                   <img
                     src={carasolePic}
                     className="d-block w-100"
                     alt="Slide 2"
                   />
+                  <div className="absolute inset-0 flex bg-gradient-to-t from-black/40 via-black/20 to-transparent items-end">
+  <div className="p-6 md:p-10 text-white">
+    <h2 className="text-3xl md:text-5xl font-semibold leading-tight">
+      The Most Luxurious Hotel <br />
+      Of Cartagena
+    </h2>
+
+    <p className="mt-3 text-sm tracking-widest uppercase opacity-90">
+      7 MIN READ
+    </p>
+  </div>
+</div>
                 </div>
-                <div className="carousel-item">
+                <div className="carousel-item relative">
                   <img
                     src={carasolePic}
                     className="d-block w-100"
                     alt="Slide 3"
                   />
+<div className="absolute inset-0 flex bg-gradient-to-t from-black/40 via-black/20 to-transparent items-end">
+  <div className="p-6 md:p-10 text-white">
+    <h2 className="text-3xl md:text-5xl font-semibold leading-tight">
+      The Most Luxurious Hotel <br />
+      Of Cartagena
+    </h2>
+
+    <p className="mt-3 text-sm tracking-widest uppercase opacity-90">
+      7 MIN READ
+    </p>
+  </div>
+</div>
                 </div>
               </div>
 
@@ -43,14 +83,19 @@ export default function TopNewsCartagena() {
                 type="button"
                 data-bs-target="#imageCarousel"
                 data-bs-slide="prev"
-              ></button>
+              >
+                <ChevronLeft size={50}/>
+              </button>
 
               <button
                 className="carousel-control-next"
                 type="button"
                 data-bs-target="#imageCarousel"
                 data-bs-slide="next"
-              ></button>
+              >
+                 <ChevronRight size={50}/>
+
+              </button>
             </div>
           </div>
 

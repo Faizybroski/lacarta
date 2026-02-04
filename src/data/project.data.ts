@@ -1,7 +1,7 @@
-import img1 from "../assets/img11.png";
-import img2 from "../assets/img12.png";
-import img3 from "../assets/img13.png";
-import img4 from "../assets/img33.png";
+import img1 from "/assets/img11.png";
+import img2 from "/assets/img12.png";
+import img3 from "/assets/img13.png";
+import img4 from "/assets/img33.png";
 
 export const projectData = {
   title: "Italian",

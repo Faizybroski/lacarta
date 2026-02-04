@@ -24,7 +24,7 @@ export default function CategoryFilters({
           <button
             key={filter}
             onClick={() => setActiveFilter(filter)}
-            className={`rounded-full px-6 py-2 text-sm font-bold transition
+            className={`font-['Bebas_Neue'] rounded-full px-6 py-2 text-sm font-bold transition
               ${
                 activeFilter === filter
                   ? "bg-gradient-to-r from-[#E6B65C] via-[#D4A74A] to-[#B8902F] text-white"

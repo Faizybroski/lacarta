@@ -4,8 +4,10 @@ import {
   CardFooter,
   CardHeader,
 } from "@/components/ui/card";
+import {ChevronRight} from 'lucide-react'
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 // import img7 from "../assets/Six-C-img1.png";
 // import img8 from "../assets/Six-C-img2.png";
 // import img9 from "../assets/Six-C-img3.png";
@@ -75,28 +77,28 @@ export default function HowToDoCartagena() {
 
           {/* Badge */}
           <Badge
-            className={`absolute top-0 right-1 px-3 py-2 
-                        text-white rounded border-0 ${card.color}`}
+            className={`absolute -top-2 right-0 px-3 py-2 
+                        text-white rounded-sm border-0 ${card.color}`}
           >
             {card.category}
           </Badge>
         </CardHeader>
 
             {/* Content */}
-            <CardContent className="p-4 flex flex-col flex-grow">
+            <CardContent className="p-3 flex flex-col flex-grow">
               <h3 className="font-semibold fw-bold text-black text-lg mb-2">
                 {card.title}
               </h3>
 
               {/* Auto-adjusting paragraph */}
-              <p className="text-sm text-muted-foreground flex-grow">
+              <p className="text-sm text-gray-500 flex-grow">
                 {card.description}
               </p>
 
               {/* Button always aligned */}
-              <button className="text-sm font-medium text-black hover:underline mt-4 self-start">
-                Read More →
-              </button>
+              <Button className="text-sm font-medium text-black bg-background hover:underline mt-4 self-start">
+                Read More <ChevronRight size={12} />
+              </Button>
             </CardContent>
 
         {/* Footer stays at bottom */}

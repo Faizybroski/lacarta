@@ -1,9 +1,9 @@
 import DetailedPage from "@/components/detail/detailsPage";
-import { beachData } from "@/data/detailed-beach.data";
+import { beachData } from "@/data/detailed-beach";
 import AroundThisPlace from "../components/card/DetailedPageCard";
 import HomeArea from "../components/HomeInArea";
+// import PaginationListing from "@/components/listings/PaginationListing";
 import FaqSection from "@/components/detail/faq-Section";
-import PaginationListing from "@/components/listings/PaginationListing";
 import PlayaScondidaCard from "@/components/detail/per-item-detail";
 import PlayaScondidaAbout from "@/components/detail/detailed-content";
 import KeyFeatures from "@/components/detail/key-Feature";
@@ -15,18 +15,17 @@ export default function DetailedBeach() {
   // console.log("....................", projectData.details)
   return (
     <>
-      <div className="bg-[#f7f7f7] px-1 py-3 md:py-5 md:px-5">
-        <div className="mx-auto max-w-7xl md:px-4">
-          <PlayaScondidaCard />
-          <PaginationListing {...beachData} />
-          <PlayaScondidaAbout />
-          <HomeArea />
-          <KeyFeatures />
-          <ServicesAmenities />
-          <ContactBooking />
-          <AroundThisPlace {...beachData} />
-        </div>
-      </div>
+    <div className="bg-[#f7f7f7] px-1 py-3 md:py-5 md:px-5">
+      <div className="mx-auto max-w-7xl md:px-4">
+      <PlayaScondidaCard />
+      {/* <PaginationListing {...beachData}></PaginationListing> */}
+      <PlayaScondidaAbout />
+      <HomeArea />
+      <KeyFeatures />
+      <ServicesAmenities />
+      <ContactBooking />
+      <AroundThisPlace  {...beachData}/>
+      </div></div>
       <FaqSection />
       <CartagenaNews />
     </>

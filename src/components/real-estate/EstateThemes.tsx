@@ -1,6 +1,6 @@
 // components/RealEstateThemes.tsx
 import { Badge } from "@/components/ui/badge"
-import fishImg from "../../assets/real-estate/Collection projects.png"
+import fishImg from "/assets/real-estate/Collection projects.png"
 
 const featured = {
   id: "collection",

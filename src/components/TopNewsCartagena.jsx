@@ -1,4 +1,4 @@
-import carasolePic from "../assets/carasole.png";
+import carasolePic from "/assets/carasole.png";
 
 export default function TopNewsCartagena() {
   return (

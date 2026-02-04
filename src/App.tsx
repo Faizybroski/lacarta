@@ -6,6 +6,7 @@ import Gastronomy from "@/pages/Gastronomy";
 import Beaches from "@/pages/Beaches";
 import Boating from "@/pages/Boating";
 import RealEstate from "@/pages/RealEstate";
+import ElitePage from "@/pages/elite";
 import Layout from "@/components/layout/Layout";
 
 import DetailedActivity from "@/pages/Detailed-Activity";
@@ -15,7 +16,8 @@ import DetailedBoating from "@/pages/Detailed-Boating";
 import DetailedGastronomy from "@/pages/Detailed-Gyst";
 
 import RealestatePage from "@/pages/Real-Estate-Page";
-import NotFound from "@/pages/NotFound";
+import NotFound from "@/pages/NotFound"
+import RealestateListing from "@/pages/real-estate-listing";
 
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
@@ -86,7 +88,14 @@ function App() {
               </Layout>
             }
           />
-
+        <Route
+            path="/elite"
+            element={
+              <Layout>
+                <ElitePage />
+              </Layout>
+            }
+          />
           <Route
             path="/real-Estate-detailed"
             element={
@@ -95,6 +104,16 @@ function App() {
               </Layout>
             }
           />
+           <Route
+            path="/real-Estate-listing"
+            element={
+              <Layout>
+                <RealestateListing />
+              </Layout>
+            }
+          />
+
+          
           <Route
             path="/Detailed-Boating"
             element={

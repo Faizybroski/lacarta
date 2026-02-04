@@ -8,7 +8,7 @@
 
 @font-face {
   font-family: 'Moonscape';
-  src: url('./assets/fonts/MoonscapeDemo.otf') format('opentype');
+  src: url('/assets/fonts/MoonscapeDemo.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }

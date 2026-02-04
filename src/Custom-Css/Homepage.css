@@ -55,7 +55,7 @@
 }
 
 .overlayed-pic{
-   background-image: url('../assets/overlayed.png');
+   background-image: url('/assets/overlayed.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -79,7 +79,7 @@
 }
 
 .backgroud-image2{
-  background-image: url('../assets/img12.png');
+  background-image: url('/assets/img12.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -154,7 +154,7 @@
 }
 
 .Hero-pic{
-   background-image: url('../assets/Hero.png');
+   background-image: url('/assets/Hero.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -194,14 +194,14 @@
   overflow: hidden;
 }
 .backgroud-image2{
-  background-image: url('../assets/img12.png');
+  background-image: url('/assets/img12.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
 }
 .backgroud-image1{
-  background-image: url('../assets/img11.png');
+  background-image: url('/assets/img11.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

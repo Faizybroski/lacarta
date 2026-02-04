@@ -1,6 +1,6 @@
-import img1 from "../assets/activitiesHero.png";
-import img2 from "../assets/Food.png";
-import img3 from "../assets/Fish.png";
+import img1 from "/assets/activitiesHero.png";
+import img2 from "/assets/Food.png";
+import img3 from "/assets/Fish.png";
 
 export const boatingData = {
   hero: {
@@ -10,6 +10,29 @@ export const boatingData = {
     path: "La Carta - Cartagena Culture & Tourism > Boating",
     cta: "https://lacarta.co/cartagena/resources/",
   },
+
+  places: [
+    {
+      title: "Marina del Rey",
+      image: img3,
+      tags: ["Restaurant", "Waterfront"],
+    },
+    {
+      title: "Playa Blanca Resort",
+      image: img3,
+      tags: ["Beach", "Luxury"],
+    },
+    {
+      title: "La Cabaña Glamping Geronimo",
+      image: img3,
+      tags: ["Glamping", "Eco-Lodge"],
+    },
+    {
+      title: "Cholon Beach Club",
+      image: img3,
+      tags: ["Beach", "Nightlife"],
+    },
+  ],
 
   premiumListings: [
     {

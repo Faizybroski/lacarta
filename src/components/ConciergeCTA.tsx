@@ -1,4 +1,4 @@
-import guidepic from "../assets/img13.png";
+import guidepic from "/assets/img13.png";
 
 export default function ConciergeCTA() {
   return (

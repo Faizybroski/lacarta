@@ -1,6 +1,7 @@
 // components/PlayaScondidaAbout.tsx
 import { Card, CardContent } from "@/components/ui/card";
-import {Clock,CalendarDays,Luggage,Phone,Link,Mail} from 'lucide-react'
+import {Clock,CalendarDays,Luggage,Phone,Link,Mail,Leaf,Facebook,Instagram,MessageCircleMore, Ship,Sunrise,Waves,UtensilsCrossed,Sailboat} from 'lucide-react'
+
 
 export default function PlayaScondidaAbout() {
   return (
@@ -28,16 +29,60 @@ export default function PlayaScondidaAbout() {
             </p>
           </div>
 
-             <Card className="border-none mt-5 shadow-lg relative bg-white/80 backdrop-blur-sm">
-              <CardContent className="py-3 px-5 rounded bg-[#f8f5e9] border-1 border-amber-300 md:p-10">
-                <div className="inline-block absolute -top-3 mb-6 rounded-full bg-[#d0a944] px-2 py-1 text-white font-bold text-sm">
-                  Perfect For
-                </div>
-                <p className="text-2x1 font-bold text-black leading-relaxed italic">
-                  "Ideal for couples, nature lovers & slow travelers seeking an authentic Caribbean escape far from the ordinary."
-                </p>
+             {/* Key Features */}
+            <Card className="rounded-xl border mt-5 relative border-amber-100 bg-[#f8f5e9]">
+              <CardContent className="p-6 mt-55">
+                <span className="mb-4 inline-block absolute -top-3 left-5 rounded-full bg-[#d0a944] px-3 py-1 text-xs font-bold text-white">
+                  Key Features
+                </span>
+
+                <ul className="mt-4 space-y-4">
+                  {[
+                    {
+                      title: "Eco-friendly Bungalows",
+                      desc: "Sustainably built with local materials",
+                      icon:<Leaf size={50} className="p-2 rounded bg-yellow-50 text-yellow-600"/>
+                    },
+                    {
+                      title: "Accessible by Speedboat",
+                      desc: "45 minutes from Cartagena",
+                      icon:<Ship size={50} className="p-2 rounded bg-yellow-50 text-yellow-600"/>
+                    },
+                    {
+                      title: "Ocean & Jungle Views",
+                      desc: "Wake up to breathtaking scenery",
+                      icon:<Waves size={50} className="p-2 rounded bg-yellow-50 text-yellow-600"/>
+                    },
+                    {
+                      title: "Local Island Cuisine",
+                      desc: "Fresh Caribbean flavors daily",
+                      icon:<UtensilsCrossed size={50} className="p-2 rounded bg-yellow-50 text-yellow-600"/>
+                    },
+                    {
+                      title: "On-site Activities",
+                      desc: "Kayaking, snorkeling & more",
+                      icon:<Sailboat size={50} className="p-2 rounded bg-yellow-50 text-yellow-600"/>
+                    },
+                    {
+                      title: "Peaceful & Secluded",
+                      desc: "Your private paradise awaits",
+                      icon:<Sunrise size={50} className="p-2 rounded bg-yellow-50 text-yellow-600"/>
+                    },
+                  ].map((item, i) => (
+                    <li key={i}>
+                      <div className="flex gap-3">
+                        <div>{item.icon}</div>
+                        <div>
+                      <p className="font-bold text-black">{item.title}</p>
+                      <p className="text-sm text-gray-600">{item.desc}</p>
+                      </div>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
               </CardContent>
             </Card>
+
         </div>
 
         <div>
@@ -54,24 +99,87 @@ export default function PlayaScondidaAbout() {
                     <p className="text-xl font-bold font-['Inter']">Isla Barú, Provincia de Cartagena, Bolívar, Colombia</p>
                   </div>
 
-                  <div>
-                    <p className="text-black font-medium mb-1">Contact</p>
-                    <div className="space-y-2 text-sm font-semibold">
-                      <div className="flex gap-2 font-bold align-items-center"><Mail size={15}></Mail> reservas@hotelplayascondidabaru.com</div>
-                      <div className="flex gap-2 font-bold align-items-center"><Link size={15}></Link> https://playascondidabaru.com</div>
-                      <div className="flex gap-2 font-bold align-items-center"><Phone size={15}></Phone> +57 350 368 24000</div>
-                    </div>
-                  </div>
-
+                 <div className="mt-3 h-[230px] w-full overflow-hidden rounded-xl border">
+     <iframe
+          title="Map Preview"
+          className="h-full w-full border-0"
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Pakistan&output=embed"
+  />
+</div>
                 </div>
               </CardContent>
             </Card>
 
-             <div className="">
-                    <p className="text-gray-500">
-                     Located on the southwestern tip of Isla Barú, our property occupies a pristine stretch of coastline where the Caribbean Sea meets lush mangrove forests. Accessible only by water, Playa Scondida offers the ultimate escape from the everyday world.
-                    </p>
+                        <Card className="bg-[#f8f5e9] p-0 text-white relative border-1 border-amber-300 shadow-xl">
+              <CardContent className="mt-2">
+                <div className="inline-block absolute -top-4 mb-6 rounded-full bg-[#d0a944] px-2 py-1 text-white font-bold text-sm">Time</div>
+                  <div className="grid grid-cols-2 gap-4  align-itms-start">
+                    <div className="p-3">
+                      <p className="font-medium text-lg text-center text-gray-500">Hour Begining</p>
+                      <p className="font-bold text-lg text-center text-black">9:00 am</p>
+                    </div>
+                    <div className="p-3 ">
+                      <p className="font-medium text-center text-lg text-gray-500">Hour Begining</p>
+                      <p className="font-bold text-lg text-center text-black">9:00 pm</p>
+                    </div>
                   </div>
+                  </CardContent>
+                  </Card>
+
+            {/* Contact */}
+            <Card className="bg-[#f8f5e9] text-white relative border-1 border-amber-300 shadow-xl">
+              <CardContent className="mt-5">
+                <div className="inline-block absolute -top-4 mb-6 rounded-full bg-[#d0a944] px-2 py-1 text-white font-bold text-sm">Social Media</div>
+             <div className="grid grid-cols-3 gap-3">
+              {[ { icon: Facebook,title:"Facebook" ,text: "reservas@playascondida.com" },
+               { icon: Instagram,title:"Instagram" , text: "playascondida.com" },
+                { icon: MessageCircleMore,title:"Whatsapp" , text: "+57 315 123 4567" },
+                 { icon: Mail,title:"Email" ,text: "reservas@playascondida.com" },
+               { icon: Link,title:"Website" , text: "playascondida.com" },
+                { icon: Phone,title:"Phone" , text: "+57 315 123 4567" },
+               ].map((item, i) => (
+                 <Card
+                   key={i}
+                   className="rounded-xl border border-amber-100 bg-[#f8f5e9]"
+                 >
+                   <CardContent className="flex flex-col items-center gap-2 p-4 text-center text-xs font-medium">
+                     <item.icon size={50} className=" bg-amber-60 rounded p-2 text-amber-600" />
+                     <h3 className="text-lg text-gray-700 font-bold">{item.title}</h3>
+                   </CardContent>
+                 </Card>
+               ))}
+             </div> 
+             </CardContent>
+             </Card>
+
+              {/* Booking */}
+             <Card className="rounded-xl border border-amber-100 bg-[#f8f5e9] text-center">
+               <CardContent className="p-3">
+                 <p className="mb-4 text-lg font-bold text-black">
+                   Also Available On
+                 </p>
+                 <button className="rounded-full bg-teal-700 px-6 py-2 text-sm font-medium text-white">
+                   Viator
+                 </button>
+               </CardContent>
+             </Card>
+
+             {/* CTA */}
+             <button className="w-full rounded-full font-bold text-3x1 bg-gradient-to-r from-[#d0a944] to-[#c39a36] py-3 text-sm font-semibold text-white">
+               Book with La Carta
+             </button>
+             
+             <div>
+              <p className="text-center font-bold text-md text-gray-600">
+             Why Book with Lacarta?
+            </p>
+            <p className="text-center text-md text-gray-500">
+              Secure payments, verified listings, 24/7 support, and exclusive
+              local experiences curated by Cartagena insiders.
+            </p>
+            </div>
 
             {/* Travel Tips */}
             <div className="space-y-6">
@@ -109,3 +217,206 @@ export default function PlayaScondidaAbout() {
     </section>
   );
 }
+
+
+
+// components/PlayaScondidaAbout.tsx
+// import { Card, CardContent } from "@/components/ui/card"
+// import {
+//   Mail,
+//   Link,
+//   Phone,
+//   Clock,
+//   CalendarDays,
+//   Luggage,
+// } from "lucide-react"
+
+// export default function PlayaScondidaAbout() {
+//   return (
+//     <section className="w-full bg-[#fbf8f2] py-14 lg:py-20">
+//       <div className="container px-4 lg:px-6 mx-auto max-w-7xl px-4">
+//         <div className="grid gap-10 md:grid-cols-[2.2fr_1.3fr]">
+//           {/* LEFT COLUMN */}
+//           <div>
+//             {/* Heading */}
+//             <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-gray-500">
+//               Discover
+//             </p>
+
+//             <h2 className="mb-6 font-serif text-3xl font-bold text-black md:text-4xl">
+//               About Tierra bomba
+//             </h2>
+
+//             {/* Description */}
+//             <p className="mb-8 max-w-2xl text-sm leading-relaxed text-gray-600">
+//               Nestled on the pristine shores of{" "}
+//               <span className="font-semibold text-black">Isla Barú</span>, just a
+//               scenic boat ride from Cartagena's historic walls, Playa Scondida
+//               offers an unparalleled eco-luxury glamping experience. Here, the
+//               Caribbean Sea whispers secrets of ancient mariners, while the
+//               jungle canopy shelters you in its emerald embrace. Our philosophy
+//               is simple: authentic luxury that honors the land. Each bungalow is
+//               crafted from locally-sourced materials, designed to blend
+//               seamlessly with the surrounding nature while providing every
+//               modern comfort you desire.
+//             </p>
+
+//             {/* Key Features */}
+//             <Card className="rounded-xl border border-amber-100 bg-[#f8f5e9]">
+//               <CardContent className="p-6">
+//                 <span className="mb-4 inline-block rounded-full bg-[#d0a944] px-3 py-1 text-xs font-semibold text-white">
+//                   Key Features
+//                 </span>
+
+//                 <ul className="mt-4 space-y-4">
+//                   {[
+//                     {
+//                       title: "Eco-friendly Bungalows",
+//                       desc: "Sustainably built with local materials",
+//                     },
+//                     {
+//                       title: "Accessible by Speedboat",
+//                       desc: "45 minutes from Cartagena",
+//                     },
+//                     {
+//                       title: "Ocean & Jungle Views",
+//                       desc: "Wake up to breathtaking scenery",
+//                     },
+//                     {
+//                       title: "Local Island Cuisine",
+//                       desc: "Fresh Caribbean flavors daily",
+//                     },
+//                     {
+//                       title: "On-site Activities",
+//                       desc: "Kayaking, snorkeling & more",
+//                     },
+//                     {
+//                       title: "Peaceful & Secluded",
+//                       desc: "Your private paradise awaits",
+//                     },
+//                   ].map((item, i) => (
+//                     <li key={i}>
+//                       <p className="font-semibold text-black">{item.title}</p>
+//                       <p className="text-sm text-gray-600">{item.desc}</p>
+//                     </li>
+//                   ))}
+//                 </ul>
+//               </CardContent>
+//             </Card>
+//           </div>
+
+//           {/* RIGHT COLUMN */}
+//           <div className="space-y-6">
+//             {/* Information */}
+//             <Card className="relative rounded-xl border border-amber-100 bg-[#f8f5e9]">
+//               <CardContent className="p-6">
+//                 <span className="absolute -top-3 rounded-full bg-[#d0a944] px-3 py-1 text-xs font-semibold text-white">
+//                   Information
+//                 </span>
+
+//                 <div className="mt-4 space-y-4 text-sm">
+//                   <div>
+//                     <p className="font-medium text-gray-500">Address</p>
+//                     <p className="font-semibold text-black">
+//                       Isla Baru, Provincia de Cartagena, Bolívar, Colombia
+//                     </p>
+//                   </div>
+
+//                   <div className="grid grid-cols-2 gap-4">
+//                     <div>
+//                       <p className="font-medium text-gray-500">Hour Begining</p>
+//                       <p className="font-semibold text-black">9:00 am</p>
+//                     </div>
+//                     <div>
+//                       <p className="font-medium text-gray-500">Hour Begining</p>
+//                       <p className="font-semibold text-black">9:00 pm</p>
+//                     </div>
+//                   </div>
+//                 </div>
+//               </CardContent>
+//             </Card>
+
+//             {/* Contact */}
+//             <div className="grid grid-cols-3 gap-3">
+//               {[
+//                 { icon: Mail, text: "reservas@playascondida.com" },
+//                 { icon: Link, text: "playascondida.com" },
+//                 { icon: Phone, text: "+57 315 123 4567" },
+//               ].map((item, i) => (
+//                 <Card
+//                   key={i}
+//                   className="rounded-xl border border-amber-100 bg-[#f8f5e9]"
+//                 >
+//                   <CardContent className="flex flex-col items-center gap-2 p-4 text-center text-xs font-medium">
+//                     <item.icon className="h-5 w-5 text-amber-600" />
+//                     <span className="text-gray-700">{item.text}</span>
+//                   </CardContent>
+//                 </Card>
+//               ))}
+//             </div>
+
+//             {/* Booking */}
+//             <Card className="rounded-xl border border-amber-100 bg-[#f8f5e9] text-center">
+//               <CardContent className="p-6">
+//                 <p className="mb-4 font-semibold text-black">
+//                   Also Available On
+//                 </p>
+//                 <button className="rounded-full bg-teal-700 px-6 py-2 text-sm font-medium text-white">
+//                   Viator ↗
+//                 </button>
+//               </CardContent>
+//             </Card>
+
+//             {/* CTA */}
+//             <button className="w-full rounded-full bg-gradient-to-r from-[#d0a944] to-[#c39a36] py-3 text-sm font-semibold text-white">
+//               Book with La Carta
+//             </button>
+
+//             <p className="text-center text-xs text-gray-500">
+//               Secure payments, verified listings, 24/7 support, and exclusive
+//               local experiences curated by Cartagena insiders.
+//             </p>
+
+//             {/* Travel Tips */}
+//             <div>
+//               <h3 className="mb-4 font-serif text-xl font-bold text-black">
+//                 Travel Tips
+//               </h3>
+
+//               <div className="space-y-3">
+//                 {[
+//                   {
+//                     icon: Clock,
+//                     title: "Speedboat Time",
+//                     desc: "45–60 minutes from Cartagena marina",
+//                   },
+//                   {
+//                     icon: CalendarDays,
+//                     title: "Best Season",
+//                     desc: "December to April (dry season)",
+//                   },
+//                   {
+//                     icon: Luggage,
+//                     title: "What to Bring",
+//                     desc: "Light clothing, reef-safe sunscreen, camera",
+//                   },
+//                 ].map((tip, i) => (
+//                   <div
+//                     key={i}
+//                     className="flex gap-3 rounded-xl border border-amber-100 bg-[#f8f5e9] p-4"
+//                   >
+//                     <tip.icon className="h-5 w-5 text-amber-600" />
+//                     <div>
+//                       <p className="font-semibold text-black">{tip.title}</p>
+//                       <p className="text-xs text-gray-600">{tip.desc}</p>
+//                     </div>
+//                   </div>
+//                 ))}
+//               </div>
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+//     </section>
+//   )
+// }

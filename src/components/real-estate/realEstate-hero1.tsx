@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
-import bgImage from "../../assets/activitiesHero.png";
+import bgImage from "/assets/activitiesHero.png";
 
 export default function EstateHero() {
   return (

@@ -1,9 +1,13 @@
 import React from "react";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import logo from "../../assets/Logo.png.png";
+import logo from "/assets/Logo.png.png";
+import footerbg from "/assets/footer-bg.png";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+
+
+import { TopBar } from './TopBar';
 import {
   Heart,
   Facebook,
@@ -11,7 +15,7 @@ import {
   Instagram,
   Youtube,
   Linkedin,
-  Cloudy,
+ CloudMoon
 } from "lucide-react";
 
 const Layout = ({ children }) => {
@@ -37,7 +41,16 @@ const Layout = ({ children }) => {
 
   return (
     <>
+    <TopBar />
       <header className="flex items-center justify-between px-6 py-4 bg-black md:px-16 relative">
+
+        <div
+  className="absolute inset-0 pointer-events-none"
+  style={{
+    background:
+      "radial-gradient(circle at center, rgba(245, 242, 242, 0.2) 0%, rgba(0,0,0,0) 60%, rgba(0,0,0,0.3) 100%)",
+  }}
+></div>
         {/* Logo */}
         <div>
           <Link to="/">
@@ -46,7 +59,7 @@ const Layout = ({ children }) => {
         </div>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-6 text-sm uppercase text-white font-semibold">
+        <nav className="hidden md:flex items-center  gap-6 text-sm uppercase text-white font-semibold">
           {NAV_LINKS.map(({ label, path }) => (
             <Link
               key={label}
@@ -64,11 +77,11 @@ const Layout = ({ children }) => {
             <Heart className="text-[#d0a439] w-6 h-6" />
           </Link>
 
+          <p>|</p>
           <Link to="#" className="text-white text-sm hidden md:block">
             Login
           </Link>
-
-          <Button className="bg-[#d0a439] hover:bg-[#b88f30] text-black font-bold rounded-sm px-6 hidden sm:block">
+          <Button className="bg-gradient-to-r from-yellow-400 to-yellow-600 hover:bg-[#b88f30] text-white font-bold rounded-sm px-6 hidden sm:block">
             BOOK TRIP
           </Button>
 
@@ -107,7 +120,23 @@ const Layout = ({ children }) => {
 
       <main>{children}</main>
 
-      <footer className="bg-black text-white pt-20 pb-10">
+      <footer
+       className="bg-black text-white pt-20 pb-10 relative bg-no-repeat bg-center bg-contain"
+  style={{ backgroundImage: `url(${footerbg})` }}
+      >
+       <div
+  className="absolute inset-0 pointer-events-none"
+  style={{
+    background:
+      "radial-gradient(circle at center, rgba(245, 242, 242, 0.2) 0%, rgba(0,0,0,0) 60%, rgba(0,0,0,0.3) 100%)",
+  }}
+></div>
+
+
+<div className="relative z-10">
+
+
+
         <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-11 gap-12">
           {/* Left: Logo + Text + Social */}
           <div className="md:col-span-3">
@@ -121,7 +150,7 @@ const Layout = ({ children }) => {
               of Cartagena la Heroica.
             </p>
 
-            <Button className="bg-[#d0a439] hover:bg-[#b88f30] text-white font-bold rounded-lg px-6 w-100">
+            <Button className="bg-gradient-to-r from-yellow-300 to-yellow-600 hover:bg-[#b88f30] text-white font-bold rounded px-6 w-100">
               BOOK TRIP
             </Button>
           </div>
@@ -186,27 +215,36 @@ const Layout = ({ children }) => {
 
           {/* Weather Card */}
           <div className="hidden md:flex justify-end md:col-span-2 py-5">
-            <div className="  max-w-xs  rounded-2xl bg-gradient-to-b from-[#7bb9ff] to-[#4d9cfb] text-white px-6 py-0 text-center align-content-center shadow-lg">
-              {/* Location */}
-              <h4 className="font-bold uppercase text-lg tracking-wide">
-                Cartagena, CO
-              </h4>
+  <div className="max-w-xs h-60 rounded-2xl bg-gradient-to-r from-blue-300 to-blue-500 text-white px-6 py-4 text-center shadow-lg flex flex-col justify-between">
+    
+    {/* Location */}
+    <h4 className="font-bold uppercase text-lg tracking-wide">
+      Cartagena, CO
+    </h4>
 
-              {/* Time & Date */}
-              <p className="text-sm opacity-90 mb-4">7:20 am, Dec 19, 2025</p>
+    {/* Time & Date */}
+    <p className="text-sm opacity-90">
+      7:20 am, Dec 19, 2025
+    </p>
 
-              {/* Temperature */}
-              <div className="flex items-center justify-center gap-2 text-5xl font-extrabold mb-3">
-                <Cloudy size={42} />
-                <span>25°C</span>
-              </div>
+    {/* Temperature */}
+    <div className="flex items-center justify-center gap-2 text-5xl font-extrabold">
+      <CloudMoon className="w-10 h-10 font-bold"/>
+      <span>25°C</span>
+    </div>
 
-              {/* Description */}
-              <p className="text-sm font-semibold uppercase tracking-widest opacity-90">
-                Few Clouds
-              </p>
-            </div>
-          </div>
+    {/* Description */}
+    <p className="text-sm font-bold uppercase tracking-widest opacity-90">
+      Few Clouds
+    </p>
+
+    {/* Footer */}
+    <p className="text-xs opacity-70 mt-2">
+      Weather from OpenWeatherMap
+    </p>
+  </div>
+</div>
+
         </div>
 
         <div className="container hidden md:block mx-auto px-4 mt-20 text-sm text-white">
@@ -236,6 +274,7 @@ const Layout = ({ children }) => {
             <span>© LaCarta 2023 – 2025. All rights reserved</span>
             <span>Privacy Policy | Terms & Conditions</span>
           </div>
+        </div>
         </div>
       </footer>
     </>

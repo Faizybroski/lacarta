@@ -1,14 +1,15 @@
-import img1 from "../assets/activitiesHero.png";
-import img2 from "../assets/Food.png";
-import img3 from "../assets/Fish.png";
+import img1 from "/assets/activitiesHero.png";
+import img2 from "/assets/Food.png";
+import img3 from "/assets/Fish.png";
 
 export const activitiesData = {
   hero: {
     title: "THE BEST ACTIVITIES IN CARTAGENA",
-    subtitle: "Top adventures, tours, and experiences",
+    subtitle:
+      "Our La Carta Filter guide helps you find your ideal BnB Hote , Hostel, and much more with our search engine costumed to your necessities.",
     bgImage: img1,
     path: "La Carta - Cartagena Culture & Tourism > Activities",
-    cta: "https://lacarta.co/cartagena/resources/",
+    cta: "BOOK NOW",
   },
 
   premiumListings: [
@@ -16,6 +17,25 @@ export const activitiesData = {
       id: 1,
       title: "La Brioche Royal",
       subtitle: "Best French Breakfast",
+      category: "Breakfast",
+      image: img3,
+      rating: 0,
+      href: "/Detailed-Activity",
+    },
+    {
+      id: 1,
+      title: "La Brioche Royal",
+      subtitle: "Best French Breakfast",
+      category: "Seafood",
+      image: img3,
+      rating: 3,
+      href: "/Detailed-Activity",
+    },
+    {
+      id: 1,
+      title: "La Brioche Royal",
+      subtitle: "Best French Breakfast",
+      category: "Breakfast",
       image: img3,
       rating: 4.8,
       href: "/Detailed-Activity",
@@ -24,25 +44,50 @@ export const activitiesData = {
       id: 1,
       title: "La Brioche Royal",
       subtitle: "Best French Breakfast",
+      category: "Sushi",
       image: img3,
-      rating: 4.8,
+      rating: 2,
       href: "/Detailed-Activity",
+    },
+  ],
+
+  eliteListings: [
+    {
+      id: 1,
+      title: "La Brioche Royal",
+      subtitle: "Best French Breakfast",
+      category: "Breakfast",
+      image: img3,
+      rating: 1,
+      href: "/elite",
     },
     {
       id: 1,
       title: "La Brioche Royal",
       subtitle: "Best French Breakfast",
+      category: "Beef",
       image: img3,
-      rating: 4.8,
-      href: "/Detailed-Activity",
+      rating: 2.5,
+      href: "/elite",
     },
     {
       id: 1,
       title: "La Brioche Royal",
       subtitle: "Best French Breakfast",
+      category: "Sushi",
+      image: img3,
+      rating: 3.7,
+      href: "/elite",
+    },
+    {
+      id: 1,
+      title: "La Brioche Royal",
+      subtitle: "Best French Breakfast",
+
+      category: "El Laguito",
       image: img3,
       rating: 4.8,
-      href: "/Detailed-Activity",
+      href: "/elite",
     },
   ],
 

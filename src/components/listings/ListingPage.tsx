@@ -27,7 +27,7 @@ export default function ListingPage({ categories = [] }) {
   return (
     <>
       <section className="bg-white py-16">
-        <div className="mx-auto max-w-7xl px-4">
+        <div className="mx-auto max-w-7xl px-10">
           <CategoryFilters
             activeFilter={activeFilter}
             setActiveFilter={(filter) => {
@@ -39,23 +39,26 @@ export default function ListingPage({ categories = [] }) {
               setCurrentPage(1);
             }}
           />
-          <div className="grid gap-6  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          <div className="grid  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {currentItems.map((cat) => (
               <Link to={`${cat.href}`}>
                 <Card
                   key={cat.id}
-                  className="relative border-0 overflow-hidden"
+                  className="relative border-0 overflow-hidden bg-transparent shadow-none"
                 >
-                  <img
-                    src={cat.image}
-                    alt={cat.title}
-                    className="h-48 w-full object-cover"
-                  />
-                  <CardHeader className="space-y-1 text-center">
-                    <h3 className="text-lg text-black font-bold">
+                  <CardHeader>
+                    <img
+                      src={cat.image}
+                      alt={cat.title}
+                      className="h-48 w-full object-cover rounded-sm"
+                    />
+                  </CardHeader>
+
+                  <CardContent className="space-y-1 text-center">
+                    <h3 className="text-lg text-black font-bold font-['Bebas_Neue']">
                       {cat.title}
                     </h3>
-                  </CardHeader>
+                  </CardContent>
                 </Card>
               </Link>
             ))}

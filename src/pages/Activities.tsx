@@ -8,6 +8,10 @@ export default function Activities() {
   return (
     <>
       <Hero {...activitiesData.hero} />
+      <PaginationListing
+        premiumListings={activitiesData.eliteListings}
+        text={"Elite Listing"}
+      />
       <PaginationListing {...activitiesData} />
       <ListingPage {...activitiesData} />
       <CartagenaNews />
