@@ -10,6 +10,7 @@ import { TopBar } from "./TopBar";
 import {
   Heart,
   Facebook,
+  Share2,
   Twitter,
   Instagram,
   Youtube,
@@ -92,24 +93,36 @@ const Layout = ({ children }) => {
           </button>
         </div>
 
+        <div className="inline fixed z-[999] top-44 left-10">
+          <div className="bg-[#f15c5d] rounded-full">
+            <Share2
+              size={60}
+              className="p-3 text-white font-bold bg-red-400 mb-6 fill-white"
+            />
+          </div>
+          <div className="bg-yellow-400 rounded-full">
+            <Heart size={60} className="p-3 text-black font-bold " />
+          </div>
+        </div>
+
         {/* Mobile nav */}
         {isOpen && (
           <nav className="absolute top-full left-0 w-full bg-black z-50 flex flex-col items-center gap-6 py-6 text-white uppercase font-semibold md:hidden">
             {[
-              "Activities",
-              "Hotels",
-              "Beaches",
-              "Boating",
-              "Tours",
-              "Gastronomy",
+              { label: "Activities", path: "/activities" },
+              { label: "Hotels", path: "/hotels" },
+              { label: "Beaches", path: "/beaches" },
+              { label: "Boating", path: "/boating" },
+              { label: "Real Estate", path: "/realState" },
+              { label: "Gastronomy", path: "/gastronomy" },
             ].map((item) => (
               <Link
-                key={item}
-                to=""
+                key={item.label}
+                to={item.path}
                 className="hover:text-[#d0a439]"
                 onClick={() => setIsOpen(false)}
               >
-                {item}
+                {item.label}
               </Link>
             ))}
           </nav>
