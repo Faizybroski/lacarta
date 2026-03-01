@@ -22,7 +22,7 @@ import Neighborhoods from "../components/real-estate/scroll-Images";
 import WaltSection from "../components/real-estate/Walt-Slider";
 import EstateCard from "@/components/card/RealEstate-Card";
 import { realEsteteData } from "@/data/real-estate-page";
-import CartagenaNews from "@/components/cartagenaNews";
+import CartagenaNews from "@/components/layout/cartagenaNews";
 
 export default function RealestatePage() {
   return (

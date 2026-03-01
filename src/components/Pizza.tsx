@@ -19,14 +19,15 @@ export default function Pizza() {
         {/* CENTER CONTENT */}
         <div className="relative grid grid-cols-1 lg:grid-cols-[70%_30%] text-center lg:text-start items-center">
           {/* LEFT CONTENT */}
-          <div className="w-full  text-start container md:px-0 ">
+          <div className="w-full text-center md:text-start container md:px-0 ">
             <h2
               className="
                 text-white
                 uppercase
                 font-bold
                 tracking-[0.12em]
-                text-sm
+                text-xl
+                md:text-sm
                 md:text-xl
               "
             >
@@ -36,7 +37,7 @@ export default function Pizza() {
             <p
               className="
                 mt-1
-                text-[6px]
+                text-[10px]
                 md:text-[10px]
                 text-white
                 tracking-wide
@@ -60,6 +61,7 @@ export default function Pizza() {
                 to-gold-light
                 hover:opacity-90
                 transition
+
               "
             >
               BOOK NOW
@@ -67,7 +69,7 @@ export default function Pizza() {
           </div>
 
           {/*  Selvio Img */}
-          <div className="hidden md:block py-5 w-full h-full">
+          <div className="hidden md:block py-14 w-full h-full">
             <div>
               <img
                 src={selvioImg}

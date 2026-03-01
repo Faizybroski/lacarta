@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
 import logo from "/assets/Logo.png.png";
+import whatsapp from "/assets/whatsapp.svg";
 import footerbg from "/assets/footer-bg.png";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -9,6 +9,8 @@ import { Link } from "react-router-dom";
 import { TopBar } from "./TopBar";
 import {
   Heart,
+  Menu,
+  X,
   Facebook,
   Share2,
   Twitter,
@@ -93,15 +95,29 @@ const Layout = ({ children }) => {
           </button>
         </div>
 
-        <div className="inline fixed z-[999] top-44 left-10">
-          <div className="bg-[#f15c5d] rounded-full">
-            <Share2
-              size={60}
-              className="p-3 text-white font-bold bg-red-400 mb-6 fill-white"
-            />
+        <div className="inline absolute z-[999] sm:top-44 top-28 left-10">
+          <div className="bg-[#f15c5d] p-1 sm:p-3 rounded-full mb-2 sm:mb-6 ">
+            <Share2 className="w-5 h-5 sm:h-10 sm:w-10 text-white font-bold  fill-white" />
           </div>
-          <div className="bg-yellow-400 rounded-full">
-            <Heart size={60} className="p-3 text-black font-bold " />
+          <div className="bg-yellow-400 p-1 sm:p-3 rounded-full">
+            <Heart className="w-5 h-5 sm:h-10 sm:w-10 text-black font-bold " />
+          </div>
+        </div>
+        <div className="fixed bottom-6 right-6 z-[999] flex items-center gap-2">
+          <div>
+            <span className="bg-white text-black font-bold px-3 py-1 rounded shadow text-sm hidden md:block">
+              Need help? Chat with us
+            </span>
+          </div>
+          <div>
+            <a
+              href="https://wa.me/+111111111111"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-14 h-14 flex items-center justify-center rounded-full  hover:scale-105 transition"
+            >
+              <img src={whatsapp} alt="WhatsApp" className="w-10 h-10" />
+            </a>
           </div>
         </div>
 
@@ -132,7 +148,7 @@ const Layout = ({ children }) => {
       <main>{children}</main>
 
       <footer
-        className="bg-black text-white pt-20 pb-10 relative bg-no-repeat bg-center bg-contain"
+        className="container bg-black text-white pt-20 pb-10 relative bg-no-repeat bg-center bg-contain"
         style={{ backgroundImage: `url(${footerbg})` }}
       >
         <div
@@ -151,21 +167,21 @@ const Layout = ({ children }) => {
                 <img src={logo} className="w-100 w-md-60 mb-6" alt="LaCarta" />
               </Link>
 
-              <p className="text-gray-400 leading-relaxed mb-8 hidden md:block">
+              <p className="text-white leading-relaxed text-sm mb-6  hidden md:block">
                 We are native Cartagenero Costeños passionate about everything
                 Cartagena. Our magazine is here to help you discover the marvels
                 of Cartagena la Heroica.
               </p>
 
-              <Button className="bg-gradient-to-r from-yellow-300 to-yellow-600 hover:bg-[#b88f30] text-white font-bold rounded px-6 w-100">
+              <Button className="bg-gradient-to-r from-gold to-gold-light hover:bg-gold text-white text-lg font-semibold rounded-sm px-6 w-full">
                 BOOK TRIP
               </Button>
             </div>
 
             {/* About */}
             <div className="hidden md:block md:col-span-2 py-5">
-              <h5 className="font-bold uppercase mb-6">About</h5>
-              <ul className="space-y-3 text-gray-400">
+              <h5 className="font-bold mb-6">About</h5>
+              <ul className="space-y-2 text-white">
                 {[
                   "About Us",
                   "Contact",
@@ -186,8 +202,8 @@ const Layout = ({ children }) => {
 
             {/* Cartagena */}
             <div className="hidden md:block md:col-span-2 py-5">
-              <h5 className="font-bold uppercase mb-6">Cartagena</h5>
-              <ul className="space-y-3 text-gray-400">
+              <h5 className="font-bold mb-6">Cartagena</h5>
+              <ul className="space-y-2 text-white">
                 {FooterNavLinks.map(({ label, path }) => (
                   <li key={label}>
                     <Link to={path} className="hover:text-white transition">
@@ -199,9 +215,9 @@ const Layout = ({ children }) => {
             </div>
 
             {/* Help */}
-            <div className="md:block text-center text-md-start md:col-span-2 py-5">
-              <h5 className="font-bold uppercase mb-6">Help</h5>
-              <ul className="space-y-3 text-gray-400">
+            <div className="md:block text-center md:text-start md:col-span-2 py-5">
+              <h5 className="font-bold mb-6">Help</h5>
+              <ul className="space-y-2 text-white">
                 {[
                   "FAQ",
                   "Travel Guide",
@@ -222,30 +238,38 @@ const Layout = ({ children }) => {
 
             {/* Weather Card */}
             <div className="hidden md:flex justify-end md:col-span-2 py-5">
-              <div className="max-w-xs h-60 rounded-2xl bg-gradient-to-r from-blue-300 to-blue-500 text-white px-6 py-4 text-center shadow-lg flex flex-col justify-between">
-                {/* Location */}
-                <h4 className="font-bold uppercase text-lg tracking-wide">
-                  Cartagena, CO
-                </h4>
-
-                {/* Time & Date */}
-                <p className="text-sm opacity-90">7:20 am, Dec 19, 2025</p>
-
-                {/* Temperature */}
-                <div className="flex items-center justify-center gap-2 text-5xl font-extrabold">
-                  <CloudMoon className="w-10 h-10 font-bold" />
-                  <span>25°C</span>
+              <div className="w-[320px] h-[260px] rounded-sm bg-gradient-to-br from-[#62B8F6] to-[#396C90] text-white shadow-xl  pt-6 pb-0 flex flex-col text-center">
+                {/* Top Section */}
+                <div className="px-8">
+                  <h4 className="text-2xl font-bold">Cartagena, CO</h4>
+                  <p className="text-sm opacity-90 mt-1">
+                    7:20 am, Dec 19, 2025
+                  </p>
                 </div>
 
+                {/* Temperature Section */}
+                <div className="flex items-center justify-center gap-3 my-4 px-8">
+                  <CloudMoon className="w-12 h-12 opacity-90" />
+                  <div className="flex items-start">
+                    <span className="text-6xl font-semibold leading-none">
+                      25
+                    </span>
+                    <span className="text-3xl font-semibold mt-1 ml-1">°C</span>
+                  </div>
+                </div>
+                <div className="flex-grow" />
+
                 {/* Description */}
-                <p className="text-sm font-bold uppercase tracking-widest opacity-90">
-                  Few Clouds
-                </p>
+                <p className="text-sm opacity-95 px-8 pb-2">Few Clouds</p>
+
+                {/* Spacer pushes footer down */}
 
                 {/* Footer */}
-                <p className="text-xs opacity-70 mt-2">
-                  Weather from OpenWeatherMap
-                </p>
+                <div className="w-full backdrop-blur-md bg-[#396C90]/50 py-2 rounded-b-sm">
+                  <p className="text-[10px] opacity-70">
+                    Weather from OpenWeatherMap
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -253,14 +277,14 @@ const Layout = ({ children }) => {
           <div className="container hidden md:block mx-auto px-4 mt-20 text-sm text-white">
             <div className="flex flex-col md:flex-row items-center justify-between gap-2">
               <span>
-                <div className="flex gap-2">
+                Follow Us
+                <div className="flex pl-0 ml-0 gap-2">
                   {[Facebook, Twitter, Instagram, Youtube, Linkedin].map(
                     (Icon, i) => (
                       <Link
                         key={i}
                         to="#"
-                        className="p-2 text-white 
-                     hover:bg-white hover:text-black transition"
+                        className="p-2 text-white hover:text-gold  transition"
                       >
                         <Icon size={22} />
                       </Link>
@@ -272,10 +296,10 @@ const Layout = ({ children }) => {
             </div>
           </div>
 
-          <div className="container mx-auto px-4 mt-20 pt-8 border-t border-white/50 text-sm text-gray-500">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-2">
+          <div className="container mx-auto px-4   text-sm text-white">
+            <div className="flex flex-col border-t-2 pt-8 mt-16 border-white md:flex-row items-center justify-between gap-2">
               <span>© LaCarta 2023 – 2025. All rights reserved</span>
-              <span>Privacy Policy | Terms & Conditions</span>
+              <span>Privacy Policy - Terms & Conditions</span>
             </div>
           </div>
         </div>

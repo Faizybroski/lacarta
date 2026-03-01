@@ -39,11 +39,11 @@ export default function PlayaScondidaCard() {
               target="_blank"
               rel="noopener noreferrer"
               className="
-    w-14 h-14
-    flex items-center justify-center
-    rounded-full shadow-lg
-    bg-green-600 hover:scale-105 transition
-  "
+                w-14 h-14
+                flex items-center justify-center
+                rounded-full shadow-lg
+                bg-green-600 hover:scale-105 transition
+              "
             >
               <img src={whatsapp} alt="WhatsApp" className="w-10 h-10" />
             </a>

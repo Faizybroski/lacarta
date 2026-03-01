@@ -28,7 +28,7 @@ export default function CategoryFilters({
             className={`font-antigua rounded-full px-7 py-1 text-sm font-bold transition
               ${
                 activeFilter === filter
-                  ? "bg-gradient-to-r from-[#E6B65C] via-[#D4A74A] to-[#B8902F] text-white"
+                  ? "bg-gradient-to-r from-gold  to-gold-light text-white"
                   : "text-black hover:bg-gray-100"
               }`}
           >

@@ -72,6 +72,17 @@ const HomePage = () => {
       >
         <div className="absolute inset-0 bg-black/30"></div>
         <div className="relative z-10 container mx-auto text-center text-white">
+          {/* <div className="inline absolute w-fit z-9 top-4 left-10">
+            <div className="bg-[#f15c5d] w-fit rounded-full">
+              <Share2
+                size={60}
+                className="p-3 text-white font-bold bg-red-400 mb-6 fill-white"
+              />
+            </div>
+            <div className="bg-yellow-400 w-fit rounded-full">
+              <Heart size={60} className="p-3 text-black font-bold " />
+            </div>
+          </div> */}
           {/* <div className="inline fixed z-[999] top-44 left-10">
             <div className="bg-[#f15c5d] rounded-full">
               <Share2
@@ -84,7 +95,7 @@ const HomePage = () => {
             </div>
           </div> */}
 
-          <div className="fixed bottom-6 right-6 z-[999] flex items-center gap-2">
+          {/* <div className="fixed bottom-6 right-6 z-[999] flex items-center gap-2">
             <div>
               <span className="bg-white text-black font-bold px-3 py-1 rounded shadow text-sm hidden md:block">
                 Need help? Chat with us
@@ -105,7 +116,7 @@ const HomePage = () => {
                 <img src={whatsapp} alt="WhatsApp" className="w-10 h-10" />
               </a>
             </div>
-          </div>
+          </div> */}
 
           <h1
             className="
@@ -147,17 +158,20 @@ const HomePage = () => {
               </nav>
             </div>
 
-            <div className="w-full">
+            <div className="flex flex-col gap-4">
               <div className="flex bg-white rounded overflow-hidden p-1">
                 <input
                   className="flex-grow p-2 bg-white text-black placeholder:px-3"
                   type="text"
                   placeholder="Search for Anything"
                 />
-                <Button className="text-white w-[250px] my-auto rounded px-6 py-2 font-bold bg-[#d0a439] hover:bg-[#b88f30]  transition-colors">
+                <Button className="text-white hidden sm:block w-[250px] my-auto rounded px-6 py-2 font-bold bg-[#d0a439] hover:bg-[#b88f30]  transition-colors">
                   Search
                 </Button>
               </div>
+              <Button className="text-white sm:hidden w-full my-auto rounded px-6 py-2 font-bold bg-[#d0a439] hover:bg-[#b88f30]  transition-colors">
+                Search
+              </Button>
             </div>
           </div>
 

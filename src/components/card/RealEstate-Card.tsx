@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
 export default function EstateCard({ details = [], columns }) {
-  const ITEMS_PER_PAGE = 5;
+  const ITEMS_PER_PAGE = 9;
   const [currentPage, setCurrentPage] = useState(1);
 
   const totalPages = Math.ceil(details.length / ITEMS_PER_PAGE);

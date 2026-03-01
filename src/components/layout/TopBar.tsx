@@ -2,11 +2,11 @@ import { Mail, Globe, ChevronDown } from "lucide-react";
 
 export function TopBar() {
   return (
-    <div className="w-full bg-gradient-to-b from-gold to-gold-light text-white text-sm w-full mx-auto px-20 py-2 flex items-center justify-between">
+    <div className="w-full bg-gradient-to-b from-gold to-gold-light text-white text-sm w-full mx-auto px-6 md:px-20 py-2 flex items-center justify-between">
       {/* LEFT */}
       <div className="flex items-center gap-2">
-        <Mail className="w-4 h-4" />
-        <span className="hidden sm:inline">hola@lacarta.co</span>
+        <Mail className="w-4 h-4 " />
+        <span className="">hola@lacarta.co</span>
       </div>
 
       {/* CENTER */}

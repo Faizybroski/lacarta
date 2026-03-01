@@ -47,8 +47,8 @@ export default function PaginationListing({
   }
 
   return (
-    <section className="mx-auto  px-10 pb-0 mb-0">
-      <div className="container">
+    <section className="mx-auto px-6 py-4 md:px-10 pb-0 mb-0">
+      <div className="w-full sm:container sm:mx-auto">
         <h2 className="mt-10 text-4xl font-antigua font-bold text-black">
           {text}
         </h2>
@@ -57,8 +57,8 @@ export default function PaginationListing({
           {/* LEFT BUTTON */}
           <button
             onClick={() => scroll("left")}
-            className="absolute -left-5 top-1/2 z-30 -translate-y-1/2
-                     h-10 w-10 rounded-full bg-[#d0a439]
+            className="absolute hidden sm:flex -left-5 top-1/2 z-30 -translate-y-1/2
+                     h-10 w-10 rounded-full bg-gradient-to-r from-gold to-gold-light
                      flex items-center justify-center
                      text-white shadow-lg hover:scale-105 transition"
           >
@@ -68,8 +68,8 @@ export default function PaginationListing({
           {/* RIGHT BUTTON */}
           <button
             onClick={() => scroll("right")}
-            className="absolute -right-5 top-1/2 z-30 -translate-y-1/2
-                     h-10 w-10 rounded-full bg-[#d0a439]
+            className="absolute hidden sm:flex -right-5 top-1/2 z-30 -translate-y-1/2
+                     h-10 w-10 rounded-full bg-gradient-to-l from-gold to-gold-light
                      flex items-center justify-center
                      text-white shadow-lg hover:scale-105 transition"
           >
@@ -84,7 +84,7 @@ export default function PaginationListing({
           <div className="overflow-hidden">
             <div
               ref={scrollRef}
-              className="w-full flex gap-4 overflow-x-auto scroll-smooth snap-x snap-mandatory  no-scrollbar"
+              className="w-full flex gap-2 sm:gap-4 px-3 sm:px-0 overflow-x-auto scroll-smooth snap-x snap-mandatory  no-scrollbar"
             >
               {premiumListings.map((item) => (
                 <div
@@ -97,6 +97,7 @@ export default function PaginationListing({
                   // sm:w-[calc(50%-12px)]
                   // lg:w-[calc(25%-18px)]
                    carousel-card
+                   pl-3 sm:pl-0
     snap-start
     shrink-0
     basis-full
@@ -118,7 +119,17 @@ export default function PaginationListing({
                 "
                 >
                   <Link to={item.href} className="block h-full">
-                    <Card className="h-full rounded-2xl shadow-md overflow-hidden bg-white">
+                    <Card className="h-full relative rounded-2xl shadow-md overflow-hidden bg-white">
+                      <span className="absolute rounded-full shadow-lg p-2 top-3 right-3 bg-white/30 backdrop-md">
+                        <Heart className="fill-white" />
+                      </span>
+                      <div className="absolute top-4 left-4 border-white border-4  bg-white/30 backdrop-md">
+                        <img
+                          src={item.image}
+                          alt={item.title}
+                          className="aspect-2/1 w-16 object-cover"
+                        />
+                      </div>
                       <img
                         src={item.image}
                         alt={item.title}

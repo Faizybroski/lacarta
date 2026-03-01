@@ -27,8 +27,8 @@ export default function ListingPage({ categories = [] }) {
   );
 
   return (
-    <section className="pb-16">
-      <div className="mx-auto container px-20">
+    <section className="pb-16 mx-auto px-6 md:px-10">
+      <div className="w-full sm:container sm:mx-auto">
         <CategoryFilters
           activeFilter={activeFilter}
           setActiveFilter={(filter) => {
