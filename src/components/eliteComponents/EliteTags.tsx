@@ -26,7 +26,7 @@ export function EliteTags() {
     <Badge
       key={tag}
       variant="secondary"
-      className="flex items-center rounded justify-center py-2 bg-[#fbf7ec] border-1 border-[#f1e4c6] text-center"
+      className="flex items-center rounded-full font-bold justify-center py-2 bg-[#fbf7ec] border-1 border-[#f1e4c6] text-center"
     >
       {tag}
     </Badge>

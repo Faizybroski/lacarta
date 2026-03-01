@@ -1,16 +1,18 @@
 import { Badge } from "@/components/ui/badge"
-import {Facebook,Instagram,Twitter} from 'lucide-react'
+import facebookImg from '../../../public/assets/facebook.png'
+import instaImg from '../../../public/assets/instagram.png'
+import twiterImg from '../../../public/assets/twitter.png'
 
 const tags = [
     {
         name:'Instagram',
-        logo: <Instagram  size={30} className="p-1" />,
+        logo: <img src={instaImg} className="h-5 w-5" alt="instagram icons"></img>,
     },{
         name:'Facebook',
-        logo: <Facebook  size={30} className="p-1" /> ,
+        logo: <img src={facebookImg} className="h-5 w-5" alt="facebook icons"></img> ,
     },{
         name:'Twitter',
-        logo: <Twitter  size={30} className="p-1" /> ,
+        logo: <img src={twiterImg} className="h-5 w-5" alt="twitter logo icons"></img> ,
     },
 ]
 

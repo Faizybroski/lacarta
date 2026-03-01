@@ -37,6 +37,15 @@ export const activitiesData = {
       subtitle: "Best French Breakfast",
       category: "Breakfast",
       image: img3,
+      rating: 0,
+      href: "/Detailed-Activity",
+    },
+    {
+      id: 1,
+      title: "La Brioche Royal",
+      subtitle: "Best French Breakfast",
+      category: "Breakfast",
+      image: img3,
       rating: 4.8,
       href: "/Detailed-Activity",
     },
@@ -53,6 +62,15 @@ export const activitiesData = {
 
   eliteListings: [
     {
+      id: 1,
+      title: "La Brioche Royal",
+      subtitle: "Best French Breakfast",
+      category: "Breakfast",
+      image: img3,
+      rating: 1,
+      href: "/elite",
+    },
+     {
       id: 1,
       title: "La Brioche Royal",
       subtitle: "Best French Breakfast",
@@ -93,6 +111,18 @@ export const activitiesData = {
 
   categories: [
     {
+      id: 7,
+      title: "Snorkeling",
+      image: img3,
+      href: "/Detailed-Activity",
+    },
+     {
+      id: 7,
+      title: "Snorkeling",
+      image: img3,
+      href: "/Detailed-Activity",
+    },
+     {
       id: 7,
       title: "Snorkeling",
       image: img3,

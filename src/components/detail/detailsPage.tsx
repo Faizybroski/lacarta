@@ -24,7 +24,7 @@ import {
   Mountain,
 } from "lucide-react"
 import PlayaScondidaCard from "./per-item-detail";
-import PlayaScondidaAbout from "./detailed-content";
+import PlayaScondidaAbout from "./gyst-detailed-content";
 
 
 

@@ -9,7 +9,7 @@ import {
 
 export default function KeyFeatures() {
   return (
-    <section className="py-16 bg-white">
+    <section className="max-w-5xl m-auto py-16 bg-white">
       <div className="container mx-auto px-4">
 
         {/* Header */}
@@ -23,18 +23,18 @@ export default function KeyFeatures() {
         </div>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((item, index) => (
             <div
               key={index}
               className="flex items-start gap-4 rounded-2xl bg-[#fbf7ef] p-6 shadow-sm border border-neutral-200"
             >
-              {/* Icon */}
+            
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-yellow-100 text-yellow-600 shrink-0">
                 <item.icon className="h-6 w-6" />
               </div>
 
-              {/* Content */}
+              
               <div>
                 <h3 className="font-serif text-lg font-semibold text-black mb-1">
                   {item.title}
@@ -45,7 +45,7 @@ export default function KeyFeatures() {
               </div>
             </div>
           ))}
-        </div>
+        </div> */}
 
       </div>
     </section>

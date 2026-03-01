@@ -60,7 +60,7 @@ function Item({
 
 export default function ServicesAmenities() {
   return (
-    <section className="py-16 bg-white">
+    <section className="w-full max-w-5xl m-auto py-16 bg-white">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="mb-12  text-center">

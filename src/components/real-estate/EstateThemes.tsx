@@ -65,10 +65,13 @@ export default function EstateThemes() {
       {/* RIGHT – Smaller themed cards – now fills full height */}
       <div className="grid gap-2 md:gap-2 lg:h-full">
         {themes.map((item, index) => (
-          <div
-            key={index}
-            className={`grid grid-cols-2 overflow-hidden md:grid-cols-[${item.orderClass}] gap-2 group h-full`}
-          >
+         <div
+  key={index}
+  className="grid grid-cols-2 gap-2 group h-full"
+  style={{
+    gridTemplateColumns: item.orderClass.replace("_", " "),
+  }}
+>
             {/* Left image – stretch to fill */}
             <div className="relative rounded overflow-hidden shadow-md transition-all duration-300 group-hover:shadow-xl">
               <img

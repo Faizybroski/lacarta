@@ -4,8 +4,8 @@ export const eliteListing = {
   location: "Cartagena, Colombia",
   rating: 4.9,
   reviews: 247,
-  price: "1,047,600 COP",
-  monthly: "97,000 COP",
+  price: "1,047,600 ",
+  monthly: "97,000 ",
   discount: "10% OFF",
 
   tags: [

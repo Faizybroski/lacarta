@@ -4,7 +4,7 @@ import { Button } from "../ui/button";
 
 export default function AroundThisPlace({ places }) {
   return (
-    <section className="w-full py-12 md:py-16 lg:py-20 bg-gradient-to-b from-slate-50 to-white">
+    <section className="w-full max-w-5xl m-auto py-12 md:py-16 lg:py-20 bg-gradient-to-b from-slate-50 to-white">
       <div className="container max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-12">

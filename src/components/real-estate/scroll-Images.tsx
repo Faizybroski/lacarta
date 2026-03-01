@@ -105,13 +105,13 @@ export default function NeighborhoodsSection() {
 
           {/* Previous / Next arrows - hidden on mobile */}
           <div className="hidden sm:block">
-            <CarouselPrevious className="left-0 -translate-x-1/2 border-2 bg-background/80 backdrop-blur-sm hover:bg-background" />
-            <CarouselNext className="right-0 translate-x-1/2 border-2 bg-background/80 backdrop-blur-sm hover:bg-background" />
+            <CarouselPrevious className="left-0 -translate-x-1/2 border-2 bg-yellow-500 backdrop-blur-sm hover:bg-background" />
+            <CarouselNext className="right-0 translate-x-1/2 border-2 bg-yellow-500 backdrop-blur-sm hover:bg-background" />
           </div>
 
           {/* Dots pagination at bottom */}
           {count > 1 && (
-            <div className="mt-6 flex justify-center gap-3">
+            <div className="mt-5 flex justify-center gap-3">
               {Array.from({ length: count }).map((_, index) => (
                 <button
                   key={index}
@@ -119,8 +119,8 @@ export default function NeighborhoodsSection() {
                   className={`
                     h-3 w-3 rounded-full transition-all duration-300
                     ${current === index + 1 
-                      ? "bg-primary scale-125" 
-                      : "bg-muted hover:bg-muted-foreground/70"}
+                      ? "bg-black" 
+                      : "bg-gray-200 hover:bg-muted-foreground/70"}
                   `}
                   aria-label={`Go to slide ${index + 1}`}
                 />

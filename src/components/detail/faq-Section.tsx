@@ -1,9 +1,20 @@
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
+
+const tagRoutes: Record<string, string> = {
+  Beaches: "/Beaches",
+  Accommodations: "/hotels",
+  Boating: "/Boating",
+  "Real Estate": "/realState",
+  Activities: "/Activities",
+  Gastronomy: "/Gastronomy",
+};
 
 export default function FaqSection() {
   return (
@@ -41,6 +52,44 @@ export default function FaqSection() {
             </AccordionItem>
           ))}
         </Accordion>
+
+        <div className="max-w-3xl p-0 m-auto mt-5">
+                    <div className="w-full mb-2">
+                      <nav className="lg:grid grid-cols-6 hidden flex-wrap justify-center gap-1">
+                    {[
+                      "Beaches",
+                      "Accommodations",
+                      "Boating",
+                      "Real Estate",
+                      "Activities",
+                      "Gastronomy",
+                    ].map((tag) => (
+                      <Button className="bg-white text-black font-bold shadow-xl rounded hover:bg-gray-200">
+                      <Link
+                        key={tag}
+                        to={tagRoutes[tag]}
+                      >
+                        {tag}
+                      </Link>
+                      </Button>
+                    ))}
+                  </nav>
+                    </div>
+        
+                    <div className=" w-full">
+                     <div className="flex bg-white rounded overflow-hidden p-1">
+                                 <input
+                                   className="flex-grow p-2 bg-white text-black"
+                                   type="text"
+                                   placeholder="Search for Anything"
+                                 />
+                                 <Button className="text-white w-[250px] my-auto rounded px-6 py-2 font-bold bg-[#d0a439] hover:bg-[#b88f30] transition-colors">
+                                   Search
+                                 </Button>
+                               </div>
+                    </div>
+                   
+                  </div>
 
       </div>
     </section>

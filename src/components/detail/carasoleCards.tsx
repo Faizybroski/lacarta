@@ -4,9 +4,8 @@ import { Star, Heart,ChevronRight,ChevronLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
-export default function PaginationListing({
+export default function CarasoleCards({
   premiumListings = [],
-  text = "Premium Listing",
 }) {
 
   // Split listings into groups of 4
@@ -17,11 +16,13 @@ export default function PaginationListing({
   }
 
   return (
-    <section className="mx-auto max-w-7xl px-4 py-16">
-      <div className="container">
-        <h2 className="mb-8 text-4xl font-['Bebas_Neue'] text-black font-bold">
-          {text}
-        </h2>
+    <section className="w-full max-w-5xl  m-auto px-4 py-16">
+      <div className="text-center">
+       <h6 className="text-muted-foreground font-serif font-bold tracking-tight mb-6">EXPLORE</h6>
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif text-black font-bold tracking-tight mb-6">
+           Around This Place
+          </h1>
+          </div>
 
         <div
           id="listingCarousel"
@@ -128,7 +129,6 @@ export default function PaginationListing({
           </button>
 
         </div>
-      </div>
     </section>
   );
 }

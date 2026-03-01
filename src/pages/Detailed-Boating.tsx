@@ -4,7 +4,7 @@ import AroundThisPlace from "../components/card/DetailedPageCard";
 import HomeArea from "../components/HomeInArea";
 import FaqSection from "@/components/detail/faq-Section";
 import PlayaScondidaCard from "@/components/detail/per-item-detail";
-import PlayaScondidaAbout from "@/components/detail/detailed-content";
+import PlayaScondidaAbout from "@/components/detail/gyst-detailed-content";
 import KeyFeatures from "@/components/detail/key-Feature";
 import ServicesAmenities from "@/components/detail/services-Amenities";
 import ContactBooking from "@/components/detail/contact-Booking";

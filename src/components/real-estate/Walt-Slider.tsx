@@ -99,7 +99,7 @@ export default function WaltSection() {
             <CarouselPrevious
               className="
                 left-0 md:left-0 -translate-x-1/2 
-                bg-[#d0a235] backdrop-blur-md 
+                bg-yellow-500 backdrop-blur-md 
                 hover:bg-[#fed358] text-white border-none hover:text-black 
                 
               "
@@ -107,7 +107,7 @@ export default function WaltSection() {
             <CarouselNext
               className="
                 right-0 md:right-0 border-none translate-x-1/2 
-                bg-[#d0a235] backdrop-blur-md 
+                bg-yellow-500 backdrop-blur-md 
                 hover:bg-[#fed358] text-white hover:text-black 
               "
             />

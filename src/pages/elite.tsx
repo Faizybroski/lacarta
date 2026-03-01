@@ -28,8 +28,8 @@ export default function ElitePage() {
         </div>
 
         <div className=" space-y-6">
-          <EliteContactCard />
           <EliteActions />
+          <EliteContactCard />
         </div>
       </section>
     </main>
