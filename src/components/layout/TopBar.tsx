@@ -1,35 +1,30 @@
-import { Mail, Globe } from "lucide-react";
+import { Mail, Globe, ChevronDown } from "lucide-react";
 
 export function TopBar() {
   return (
-    <div className="w-full bg-[#cfa43a] text-white text-sm">
-      <div className="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between">
+    <div className="w-full bg-gradient-to-b from-gold to-gold-light text-white text-sm w-full mx-auto px-20 py-2 flex items-center justify-between">
+      {/* LEFT */}
+      <div className="flex items-center gap-2">
+        <Mail className="w-4 h-4" />
+        <span className="hidden sm:inline">hola@lacarta.co</span>
+      </div>
 
-        {/* LEFT */}
-        <div className="flex items-center gap-2">
-          <Mail size={14} />
-          <span className="hidden sm:inline">
-            hola@lacarta.co
-          </span>
+      {/* CENTER */}
+      <div className="hidden md:block font-medium text-center">
+        Download our FREE Cartagena Travel Guide!
+      </div>
+
+      {/* RIGHT */}
+      <div className="flex items-center gap-4">
+        <span className="hidden sm:inline cursor-pointer hover:underline">
+          Advertise With Us
+        </span>
+
+        <div className="flex items-center gap-1 cursor-pointer">
+          <Globe className="w-4 h-4" />
+          <span>EN</span>
+          <ChevronDown className="w-4 h-4" />
         </div>
-
-        {/* CENTER */}
-        <div className="hidden md:block font-medium text-center">
-          Download our FREE Cartagena Travel Guide!
-        </div>
-
-        {/* RIGHT */}
-        <div className="flex items-center gap-4">
-          <span className="hidden sm:inline cursor-pointer hover:underline">
-            Advertise With Us
-          </span>
-
-          <div className="flex items-center gap-1 cursor-pointer">
-            <Globe size={14} />
-            <span>EN</span>
-          </div>
-        </div>
-
       </div>
     </div>
   );

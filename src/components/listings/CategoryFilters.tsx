@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ListFilter} from 'lucide-react'
+import { ListFilter } from "lucide-react";
 
 const FILTERS = [
   "All",
@@ -18,14 +18,14 @@ export default function CategoryFilters({
   onClear,
 }) {
   return (
-    <div className="mb-2 flex flex-wrap items-center justify-between gap-2">
+    <div className="mb-2 sm:mt-0 mt-12 flex flex-wrap items-center justify-between gap-2">
       {/* LEFT FILTER TABS */}
-      <div className="flex flex-wrap gap-1">
+      <div className="sm:flex sm:flex-wrap  hidden">
         {FILTERS.map((filter) => (
           <button
             key={filter}
             onClick={() => setActiveFilter(filter)}
-            className={`font-serif rounded-full px-7 py-1 text-sm font-bold transition
+            className={`font-antigua rounded-full px-7 py-1 text-sm font-bold transition
               ${
                 activeFilter === filter
                   ? "bg-gradient-to-r from-[#E6B65C] via-[#D4A74A] to-[#B8902F] text-white"
@@ -42,13 +42,13 @@ export default function CategoryFilters({
         <Button
           variant="destructive"
           onClick={onClear}
-          className="rounded-full px-3 font-bold  bg-gradient-to-r from-[#C62828] via-[#B71C1C] to-[#8E0000]"
+          className="rounded-full px-3 font-bold  bg-gradient-to-r from-red to-red-light font-antigua"
         >
           Clear Filters
         </Button>
 
-        <Button className="rounded-full bg-gradient-to-r text-white font-bold from-[#3BCF8E] via-[#2EB872] to-[#1E9E5A] px-4 hover:brightness-110">
-          <ListFilter size={30}/> Filters
+        <Button className="rounded-full bg-gradient-to-r text-white font-bold font-antigua from-green to-green-light px-4 hover:brightness-110">
+          <ListFilter size={30} /> Filters
         </Button>
       </div>
     </div>

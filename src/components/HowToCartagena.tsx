@@ -4,7 +4,7 @@ import {
   CardFooter,
   CardHeader,
 } from "@/components/ui/card";
-import {ChevronRight} from 'lucide-react'
+import { ChevronRight } from "lucide-react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -20,7 +20,7 @@ const cards = [
     description:
       "Don’t Exchange Money at the Airport! Here are the best places to find ATMs & currency exchange in Cartagena.",
     author: "May",
-    color: "bg-gradient-to-r from-[#E6B65C] via-[#D4A74A] to-[#B8902F]",
+    color: "bg-gradient-to-r from-gold to-gold-light",
     image: "/images/Six-C-img1.png",
   },
   {
@@ -29,7 +29,7 @@ const cards = [
     description:
       "Cartagena is very friendly but sometimes you will encounter scammers. Here is what to do & how to stay safe.",
     author: "Miguel",
-    color: "bg-gradient-to-r from-[#C62828] via-[#B71C1C] to-[#8E0000]",
+    color: "bg-gradient-to-r from-red to-red-light",
     image: "/images/Six-C-img2.png",
   },
   {
@@ -38,7 +38,7 @@ const cards = [
     description:
       "Here are some of the most famous statues of Cartagena and recognizable monuments from Cartagena.",
     author: "Luz",
-    color: "bg-gradient-to-r from-[#C62828] via-[#B71C1C] to-[#8E0000]",
+    color: "bg-gradient-to-r from-red to-red-light",
     image: "/images/Six-C-img3.png",
   },
   {
@@ -47,74 +47,77 @@ const cards = [
     description:
       "Are Taxis Safe in Colombia? Find out in our step by step guide on how to order taxis in Cartagena.",
     author: "Alejandra",
-    color: "bg-gradient-to-r from-[#3BCF8E] via-[#2EB872] to-[#1E9E5A]",
+    color: "bg-gradient-to-r from-green to-green-light",
     image: "/images/Six-C-img4.png",
   },
 ];
 
 export default function HowToDoCartagena() {
   return (
-    <section className="container mx-auto px-4 py-16">
-      {/* Title */}
-      <h2 className="text-3xl md:text-4xl font-black text-black text-center uppercase mb-16">
-        How To Do Cartagena
-      </h2>
+    <>
+      <div className="text-center mb-7 mt-10 md:mt-20">
+        <h2 className="text-3xl md:text-4xl font-black font-antigua text-black text-center capitalize mb-16">
+          How To Do Cartagena
+        </h2>
+      </div>
 
-      {/* Cards Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
-        {cards.map((card, index) => (
-          <Card
-            key={index}
-            className="overflow-hidden shadow-lg flex flex-col h-full"
-          >
-            {/* Image */}
-            <CardHeader className="p-0 relative">
-              <img
-                src={card.image}
-                alt={card.title}
-                className="h-48 w-full object-cover"
-              />
+      <section className="container mb-5 mx-auto pb-13 px-10 md:px-16 md:py-16">
+        {/* Title */}
 
-          {/* Badge */}
-          <Badge
-            className={`absolute -top-2 right-0 px-3 py-2 
-                        text-white rounded-sm border-0 ${card.color}`}
-          >
-            {card.category}
-          </Badge>
-        </CardHeader>
+        {/* Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 items-stretch">
+          {cards.map((card, index) => (
+            <Card
+              key={index}
+              className="overflow-hidden relative rounded-md shadow-2xl flex flex-col h-full"
+            >
+              {/* Image */}
+              <CardHeader className="p-0 relative overflow-hidden">
+                <img
+                  src={card.image}
+                  alt={card.title}
+                  className="h-48 w-full object-cover rounded-md"
+                />
 
-            {/* Content */}
-            <CardContent className="p-3 flex flex-col flex-grow">
-              <h3 className="font-semibold fw-bold text-black text-lg mb-2">
-                {card.title}
-              </h3>
+                {/* Badge */}
+                <Badge
+                  className={`absolute -top-2 right-0 py-2 px-auto text-xs mx-auto w-24 flex items-center justify-center text-center overflow-hidden  text-white rounded-tr-md rounded-bl-none rounded-tl-none rounded-br-none border-0 ${card.color}`}
+                >
+                  {card.category}
+                </Badge>
+              </CardHeader>
 
-              {/* Auto-adjusting paragraph */}
-              <p className="text-sm text-gray-500 flex-grow">
-                {card.description}
-              </p>
+              {/* Content */}
+              <CardContent className="p-4">
+                <h3 className="font-bold text-black leading-tight text-lg mb-2">
+                  {card.title}
+                </h3>
 
-              {/* Button always aligned */}
-              <Button className="text-sm font-medium text-black bg-background hover:underline mt-4 self-start">
-                Read More <ChevronRight size={12} />
-              </Button>
-            </CardContent>
+                {/* Auto-adjusting paragraph */}
+                <p className="text-xs text-gray-500 leading-relaxed  mb-3">
+                  {card.description}
+                </p>
 
-        {/* Footer stays at bottom */}
-        <CardFooter className="px-4 flex items-center gap-2">
-          <Avatar className="h-8 w-8">
-            <AvatarImage src="/images/avatar.png" />
-            <AvatarFallback>
-              {card.author[0]}
-            </AvatarFallback>
-          </Avatar>
-          <span className="text-sm fw-bold text-black">{card.author}</span>
-        </CardFooter>
-      </Card>
-    ))}
-  </div>
-</section>
+                {/* Button always aligned */}
+                <Button className="text-sm font-medium p-0 text-gray-500 bg-background hover:underline ">
+                  Read More <ChevronRight className="w-4 h-4" />
+                </Button>
+              </CardContent>
 
-  )
+              {/* Footer stays at bottom */}
+              <CardFooter className="px-4 flex items-center gap-2  mt-auto">
+                <Avatar className="h-8 w-8">
+                  <AvatarImage src="/images/avatar.png" />
+                  <AvatarFallback>{card.author[0]}</AvatarFallback>
+                </Avatar>
+                <span className="text-sm fw-bold text-black">
+                  {card.author}
+                </span>
+              </CardFooter>
+            </Card>
+          ))}
+        </div>
+      </section>
+    </>
+  );
 }

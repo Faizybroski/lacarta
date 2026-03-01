@@ -23,12 +23,12 @@ export default function ListingPage({ categories = [] }) {
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
   const currentItems = filteredCategories.slice(
     startIndex,
-    startIndex + ITEMS_PER_PAGE
+    startIndex + ITEMS_PER_PAGE,
   );
 
   return (
-    <section className="py-16">
-      <div className="mx-auto container px-10">
+    <section className="pb-16">
+      <div className="mx-auto container px-20">
         <CategoryFilters
           activeFilter={activeFilter}
           setActiveFilter={(filter) => {
@@ -42,11 +42,11 @@ export default function ListingPage({ categories = [] }) {
         />
 
         {/* Grid */}
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 g-0">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-6">
           {currentItems.map((cat) => (
             <Link key={cat.id} to={`${cat.href}`}>
-              <Card className="border-0 bg-transparent  shadow-none">
-                <CardHeader>
+              <Card className="border-0 bg-transparent shadow-none p-0">
+                <CardHeader className="p-0">
                   <img
                     src={cat.image}
                     alt={cat.title}
@@ -54,8 +54,8 @@ export default function ListingPage({ categories = [] }) {
                   />
                 </CardHeader>
 
-                <CardContent className="text-center">
-                  <h3 className="text-lg font-extrabold text-black">
+                <CardContent className="text-center p-0">
+                  <h3 className="text-lg font-extrabold text-black font-antigua">
                     {cat.title}
                   </h3>
                 </CardContent>
@@ -64,58 +64,56 @@ export default function ListingPage({ categories = [] }) {
           ))}
         </div>
 
-        
         {/* Pagination */}
-{totalPages > 1 && (
-  <div className="flex justify-center items-center gap-3 mt-12 text-lg font-semibold">
-    
-    {/* Page Numbers */}
-    {Array.from({ length: totalPages }, (_, i) => i + 1)
-      .slice(
-        Math.max(0, currentPage - 3),
-        Math.min(totalPages, currentPage + 2)
-      )
-      .map((page) => (
-        <button
-          key={page}
-          onClick={() => setCurrentPage(page)}
-          className={`px-2 transition
+        {totalPages > 1 && (
+          <div className="flex justify-center items-center gap-3 mt-12 text-lg font-semibold">
+            {/* Page Numbers */}
+            {Array.from({ length: totalPages }, (_, i) => i + 1)
+              .slice(
+                Math.max(0, currentPage - 3),
+                Math.min(totalPages, currentPage + 2),
+              )
+              .map((page) => (
+                <button
+                  key={page}
+                  onClick={() => setCurrentPage(page)}
+                  className={`px-2 transition font-antigua
             ${
               currentPage === page
                 ? "text-[#d0a439]" // gold active
                 : "text-black hover:text-[#d0a439]"
             }`}
-        >
-          {page}
-        </button>
-      ))}
+                >
+                  {page}
+                </button>
+              ))}
 
-    {/* dots */}
-    {currentPage + 2 < totalPages && (
-      <span className="px-2">...</span>
-    )}
+            {/* dots */}
+            {currentPage + 2 < totalPages && (
+              <span className="px-2 font-antigua">...</span>
+            )}
 
-    {/* last page */}
-    {currentPage + 2 < totalPages && (
-      <button
-        onClick={() => setCurrentPage(totalPages)}
-        className="px-2 hover:text-[#d0a439]"
-      >
-        {totalPages}
-      </button>
-    )}
+            {/* last page */}
+            {currentPage + 2 < totalPages && (
+              <button
+                onClick={() => setCurrentPage(totalPages)}
+                className="px-2 hover:text-[#d0a439] font-antigua"
+              >
+                {totalPages}
+              </button>
+            )}
 
-    {/* Next */}
-    {currentPage < totalPages && (
-      <button
-        onClick={() => setCurrentPage((p) => p + 1)}
-        className="ml-2 hover:text-[#d0a439]"
-      >
-        Next »
-      </button>
-    )}
-  </div>
-)}
+            {/* Next */}
+            {currentPage < totalPages && (
+              <button
+                onClick={() => setCurrentPage((p) => p + 1)}
+                className="ml-2 hover:text-[#d0a439] font-antigua"
+              >
+                Next »
+              </button>
+            )}
+          </div>
+        )}
       </div>
     </section>
   );
