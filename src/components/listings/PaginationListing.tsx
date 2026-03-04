@@ -91,13 +91,11 @@ export default function PaginationListing({
                   key={item.id}
                   className="
                   // carousel-card
-                  // snap-start
-                  // flex-shrink-0
                   // w-full
                   // sm:w-[calc(50%-12px)]
                   // lg:w-[calc(25%-18px)]
                    carousel-card
-                   pl-3 sm:pl-0
+                   pl-1 sm:pl-0
     snap-start
     shrink-0
     basis-full
@@ -127,7 +125,8 @@ export default function PaginationListing({
                         <img
                           src={item.image}
                           alt={item.title}
-                          className="aspect-2/1 w-16 object-cover"
+                          // className="aspect-2/1 w-16 object-cover"
+                          className="h-10 w-16 object-cover"
                         />
                       </div>
                       <img

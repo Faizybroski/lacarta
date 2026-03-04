@@ -5,7 +5,7 @@ import whatsapp from "/assets/whatsapp.svg";
 import footerbg from "/assets/footer-bg.png";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-
+import {BookingDialog} from  "@/components/bookingForm"
 import { TopBar } from "./TopBar";
 import {
   Heart,
@@ -40,6 +40,7 @@ const Layout = ({ children }) => {
   ];
 
   const [isOpen, setIsOpen] = useState(false);
+  const [dialogOpen, setDialogOpen] = useState(false);
 
   return (
     <>
@@ -82,7 +83,7 @@ const Layout = ({ children }) => {
           <Link to="#" className="text-white text-sm hidden md:block">
             Login
           </Link>
-          <Button className="bg-gradient-to-r from-gold to-gold-light hover:bg-[#b88f30] text-white  rounded-sm px-6 hidden sm:block">
+          <Button onClick={() => setDialogOpen(true)} className="bg-gradient-to-b from-gold to-gold-light hover:bg-gold text-white  rounded px-6 hidden sm:block">
             BOOK A TRIP
           </Button>
 
@@ -95,7 +96,7 @@ const Layout = ({ children }) => {
           </button>
         </div>
 
-        <div className="inline absolute z-[999] sm:top-44 top-28 left-10">
+        <div className="inline absolute z-[999] top-28 sm:top-44 right-4 sm:right-auto sm:left-4 flex flex-col items-center">
           <div className="bg-[#f15c5d] p-1 sm:p-3 rounded-full mb-2 sm:mb-6 ">
             <Share2 className="w-5 h-5 sm:h-10 sm:w-10 text-white font-bold  fill-white" />
           </div>
@@ -148,11 +149,13 @@ const Layout = ({ children }) => {
       <main>{children}</main>
 
       <footer
-        className="container bg-black text-white pt-20 pb-10 relative bg-no-repeat bg-center bg-contain"
+        className=" bg-black text-white pt-20 pb-10 relative bg-no-repeat bg-center bg-contain"
         style={{ backgroundImage: `url(${footerbg})` }}
       >
+        <div className="container">
+
         <div
-          className="absolute inset-0 pointer-events-none"
+          className=" absolute inset-0 pointer-events-none"
           style={{
             background:
               "radial-gradient(circle at center, rgba(245, 242, 242, 0.2) 0%, rgba(0,0,0,0) 60%, rgba(0,0,0,0.3) 100%)",
@@ -173,7 +176,7 @@ const Layout = ({ children }) => {
                 of Cartagena la Heroica.
               </p>
 
-              <Button className="bg-gradient-to-r from-gold to-gold-light hover:bg-gold text-white text-lg font-semibold rounded-sm px-6 w-full">
+              <Button onClick={() => setDialogOpen(true)} className="bg-gradient-to-b from-gold to-gold-light hover:bg-gold text-white text-lg font-semibold rounded px-6 w-full">
                 BOOK TRIP
               </Button>
             </div>
@@ -303,7 +306,9 @@ const Layout = ({ children }) => {
             </div>
           </div>
         </div>
+        </div>
       </footer>
+      <BookingDialog open={dialogOpen} onOpenChange={setDialogOpen} />
     </>
   );
 };

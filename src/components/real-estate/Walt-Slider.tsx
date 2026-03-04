@@ -14,7 +14,7 @@ const slides = [
     subtitle:
       "Contemporary rental living designed for comfort, connection, and community in Dorval’s most vibrant district",
     tag: "NOW PRE-LEASING",
-    imageUrl: "https://images.unsplash.com/photo-1505691723518-36a5ac3b2f00",
+    imageUrl: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267",
   },
   {
     title: "Skyline Terrace Collection",

@@ -251,7 +251,52 @@ const HomePage = () => {
 
       {/* Masonry-style Section */}
       {/* <section className="py-12 px-10 md:px-16 bg-gray-50"> */}
-      <div className="text-center mb-7 mt-10">
+      {/* ══ THE BEST OF SECTION TITLE ══ */}
+      <div className="text-center px-4 mb-4 mt-6 sm:mt-10">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-black font-antigua text-black text-center uppercase mb-8 sm:mb-12 md:mb-16">
+          The best of Cartagena, Colombia
+        </h2>
+      </div>
+
+      {/* ══ MASONRY GRID SECTION ══ */}
+      <section className="container mb-8 mx-auto pb-10 px-4 sm:px-8 md:px-10 lg:px-16">
+
+        {/* Mobile: single column stack */}
+        {/* <div className="flex flex-col gap-4 lg:hidden">
+          <Card image={beachpic} category="BEACHES" title="Best Beaches of Cartagena" author="Miguel" time="17 min" className="w-full" />
+          <Card image={resturantpic} category="Gastronomy" title="The Best Restaurants of Cartagena." author="May" time="10 min" className="w-full" />
+          <Card image={shippic} category="ACTIVITIES" title="What to do in Cartagena" author="Maria" time="10 min" className="w-full" />
+          <Card image={girlpic} category="Fashion" title="The Best Shopping in Cartagena" author="Alejandra" time="7 min" className="w-full" />
+          <Card image={hotel1} category="HOTELS" title="Top Hotels of Cartagena" author="Natalia" time="21 min" className="w-full" />
+          <Card image={artpic} category="Art" title="The Best Street Art of Cartagena" author="Juan Pablo" time="5 min" className="w-full" />
+        </div> */}
+
+        {/* Desktop: masonry grid */}
+        {/* <div className=" md:grid grid-cols-3 gap-6 auto-rows-[260px]"> */}
+        <div className="hidden sm:grid grid-cols-2 gap-2 md:grid-cols-3 md:gap-6 md:auto-rows-[260px] auto-rows-[120px]     /* mobile row height */
+    sm:auto-rows-[150px]  /* tablet */
+    md:auto-rows-[260px]  /* desktop */">
+      {/* <div className="block sm:hidden"> */}
+          <Card image={beachpic} category="BEACHES" title="Best Beaches of Cartagena" author="Miguel" time="17 min" className="row-span-3 sm:row-span-2" />
+          <Card image={resturantpic} category="Gastronomy" title="The Best Restaurants of Cartagena." author="May" time="10 min" className="row-span-2 sm:row-span-1" />
+          <Card image={shippic} category="ACTIVITIES" title="What to do in Cartagena" author="Maria" time="10 min" className="row-span-3 sm:row-span-2" />
+          <Card image={girlpic} category="Fashion" title="The Best Shopping in Cartagena" author="Alejandra" time="7 min" className="row-span-4 sm:row-span-3 z-10" />
+          <CircleCard image={hotelpic} category="HOTELS" title="Top Hotels of Cartagena" author="Natalia" time="21 min" className="" />
+          <Card image={artpic} category="Art" title="The Best Street Art of Cartagena" author="Juan Pablo" time="5 min" className="mt-5  row-span-2 sm:row-span-1" />
+      </div>
+          <div className=" sm:hidden grid grid-cols-2 gap-2 md:grid-cols-3 md:gap-6 md:auto-rows-[260px] auto-rows-[120px]     /* mobile row height */
+    sm:auto-rows-[150px]  /* tablet */
+    md:auto-rows-[260px]  /* desktop */">
+          <Card image={beachpic} category="BEACHES" title="Best Beaches of Cartagena" author="Miguel" time="17 min" className="row-span-2 sm:row-span-1" />
+          <Card image={resturantpic} category="Gastronomy" title="The Best Restaurants of Cartagena." author="May" time="10 min" className="row-span-1 sm:row-span-1" />
+          <Card image={girlpic} category="Fashion" title="The Best Shopping in Cartagena" author="Alejandra" time="7 min" className="row-span-3 sm:row-span-2 z-10 " />
+          <CircleCard image={hotelpic} category="HOTELS" title="Top Hotels of Cartagena" author="Natalia" time="21 min" className="" />
+          <Card image={shippic} category="ACTIVITIES" title="What to do in Cartagena" author="Maria" time="10 min" className="mt-10 row-span-2 sm:row-span-1" />
+          <Card image={artpic} category="Art" title="The Best Street Art of Cartagena" author="Juan Pablo" time="5 min" className=" row-span-1 sm:row-span-2" />
+          </div>
+        {/* </div> */}
+      </section>
+      {/* <div className="text-center mb-7 mt-10">
         <h2 className="text-3xl md:text-4xl font-black font-antigua text-black text-center uppercase mb-16">
           The best of Cartagena, Colombia
         </h2>
@@ -259,7 +304,6 @@ const HomePage = () => {
 
       <section className="container mb-5 mx-auto pb-13 px-10 md:px-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[260px]">
-          {/* Beaches – Tall */}
           <Card
             image={beachpic}
             category="BEACHES"
@@ -269,7 +313,6 @@ const HomePage = () => {
             className="row-span-2"
           />
 
-          {/* Restaurants */}
           <Card
             image={resturantpic}
             category="Gastronomy"
@@ -279,7 +322,6 @@ const HomePage = () => {
             className="row-span-1"
           />
 
-          {/* Activities – Tall */}
           <Card
             image={shippic}
             category="ACTIVITIES"
@@ -289,7 +331,6 @@ const HomePage = () => {
             className="row-span-2"
           />
 
-          {/* Fashion – Tall */}
           <Card
             image={girlpic}
             category="Fashion"
@@ -299,7 +340,6 @@ const HomePage = () => {
             className="row-span-2 sm:row-span-3 z-10"
           />
 
-          {/* Hotels – Circular */}
           <CircleCard
             image={hotelpic}
             category="HOTELS"
@@ -317,7 +357,6 @@ const HomePage = () => {
             className="row-span-1 rounded-full sm:hidden block"
           />
 
-          {/* Street Art */}
           <Card
             image={artpic}
             category="Art"
@@ -327,11 +366,11 @@ const HomePage = () => {
             className="mt-5 z-10"
           />
         </div>
-      </section>
+      </section> */}
       {/* </section> */}
 
       {/* Newsletter Promo (Desktop) */}
-      <div className="md:py-24 py-12  relative bg-[url('Rectangle.png')] sm:-mt-24">
+      <div className="md:py-24 py-12  relative bg-[url('Rectangle.png')] md:-mt-24">
         {/* Decorative background waves (optional SVG or image) */}
 
         <div className="container mx-auto  relative z-10">
