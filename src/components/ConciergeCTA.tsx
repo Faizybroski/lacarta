@@ -2,7 +2,7 @@ import guidepic from "/assets/img13.png";
 
 export default function ConciergeCTA() {
   return (
-    <div className="w-full bg-[url('Rectangle1.png')] bg-cover bg-center py-12 md:py-20">
+    <div className="w-full bg-[url('/Rectangle1.png')] bg-cover bg-center py-12 md:py-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="bg-white flex flex-col md:flex-row items-center gap-8 p-6 md:p-8 shadow-lg">
           {/* Left Content */}

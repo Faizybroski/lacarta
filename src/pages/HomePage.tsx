@@ -466,7 +466,7 @@ const HomePage = () => {
       {/* </section> */}
 
       {/* Newsletter Promo (Desktop) */}
-      <div className="md:py-24 py-12  relative bg-[url('Rectangle.png')] md:-mt-24">
+      <div className="md:py-24 py-12  relative bg-[url('/Rectangle.png')] md:-mt-24">
         {/* Decorative background waves (optional SVG or image) */}
 
         <div className="container mx-auto  relative z-10">
