@@ -759,12 +759,12 @@ export default function ActivityDetails() {
             </div>
 
             {/* RIGHT: Main image + Thumbnails */}
-            <div className="flex items-start gap-2 md:gap-2.5 w-full lg:w-auto lg:shrink-0 mt-4 lg:mt-0">
+            <div className="flex flex-col sm:flex-row sm:items-start gap-2 md:gap-2.5 w-full lg:w-auto lg:shrink-0 mt-4 lg:mt-0">
               <div
                 className="rounded-2xl overflow-hidden shadow-lg flex-1 lg:flex-none"
                 style={{ height: "auto" }}
               >
-                <div className="lg:hidden w-full h-full">
+                <div className="lg:hidden w-full h-auto">
                   <img
                     src={thumbnails[activeImg]}
                     alt="Snorkeling"
@@ -782,7 +782,7 @@ export default function ActivityDetails() {
                   />
                 </div>
               </div>
-              <div className="flex flex-col gap-1.5 md:gap-2 shrink-0">
+              <div className="flex flex-row sm:flex-col gap-1.5 md:gap-2 shrink-0">
                 {thumbnails.map((src, i) => (
                   <div
                     key={i}
@@ -971,7 +971,7 @@ export default function ActivityDetails() {
                     <p className="font-bold text-[10px] md:text-xs text-black">
                       {item.label}
                     </p>
-                    <p className="text-[9px] md:text-[10px] text-black leading-tight font-bold ">
+                    <p className="text-[9px] md:text-[10px] text-black leading-tight font-bold break-all ">
                       {item.sub}
                     </p>
                   </div>

@@ -15,6 +15,7 @@ import artpic from "/assets/art.png";
 import resturantpic from "/assets/resturant.png";
 import hotelpic from "/assets/hotels.png";
 import hotel1 from "/assets/hotel2.png";
+import sqImage from "/assets/ChatGPT Image Mar 6, 2026, 03_01_45 AM.png";
 
 import Card from "@/components/card/Card";
 import CircleCard from "@/components/card/CircularCard";
@@ -260,7 +261,6 @@ const HomePage = () => {
 
       {/* ══ MASONRY GRID SECTION ══ */}
       <section className="container mb-8 mx-auto pb-10 px-4 sm:px-8 md:px-10 lg:px-16">
-
         {/* Mobile: single column stack */}
         {/* <div className="flex flex-col gap-4 lg:hidden">
           <Card image={beachpic} category="BEACHES" title="Best Beaches of Cartagena" author="Miguel" time="17 min" className="w-full" />
@@ -273,27 +273,123 @@ const HomePage = () => {
 
         {/* Desktop: masonry grid */}
         {/* <div className=" md:grid grid-cols-3 gap-6 auto-rows-[260px]"> */}
-        <div className="hidden sm:grid grid-cols-2 gap-2 md:grid-cols-3 md:gap-6 md:auto-rows-[260px] auto-rows-[120px]     /* mobile row height */
+        <div
+          className="hidden sm:grid grid-cols-2 gap-2 md:grid-cols-3 md:gap-6 md:auto-rows-[260px] auto-rows-[120px]     /* mobile row height */
     sm:auto-rows-[150px]  /* tablet */
-    md:auto-rows-[260px]  /* desktop */">
-      {/* <div className="block sm:hidden"> */}
-          <Card image={beachpic} category="BEACHES" title="Best Beaches of Cartagena" author="Miguel" time="17 min" className="row-span-3 sm:row-span-2" />
-          <Card image={resturantpic} category="Gastronomy" title="The Best Restaurants of Cartagena." author="May" time="10 min" className="row-span-2 sm:row-span-1" />
-          <Card image={shippic} category="ACTIVITIES" title="What to do in Cartagena" author="Maria" time="10 min" className="row-span-3 sm:row-span-2" />
-          <Card image={girlpic} category="Fashion" title="The Best Shopping in Cartagena" author="Alejandra" time="7 min" className="row-span-4 sm:row-span-3 z-10" />
-          <CircleCard image={hotelpic} category="HOTELS" title="Top Hotels of Cartagena" author="Natalia" time="21 min" className="" />
-          <Card image={artpic} category="Art" title="The Best Street Art of Cartagena" author="Juan Pablo" time="5 min" className="mt-5  row-span-2 sm:row-span-1" />
-      </div>
-          <div className=" sm:hidden grid grid-cols-2 gap-2 md:grid-cols-3 md:gap-6 md:auto-rows-[260px] auto-rows-[120px]     /* mobile row height */
+    md:auto-rows-[260px]  /* desktop */"
+        >
+          {/* <div className="block sm:hidden"> */}
+          <Card
+            image={beachpic}
+            category="BEACHES"
+            title="Best Beaches of Cartagena"
+            author="Miguel"
+            time="17 min"
+            className="row-span-3 sm:row-span-2"
+          />
+          <Card
+            image={resturantpic}
+            category="Gastronomy"
+            title="The Best Restaurants of Cartagena."
+            author="May"
+            time="10 min"
+            className="row-span-2 sm:row-span-1"
+          />
+          <Card
+            image={shippic}
+            category="ACTIVITIES"
+            title="What to do in Cartagena"
+            author="Maria"
+            time="10 min"
+            className="row-span-3 sm:row-span-2"
+          />
+          <Card
+            image={girlpic}
+            category="Fashion"
+            title="The Best Shopping in Cartagena"
+            author="Alejandra"
+            time="7 min"
+            className="row-span-4 sm:row-span-3 z-10"
+          />
+          <CircleCard
+            image={hotelpic}
+            category="HOTELS"
+            title="Top Hotels of Cartagena"
+            author="Natalia"
+            time="21 min"
+            className=""
+          />
+          <Card
+            image={artpic}
+            category="Art"
+            title="The Best Street Art of Cartagena"
+            author="Juan Pablo"
+            time="5 min"
+            className="mt-5  row-span-2 sm:row-span-1"
+          />
+        </div>
+        <div
+          className=" sm:hidden grid grid-cols-2 gap-2 md:grid-cols-3 md:gap-6 md:auto-rows-[260px] auto-rows-[120px]     /* mobile row height */
     sm:auto-rows-[150px]  /* tablet */
-    md:auto-rows-[260px]  /* desktop */">
-          <Card image={beachpic} category="BEACHES" title="Best Beaches of Cartagena" author="Miguel" time="17 min" className="row-span-2 sm:row-span-1" />
-          <Card image={resturantpic} category="Gastronomy" title="The Best Restaurants of Cartagena." author="May" time="10 min" className="row-span-1 sm:row-span-1" />
-          <Card image={girlpic} category="Fashion" title="The Best Shopping in Cartagena" author="Alejandra" time="7 min" className="row-span-3 sm:row-span-2 z-10 " />
-          <CircleCard image={hotelpic} category="HOTELS" title="Top Hotels of Cartagena" author="Natalia" time="21 min" className="" />
-          <Card image={shippic} category="ACTIVITIES" title="What to do in Cartagena" author="Maria" time="10 min" className="mt-10 row-span-2 sm:row-span-1" />
-          <Card image={artpic} category="Art" title="The Best Street Art of Cartagena" author="Juan Pablo" time="5 min" className=" row-span-1 sm:row-span-2" />
-          </div>
+    md:auto-rows-[260px]  /* desktop */"
+        >
+          <Card
+            image={beachpic}
+            category="BEACHES"
+            title="Best Beaches of Cartagena"
+            author="Miguel"
+            time="17 min"
+            className="row-span-2 sm:row-span-1"
+          />
+          <Card
+            image={resturantpic}
+            category="Gastronomy"
+            title="The Best Restaurants of Cartagena."
+            author="May"
+            time="10 min"
+            className="row-span-1 sm:row-span-1"
+          />
+          <Card
+            image={girlpic}
+            category="Fashion"
+            title="The Best Shopping in Cartagena"
+            author="Alejandra"
+            time="7 min"
+            className="row-span-3 sm:row-span-2 z-10 "
+          />
+          <Card
+          image={sqImage}
+          category="HOTELS"
+            title="Top Hotels of Cartagena"
+            author="Natalia"
+            time="21 min"
+            className="row-span-1 sm:row-span-1"
+          />
+          {/* <CircleCard
+            image={hotelpic}
+            category="HOTELS"
+            title="Top Hotels of Cartagena"
+            author="Natalia"
+            time="21 min"
+            className=""
+          /> */}
+          <Card
+            image={shippic}
+            category="ACTIVITIES"
+            title="What to do in Cartagena"
+            author="Maria"
+            time="10 min"
+            className="row-span-2 sm:row-span-1"
+          />
+          <Card
+            image={artpic}
+            category="Art"
+            title="The Best Street Art of Cartagena"
+            author="Juan Pablo"
+            time="5 min"
+            className=" row-span-1 sm:row-span-2"
+          />
+        </div>
         {/* </div> */}
       </section>
       {/* <div className="text-center mb-7 mt-10">
