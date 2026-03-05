@@ -64,6 +64,7 @@ import {
   Youtube,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 
 const thumbnails = [
   "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800",
@@ -143,16 +144,38 @@ const dealsSlides = [
     title: "Snorkeling + Lunch Combo",
     desc: "Full equipment, guided tour & fresh seafood lunch included. Valid till March 2025.",
     highlight: "BOOK NOW",
+    tag: "SAVE 20%",
+
+    valid: "Valid until February 14, 2026",
   },
   {
     title: "Group Discount 10% Off",
     desc: "Book for 4+ people and get 10% off. Life jackets & transport included.",
     highlight: "LIMITED",
+
+    valid: "Valid until February 14, 2026",
   },
   {
     title: "Sunset Snorkel Package",
     desc: "Evening snorkeling with cocktails on return. Reserve now.",
     highlight: "POPULAR",
+    tag: "SAVE 20%",
+
+    valid: "Valid until February 14, 2026",
+  },
+  {
+    title: "Extended Stay Package",
+    desc: "Book 5 nights, get the 6th night complimentary. Includes daily breakfast and one spa treatment.",
+    tag: "SAVE 20%",
+    highlight: "LIMITED",
+    valid: "Valid until March 31, 2026",
+  },
+  {
+    title: "Romantic Escape",
+    desc: "Private beachfront dinner and champagne upon arrival.",
+    tag: "",
+    highlight: "LIMITED",
+    valid: "Valid until February 14, 2026",
   },
 ];
 
@@ -988,6 +1011,102 @@ export default function ActivityDetails() {
                   ))}
                 </div>
               </div> */}
+
+              <div className="bg-white rounded-2xl  relative ">
+                <div className="flex items-center justify-between  pt-3 md:pt-4 pb-1.5">
+                  <p className="font-bold text-black text-xs md:text-sm font-antigua">
+                    Deals &amp; Promotions
+                  </p>
+                  <span className="text-xs text-gold font-semibold font-antigua">
+                    {dealIdx + 1}/{dealsSlides.length}
+                  </span>
+                </div>
+                <div className=" pb-3 md:pb-4 relative ">
+                  <div className="flex flex-col relative bg-[#f8f5e9] w-full h-[130px] rounded-xl p-3 md:p-4 border border-amber-100 shadow-sm">
+                    <div className="flex items-start justify-between gap-2 relative">
+                      <div className="flex-1  space-y-3 mb-3">
+                        <p className="font-bold text-black text-xs md:text-sm font-antigua">
+                          {dealsSlides[dealIdx].title}
+                        </p>
+                        <p className="text-[10px] md:text-xs text-gray-500 mt-1 leading-relaxed">
+                          {dealsSlides[dealIdx].desc}
+                        </p>
+                      </div>
+                      {/* <span className="bg-gold text-white text-[9px] md:text-[10px] font-bold px-1.5 md:px-2 py-0.5 rounded shrink-0">
+                                      {dealsSlides[dealIdx].tag}
+                                    </span> */}
+                    </div>
+                    {dealsSlides[dealIdx].tag && (
+                      <Badge className="absolute top-0 right-0 border-0 bg-gradient-to-r from-gold-light to-gold overflow-hidden text-white  rounded-xl rounded-tl-none rounded-br-none  text-xs">
+                        {dealsSlides[dealIdx].tag}
+                      </Badge>
+                    )}
+                    <div className="mt-auto flex items-center justify-between text-[10px] md:text-xs ">
+                      <div className="flex items-center gap-2 text-gray-500">
+                        <Calendar className="w-3 h-3" />
+                        {dealsSlides[dealIdx].valid}
+                      </div>
+
+                      <button className="text-[#c89b2c] font-semibold flex items-center gap-2">
+                        Claim Offer →
+                      </button>
+                    </div>
+                    <button
+                      onClick={() =>
+                        setDealIdx(
+                          (p) =>
+                            (p - 1 + dealsSlides.length) % dealsSlides.length,
+                        )
+                      }
+                      className="absolute z-16 -left-3 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-gradient-to-l from-gold to-gold-light text-white flex items-center justify-center shadow"
+                    >
+                      <ChevronLeft size={12} />
+                    </button>
+
+                    <button
+                      onClick={() =>
+                        setDealIdx((p) => (p + 1) % dealsSlides.length)
+                      }
+                      className="absolute z-16 -right-3 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-gradient-to-r from-gold to-gold-light text-white flex items-center justify-center shadow"
+                    >
+                      <ChevronRight size={12} />
+                    </button>
+                    {/* <button
+                                    onClick={() =>
+                                      setDealIdx(
+                                        (p) =>
+                                          (p - 1 + dealsSlides.length) % dealsSlides.length,
+                                      )
+                                    }
+                                    className="absolute  md:left-2 top-1/2 -translate-y-1/2 w-5 h-5 md:w-6 md:h-6 rounded-full bg-gradient-to-l from-gold to-gold-light text-white flex items-center justify-center"
+                                  >
+                                    <ChevronLeft size={11} />
+                                  </button>
+                                  <button
+                                    onClick={() =>
+                                      setDealIdx((p) => (p + 1) % dealsSlides.length)
+                                    }
+                                    className="absolute  md:right-2 top-1/2   -translate-y-1/2 w-5 h-5 md:w-6 md:h-6 rounded-full bg-gradient-to-r from-gold to-gold-light text-white flex items-center justify-center"
+                                  >
+                                    <ChevronRight size={11} />
+                                  </button> */}
+
+                    {/* <div className="flex items-center gap-2 md:gap-3 mt-2 md:mt-2.5 text-[9px] md:text-[10px] text-gray-400 flex-wrap">
+                                    <span>✓ Valid till March 15, 2025</span>
+                                    <span>✓ T&C apply</span>
+                                  </div> */}
+                  </div>
+                </div>
+                <div className="flex justify-center gap-1.5 pb-2.5 md:pb-3">
+                  {dealsSlides.map((_, i) => (
+                    <button
+                      key={i}
+                      onClick={() => setDealIdx(i)}
+                      className={`h-1.5 rounded-full transition-all ${i === dealIdx ? "bg-gold w-4" : "bg-gold w-1.5"}`}
+                    />
+                  ))}
+                </div>
+              </div>
 
               {/* Also Available On */}
               <div className="bg-white rounded-2xl border border-gold-light shadow-sm p-3 md:p-4 text-center">

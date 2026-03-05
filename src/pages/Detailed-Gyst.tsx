@@ -6,6 +6,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent } from "@/components/ui/card";
+import CartagenaNews from "@/components/layout/cartagenaNews";
 import { Link } from "react-router-dom";
 import {
   Heart,
@@ -146,16 +147,38 @@ const dealsSlides = [
     title: "Snorkeling + Lunch Combo",
     desc: "Full equipment, guided tour & fresh seafood lunch included. Valid till March 2025.",
     highlight: "BOOK NOW",
+    tag: "SAVE 20%",
+
+    valid: "Valid until February 14, 2026",
   },
   {
     title: "Group Discount 10% Off",
     desc: "Book for 4+ people and get 10% off. Life jackets & transport included.",
     highlight: "LIMITED",
+
+    valid: "Valid until February 14, 2026",
   },
   {
     title: "Sunset Snorkel Package",
     desc: "Evening snorkeling with cocktails on return. Reserve now.",
     highlight: "POPULAR",
+    tag: "SAVE 20%",
+
+    valid: "Valid until February 14, 2026",
+  },
+  {
+    title: "Extended Stay Package",
+    desc: "Book 5 nights, get the 6th night complimentary. Includes daily breakfast and one spa treatment.",
+    tag: "SAVE 20%",
+    highlight: "LIMITED",
+    valid: "Valid until March 31, 2026",
+  },
+  {
+    title: "Romantic Escape",
+    desc: "Private beachfront dinner and champagne upon arrival.",
+    tag: "",
+    highlight: "LIMITED",
+    valid: "Valid until February 14, 2026",
   },
 ];
 
@@ -235,6 +258,16 @@ const hoursData = [
   { day: "Friday", open: "12:00", close: "11:00 pm" },
   { day: "Saturday", open: "11:00", close: "11:00 pm" },
   { day: "Sunday", open: "11:00", close: "9:00 pm" },
+];
+
+const hours = [
+  { day: "Monday", time: "Closed today", closed: true },
+  { day: "Tuesday", time: "11:50 – 21:50" },
+  { day: "Wednesday", time: "11:50 – 21:50" },
+  { day: "THURSDAY", time: "11:50 – 22:00" },
+  { day: "Friday", time: "11:50 – 22:00" },
+  { day: "SATURDAY", time: "10:00 – 14:00, 16:50 – 22:00" },
+  { day: "Sunday", time: "10:00 – 14:00, 16:50 – 21:00" },
 ];
 
 const specialties = [
@@ -846,7 +879,8 @@ export default function GastronomyDetails() {
                 {/* Header */}
 
                 {/* Key Features Badge */}
-                <Badge className="absolute -top-3 left-6 bg-[#C9A227] text-white text-md px-4 py-1 rounded-full font-semibold shadow-sm">
+
+                <Badge className="absolute -top-3 left-6 bg-gradient-to-r from-gold to-gold-light text-white text-md px-4 py-1 font-semibold rounded-full shadow-md">
                   Key Features
                 </Badge>
 
@@ -963,7 +997,7 @@ export default function GastronomyDetails() {
               {/* Menu Tabs */}
               <div className="bg-[#F4F1E6] border border-[#E4D7B2] rounded-2xl px-6 pb-6 pt-3 md:px-10 md:pb-10 md:pt-4 relative">
                 {/* Floating Title Pill */}
-                <Badge className="absolute -top-4 left-8 bg-gradient-to-r from-gold to-gold-light text-white text-md md:text-xl font-semibold px-4 py-1   rounded-full shadow-md">
+                <Badge className="absolute -top-3 left-6 bg-gradient-to-r from-gold to-gold-light text-white text-md px-4 py-1 font-semibold rounded-full shadow-md">
                   Menu
                 </Badge>
 
@@ -1094,6 +1128,43 @@ export default function GastronomyDetails() {
             {/* RIGHT SIDEBAR */}
             <div className="space-y-3 md:space-y-4">
               {/* Information + Hours Table */}
+              <div className="relative bg-[#F4F1E6] border border-gold-light rounded-2xl p-8 md:p-10">
+                {/* floating badge */}
+                <Badge className="absolute -top-3 left-6 bg-gradient-to-r from-gold to-gold-light text-white text-md px-4 py-1 font-semibold rounded-full shadow-md">
+                  Time
+                </Badge>
+
+                {/* header */}
+                <div className="flex items-center justify-between mb-8">
+                  <div className="flex items-center gap-3">
+                    <Clock className="text-gray-700" size={20} />
+                    <span className="font-semibold text-md text-gray-800">
+                      Hours Open
+                    </span>
+                  </div>
+
+                  <ChevronDown size={22} className="text-gray-800" />
+                </div>
+
+                {/* hours grid */}
+                <div className="grid grid-cols-2 gap-y-3 ">
+                  {hours.map((item, i) => (
+                    <div key={i} className="contents">
+                      <div className="text-md font-semibold text-gray-800">
+                        {item.day}
+                      </div>
+
+                      <div
+                        className={`text-md font-antigua font-semibold ml-0 md:-ml-20 ${
+                          item.closed ? "text-red" : "text-gray-900"
+                        }`}
+                      >
+                        {item.time}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
               {/* <div className="bg-[#f8f5e9] rounded-2xl p-4 md:p-5 border border-amber-200 shadow-sm relative">
                 <span className="absolute -top-3 left-5 bg-gold text-white text-xs font-bold px-3 py-1 rounded-full">
                   Information
@@ -1170,9 +1241,10 @@ export default function GastronomyDetails() {
               </div> */}
 
               {/* Address */}
-              <div className="bg-[#F4F1E6] border border-[#E4D7B2] rounded-3xl p-6 md:p-10 relative">
+              <div className="bg-[#F4F1E6] border border-[#E4D7B2] rounded-2xl p-6 md:p-10 relative">
                 {/* Floating Title */}
-                <Badge className="absolute -top-3 left-6 bg-[#C9A227] text-white text-md px-4 py-1 rounded-full font-semibold shadow-sm">
+
+                <Badge className="absolute -top-3 left-6 bg-gradient-to-r from-gold to-gold-light text-white text-md px-4 py-1 font-semibold rounded-full shadow-md">
                   Information
                 </Badge>
 
@@ -1230,23 +1302,29 @@ export default function GastronomyDetails() {
                       {
                         icon: "https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg",
                       },
-                      { icon: "https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" },
+                      {
+                        icon: "https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg",
+                      },
                       {
                         icon: "https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg",
                       },
                     ].map((item, i) => (
                       <>
-                      {/* <div key={i} className="flex justify-equal items-center gap-1 sm:gap-3 "> */}
+                        {/* <div key={i} className="flex justify-equal items-center gap-1 sm:gap-3 "> */}
                         <div
                           className={`w-8 h-8 sm:w-12 sm:h-12 rounded-xl  flex items-center justify-center text-white`}
                         >
-                          <img src={item.icon} alt="" className="w-8 h-8 sm:w-12 sm:h-12  object-cover" />
+                          <img
+                            src={item.icon}
+                            alt=""
+                            className="w-8 h-8 sm:w-12 sm:h-12  object-cover"
+                          />
                         </div>
 
                         {/* <p className="text-sm text-gray-600 font-medium">
                           {item.label}
                         </p> */}
-                       {/* </div> */}
+                        {/* </div> */}
                       </>
                     ))}
                   </div>
@@ -1283,68 +1361,41 @@ export default function GastronomyDetails() {
               {/* 3 Contact Icons */}
               <div className="grid grid-cols-3 gap-2 md:gap-2.5">
                 {[
-                  { icon: Mail, label: "Email", sub: "info@knotdasie.com" },
-                  { icon: Globe, label: "Website", sub: "knotdasie.com" },
+                  { icon: Mail, label: "Email", sub: "info@ecoadventura.com" },
+                  { icon: Globe, label: "Website", sub: "ecoadventura.co" },
                   { icon: Phone, label: "Phone", sub: "+57 315 123 4567" },
                 ].map((item, i) => (
                   <div
                     key={i}
-                    className="bg-[#f8f5e9] rounded-xl border border-amber-100 shadow-sm p-2 md:p-3 flex flex-col items-center text-center gap-1 cursor-pointer hover:border-amber-400 transition"
+                    className="bg-[#f8f5e9] rounded-xl border border-gold-light shadow-sm p-2 md:p-3 flex flex-col items-center text-center gap-1 cursor-pointer hover:border-gold transition"
                   >
-                    <div className="w-8 h-8 md:w-9 md:h-9 rounded-xl bg-amber-50 flex items-center justify-center">
-                      <item.icon size={14} className="text-amber-500" />
+                    <div className="w-8 h-8 md:w-9 md:h-9 rounded-xl backdrop-blur-lg bg-amber-50 flex items-center justify-center">
+                      <item.icon size={14} className="text-gold" />
                     </div>
                     <p className="font-bold text-[10px] md:text-xs text-black">
                       {item.label}
                     </p>
-                    <p className="text-[9px] md:text-[10px] text-black leading-tight font-bold">
+                    <p className="text-[9px] md:text-[10px] text-black leading-tight font-bold  break-all">
                       {item.sub}
                     </p>
                   </div>
                 ))}
               </div>
 
-              {/* Also Available On */}
-              <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-3 md:p-4 text-center">
-                <p className="font-bold text-black text-xs md:text-sm mb-2 md:mb-3 font-antigua">
-                  Also Available On
-                </p>
-                <div className="flex justify-center gap-2 md:gap-4 flex-wrap">
-                  <button className="bg-red-500 text-white text-[10px] md:text-xs font-bold rounded-xl px-3 md:px-5 py-2 md:py-3">
-                    TripAdvisor ↗
-                  </button>
-                  <button className="bg-orange-500 text-white text-[10px] md:text-xs font-bold rounded-xl px-3 md:px-5 py-2 md:py-3">
-                    OpenTable ↗
-                  </button>
-                  <button className="bg-green text-white text-[10px] md:text-xs font-bold rounded-xl px-3 md:px-5 py-2 md:py-3">
-                    Yelp ↗
-                  </button>
-                </div>
-              </div>
-
-              {/* Book with La Carta */}
-              <button className="w-full rounded-full bg-gold hover:bg-gold transition py-3 md:py-3.5 text-xs md:text-sm font-bold text-white shadow">
-                Book with La Carta
-              </button>
-              <div className="flex items-center justify-center gap-2 text-[10px] md:text-xs text-gray-400 flex-wrap">
-                <ShieldCheck size={12} className="text-green-500" />
-                <span>Secure payments · Verified listings · 24/7 support</span>
-              </div>
-
               {/* Deals Slider */}
-              <div className="bg-[#f8f5e9] rounded-2xl border border-amber-200 shadow-sm relative overflow-hidden">
-                <div className="flex items-center justify-between px-4 md:px-5 pt-3 md:pt-4 pb-1.5">
+              <div className="bg-white rounded-2xl  relative ">
+                <div className="flex items-center justify-between  pt-3 md:pt-4 pb-1.5">
                   <p className="font-bold text-black text-xs md:text-sm font-antigua">
                     Deals &amp; Promotions
                   </p>
-                  <span className="text-xs text-amber-600 font-semibold font-antigua">
+                  <span className="text-xs text-gold font-semibold font-antigua">
                     {dealIdx + 1}/{dealsSlides.length}
                   </span>
                 </div>
-                <div className="px-4 md:px-5 pb-3 md:pb-4 relative min-h-[100px] md:min-h-[110px]">
-                  <div className="bg-white rounded-xl p-3 md:p-4 border border-amber-100 shadow-sm">
-                    <div className="flex items-start justify-between gap-2">
-                      <div className="flex-1">
+                <div className=" pb-3 md:pb-4 relative ">
+                  <div className="flex flex-col relative bg-[#f8f5e9] w-full h-[130px] rounded-xl p-3 md:p-4 border border-amber-100 shadow-sm">
+                    <div className="flex items-start justify-between gap-2 relative">
+                      <div className="flex-1  space-y-3 mb-3">
                         <p className="font-bold text-black text-xs md:text-sm font-antigua">
                           {dealsSlides[dealIdx].title}
                         </p>
@@ -1352,48 +1403,178 @@ export default function GastronomyDetails() {
                           {dealsSlides[dealIdx].desc}
                         </p>
                       </div>
-                      <span className="bg-gold text-white text-[9px] md:text-[10px] font-bold px-1.5 md:px-2 py-0.5 rounded shrink-0">
-                        {dealsSlides[dealIdx].highlight}
-                      </span>
+                      {/* <span className="bg-gold text-white text-[9px] md:text-[10px] font-bold px-1.5 md:px-2 py-0.5 rounded shrink-0">
+                                      {dealsSlides[dealIdx].tag}
+                                    </span> */}
                     </div>
-                    <div className="flex items-center gap-2 md:gap-3 mt-2 md:mt-2.5 text-[9px] md:text-[10px] text-gray-400 flex-wrap">
-                      <span>✓ Valid till March 15, 2025</span>
-                      <span>✓ T&C apply</span>
+                    {dealsSlides[dealIdx].tag && (
+                      <Badge className="absolute top-0 right-0 border-0 bg-gradient-to-r from-gold-light to-gold overflow-hidden text-white  rounded-xl rounded-tl-none rounded-br-none  text-xs">
+                        {dealsSlides[dealIdx].tag}
+                      </Badge>
+                    )}
+                    <div className="mt-auto flex items-center justify-between text-[10px] md:text-xs ">
+                      <div className="flex items-center gap-2 text-gray-500">
+                        <Calendar className="w-3 h-3" />
+                        {dealsSlides[dealIdx].valid}
+                      </div>
+
+                      <button className="text-[#c89b2c] font-semibold flex items-center gap-2">
+                        Claim Offer →
+                      </button>
                     </div>
+                    <button
+                      onClick={() =>
+                        setDealIdx(
+                          (p) =>
+                            (p - 1 + dealsSlides.length) % dealsSlides.length,
+                        )
+                      }
+                      className="absolute z-16 -left-3 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-gradient-to-l from-gold to-gold-light text-white flex items-center justify-center shadow"
+                    >
+                      <ChevronLeft size={12} />
+                    </button>
+
+                    <button
+                      onClick={() =>
+                        setDealIdx((p) => (p + 1) % dealsSlides.length)
+                      }
+                      className="absolute z-16 -right-3 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-gradient-to-r from-gold to-gold-light text-white flex items-center justify-center shadow"
+                    >
+                      <ChevronRight size={12} />
+                    </button>
+                    {/* <button
+                                    onClick={() =>
+                                      setDealIdx(
+                                        (p) =>
+                                          (p - 1 + dealsSlides.length) % dealsSlides.length,
+                                      )
+                                    }
+                                    className="absolute  md:left-2 top-1/2 -translate-y-1/2 w-5 h-5 md:w-6 md:h-6 rounded-full bg-gradient-to-l from-gold to-gold-light text-white flex items-center justify-center"
+                                  >
+                                    <ChevronLeft size={11} />
+                                  </button>
+                                  <button
+                                    onClick={() =>
+                                      setDealIdx((p) => (p + 1) % dealsSlides.length)
+                                    }
+                                    className="absolute  md:right-2 top-1/2   -translate-y-1/2 w-5 h-5 md:w-6 md:h-6 rounded-full bg-gradient-to-r from-gold to-gold-light text-white flex items-center justify-center"
+                                  >
+                                    <ChevronRight size={11} />
+                                  </button> */}
+
+                    {/* <div className="flex items-center gap-2 md:gap-3 mt-2 md:mt-2.5 text-[9px] md:text-[10px] text-gray-400 flex-wrap">
+                                    <span>✓ Valid till March 15, 2025</span>
+                                    <span>✓ T&C apply</span>
+                                  </div> */}
                   </div>
-                  <button
-                    onClick={() =>
-                      setDealIdx(
-                        (p) =>
-                          (p - 1 + dealsSlides.length) % dealsSlides.length,
-                      )
-                    }
-                    className="absolute left-1.5 md:left-2 top-1/2 -translate-y-1/2 w-5 h-5 md:w-6 md:h-6 rounded-full bg-amber-400 text-white flex items-center justify-center"
-                  >
-                    <ChevronLeft size={11} />
-                  </button>
-                  <button
-                    onClick={() =>
-                      setDealIdx((p) => (p + 1) % dealsSlides.length)
-                    }
-                    className="absolute right-1.5 md:right-2 top-1/2 -translate-y-1/2 w-5 h-5 md:w-6 md:h-6 rounded-full bg-amber-400 text-white flex items-center justify-center"
-                  >
-                    <ChevronRight size={11} />
-                  </button>
                 </div>
                 <div className="flex justify-center gap-1.5 pb-2.5 md:pb-3">
                   {dealsSlides.map((_, i) => (
                     <button
                       key={i}
                       onClick={() => setDealIdx(i)}
-                      className={`h-1.5 rounded-full transition-all ${i === dealIdx ? "bg-gold w-4" : "bg-amber-200 w-1.5"}`}
+                      className={`h-1.5 rounded-full transition-all ${i === dealIdx ? "bg-gold w-4" : "bg-gold w-1.5"}`}
                     />
                   ))}
                 </div>
               </div>
 
+              {/* Also Available On */}
+              <div className="bg-[#f8f5e9] rounded-2xl border border-gold-light shadow-sm p-6 md:p-8 text-center max-w-xl mx-auto">
+                <p className="font-antigua font-bold text-black text-sm md:text-lg mb-5">
+                  Also Available On
+                </p>
+
+                <div className="flex justify-center gap-2 flex-wrap mb-6">
+                  <button className="bg-[#0d3b82] hover:bg-[#0b326d] text-white flex items-center gap-2 text-xs md:text-sm rounded-xl px-6 py-3 transition">
+                    <span>Takeout</span>
+                    <ExternalLink size={16} />
+                  </button>
+
+                  <button className="bg-[#f27c00] hover:bg-[#db6f00] text-white flex items-center gap-2 text-xs md:text-sm rounded-xl px-6 py-3 transition">
+                    <span>Rappi</span>
+                    <ExternalLink size={16} />
+                  </button>
+
+                  <button className="bg-[#4a6fa8] hover:bg-[#3f5f90] text-white flex items-center gap-2 text-xs md:text-sm rounded-xl px-6 py-3 transition">
+                    <span>Gift Card</span>
+                    <ExternalLink size={16} />
+                  </button>
+                </div>
+
+                <button className="w-full rounded-full bg-gradient-to-r from-[#c89b2c] to-[#e0c36c] py-3 md:py-4 text-sm md:text-base font-antigua text-white font-bold shadow-md hover:opacity-90 transition">
+                  Reserve Now
+                </button>
+              </div>
+              {/* <div className="bg-white rounded-2xl border border-gold-light shadow-sm p-3 md:p-4 text-center">
+                <p className="font-bold text-black text-xs md:text-sm mb-2 md:mb-3 font-antigua">
+                  Also Available On
+                </p>
+                <div className="flex flex-col gap-2 md:gap-5 flex-wrap">
+                  <div className="flex justify-center gap-2 md:gap-5 flex-wrap">
+                    <button className="bg-green text-white flex  gap-3 text-[10px] md:text-xs font-normal rounded-xl px-3 md:px-5 py-2 md:py-3 hover:bg-green transition">
+                      <span>Booking.com</span> <ExternalLink size={15} />
+                    </button>
+                    <button className="bg-teal-700 flex gap-3 text-white text-[10px] md:text-xs font-normal rounded-xl px-3 md:px-75 py-2 md:py-3 hover:bg-teal-800 transition">
+                      <span>Airbnb</span> <ExternalLink size={15} />
+                    </button>
+                    <button className="bg-blue-900 flex gap-3 text-white text-[10px] md:text-xs font-normal rounded-xl px-3 md:px-5 py-2 md:py-3 hover:bg-blue-800 transition">
+                      <span>Expedia</span> <ExternalLink size={15} />
+                    </button>
+                  </div>
+                  <button className="w-full rounded-full bg-gradient-to-r from-gold to-gold-light font-antigua hover:bg-gold transition py-3 md:py-3.5 text-xs md:text-sm font-bold text-white shadow">
+                    Book with La Carta
+                  </button>
+                </div>
+              </div> */}
+
+              {/* Book with La Carta */}
+
+              <div className="flex items-center justify-center gap-2 text-[10px] md:text-xs text-gray-400 flex-wrap">
+                <ShieldCheck size={12} />
+                Why book with Lacarta?
+              </div>
+              <p className="text-center text-[10px] md:text-xs text-gray-400 leading-relaxed">
+                Secure payments, Verified listings, 24/7 support and Exclusive
+                local experiences curated by Cartagena insiders.
+              </p>
+
               {/* Powered By */}
-              <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-3 md:p-4">
+              <div className="space-y-1 md:space-y-5">
+                <h3 className="font-antigua text-lg md:text-lg font-bold text-black">
+                  Featured In
+                </h3>
+
+                <div className="space-y-4">
+                  {[
+                    "https://restomontreal.ca",
+                    "https://travelcolombia.com",
+                    "https://visitcartagena.org",
+                  ].map((link, i) => (
+                    <div
+                      key={i}
+                      className="flex items-center gap-2 md:gap-4 bg-[#f8f5e9] border border-gold-light rounded-2xl px-5 py-1"
+                    >
+                      <div className="bg-red-600 rounded-lg p-2 flex items-center justify-center shrink-0">
+                        <img
+                          src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg"
+                          alt=""
+                          className="w-6 h-6 sm:w-8 sm:h-8 object-contain"
+                        />
+                      </div>
+
+                      <a
+                        href={link}
+                        target="_blank"
+                        className="font-antigua text-sm md:text-sm font-bold text-black"
+                      >
+                        {link}
+                      </a>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              {/* <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-3 md:p-4">
                 <p className="text-[10px] md:text-xs font-bold text-gray-400 uppercase mb-2">
                   Powered by
                 </p>
@@ -1414,17 +1595,17 @@ export default function GastronomyDetails() {
                     ),
                   )}
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
       </div>
 
-      {/* LOCATION */}
+      {/* ══ SECTION 3: LOCATION ══ */}
       <div className="px-4 sm:px-6 md:px-10 lg:px-12 py-6 md:py-8">
         <div className="mx-auto max-w-[1200px]">
           <div className="text-center mb-4 md:mb-5">
-            <p className="text-[10px] md:text-xs uppercase tracking-widest font-bold text-gray-400 mb-1">
+            <p className="text-[10px] md:text-xs uppercase tracking-widest font-medium text-black/70 mb-1">
               Find Us
             </p>
             <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold font-antigua text-black">
@@ -1437,63 +1618,68 @@ export default function GastronomyDetails() {
               className="w-full h-full border-0"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              src="https://www.google.com/maps?q=El+Centro+Cartagena+Colombia&output=embed"
+              src="https://www.google.com/maps?q=Isla+Baru+Cartagena+Colombia&output=embed"
             />
           </div>
         </div>
       </div>
 
-      {/* SERVICES — 4 cols for gastronomy: Services & Amenities + Menu + Atmosphere */}
+      {/* ══ SECTION 4: SERVICES & AMENITIES ══ */}
       <div className="px-4 sm:px-6 md:px-10 lg:px-12 pb-6 md:pb-8">
         <div className="mx-auto max-w-[1200px] bg-white rounded-2xl p-5 md:p-8">
           <div className="text-center mb-5 md:mb-7">
-            <p className="text-[10px] md:text-xs uppercase tracking-widest font-bold text-gray-400 mb-1">
+            <p className="text-[10px] md:text-xs uppercase tracking-widest font-medium text-black/70 mb-1">
               What's Included
             </p>
-            <h2 className="text-xl md:text-2xl font-extrabold text-black font-antigua">
+            <h2 className="text-xl md:text-3xl font-extrabold text-black font-antigua">
               Services &amp; Amenities
             </h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-10">
             {[
               {
-                title: "Services & Amenities",
+                title: "Key Features",
                 items: [
-                  { icon: Utensils, label: "Fine dining" },
-                  { icon: Wine, label: "Wine cellar" },
-                  { icon: Leaf, label: "Vegetarian menu" },
-                  { icon: Coffee, label: "Private dining room" },
-                  { icon: Users, label: "Event hosting" },
+                  {
+                    icon: WavesIcon,
+                    label: "Turquoise Beach",
+                    sub: "White sand & calm waters",
+                  },
+                  {
+                    icon: Anchor,
+                    label: "Snorkeling Zone",
+                    sub: "Coral reef access",
+                  },
+                  {
+                    icon: Shell,
+                    label: "Secluded Coves",
+                    sub: "Private beach areas",
+                  },
                 ],
+                hasSub: true,
               },
               {
-                title: "Menu",
+                title: "Services",
                 items: [
-                  { icon: Utensils, label: "À la carte" },
-                  { icon: Sparkles, label: "Tasting menu" },
-                  { icon: Leaf, label: "Seasonal specials" },
+                  { icon: Umbrella, label: "Sunbed & umbrella rental" },
+                  { icon: Fish, label: "Fresh seafood restaurant" },
+                  { icon: LifeBuoy, label: "Lifeguard on duty" },
                 ],
+                hasSub: false,
               },
               {
-                title: "Menu",
+                title: "Amenities",
                 items: [
-                  { icon: Coffee, label: "Breakfast" },
-                  { icon: GlassWater, label: "Cocktail bar" },
-                  { icon: Wine, label: "Wine pairing" },
+                  { icon: Droplets, label: "Freshwater showers" },
+                  { icon: Sun, label: "Changing rooms" },
+                  { icon: Umbrella, label: "Beach volleyball court" },
+                  { icon: Anchor, label: "Kayak rental" },
                 ],
-              },
-              {
-                title: "Atmosphere",
-                items: [
-                  { icon: Music, label: "Live music Fri–Sat" },
-                  { icon: Camera, label: "Instagrammable décor" },
-                  { icon: Globe, label: "Outdoor terrace" },
-                  { icon: Users, label: "Romantic setting" },
-                ],
+                hasSub: false,
               },
             ].map((col, ci) => (
               <div key={ci}>
-                <h3 className="font-bold text-black text-sm md:text-base mb-3 md:mb-4 pb-2 border-b-2 border-gray-300">
+                <h3 className="font-bold text-black text-sm sm:text-lg font-antigua md:text-base mb-3 md:mb-4 pb-3 border-b border-gold-light">
                   {col.title}
                 </h3>
                 <div className="space-y-3 md:space-y-3.5">
@@ -1502,9 +1688,16 @@ export default function GastronomyDetails() {
                       <div className="w-7 h-7 md:w-8 md:h-8 rounded-xl bg-amber-50 flex items-center justify-center shrink-0">
                         <item.icon size={13} className="text-amber-500" />
                       </div>
-                      <p className="font-semibold text-gray-900 text-xs md:text-sm pt-1">
-                        {item.label}
-                      </p>
+                      <div>
+                        <p className="font-normal text-gray-900 text-xs md:text-sm">
+                          {item.label}
+                        </p>
+                        {col.hasSub && item.sub && (
+                          <p className="text-[10px] md:text-xs text-gray-400">
+                            {item.sub}
+                          </p>
+                        )}
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -1514,23 +1707,23 @@ export default function GastronomyDetails() {
         </div>
       </div>
 
-      {/* AROUND THIS PLACE */}
+      {/* ══ SECTION 5: AROUND THIS PLACE ══ */}
       <div className="px-4 sm:px-6 md:px-10 lg:px-12 pb-6 md:pb-8">
         <div className="mx-auto max-w-[1200px]">
-          <div className="flex items-end justify-between mb-4 md:mb-5">
-            <div>
-              <p className="text-[10px] md:text-xs uppercase tracking-widest font-bold text-gray-400 mb-0.5">
+          <div className="flex items-end justify-between flex-col  w-full mb-4 md:mb-5">
+            <div className="w-full">
+              <p className="text-[10px] md:text-xs uppercase w-full text-center tracking-widest font-medium text-black/70 mb-0.5">
                 Explore
               </p>
-              <h2 className="text-xl md:text-2xl font-extrabold font-antigua text-black">
+              <h2 className="text-xl md:text-2xl font-extrabold text-center font-antigua text-black">
                 Around This Place
               </h2>
             </div>
-            <div className="flex gap-1.5 md:gap-2">
-              <button className="bg-red text-white text-[10px] md:text-xs font-bold rounded-full px-3 md:px-4 py-1.5 md:py-2">
+            <div className="flex flex-1 gap-1.5 md:gap-2">
+              <button className="bg-gradient-to-b from-red to-red-light text-white text-[10px] md:text-xs font-bold rounded-full px-3 md:px-4 py-1.5 md:py-2 hover:bg-red transition">
                 Clear Filters
               </button>
-              <button className="bg-green text-white text-[10px] md:text-xs font-bold rounded-full px-3 md:px-4 py-1.5 md:py-2">
+              <button className="bg-gradient-to-r from-green to-green-light text-white text-[10px] md:text-xs font-bold rounded-full px-3 md:px-4 py-1.5 md:py-2 hover:bg-green transition">
                 + Filters
               </button>
             </div>
@@ -1539,14 +1732,14 @@ export default function GastronomyDetails() {
         </div>
       </div>
 
-      {/* FAQ */}
+      {/* ══ SECTION 6: FAQ ══ */}
       <div className="bg-[#fbf7ef] py-8 md:py-12 px-4 sm:px-6 md:px-10 lg:px-12">
         <div className="mx-auto max-w-[950px]">
           <div className="text-center mb-6 md:mb-8">
-            <p className="text-[10px] md:text-xs uppercase tracking-widest font-bold text-gray-400 mb-1 md:mb-1.5">
+            <p className="text-[10px] md:text-xs uppercase tracking-widest font-medium text-black/70 mb-1 md:mb-1.5">
               Questions?
             </p>
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-black">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-antigua font-extrabold text-black">
               Frequently Asked
             </h2>
           </div>
@@ -1570,149 +1763,211 @@ export default function GastronomyDetails() {
               </AccordionItem>
             ))}
           </Accordion>
-          <div className="mt-5 md:mt-6 space-y-2 md:space-y-3">
-            <nav className="hidden sm:grid grid-cols-3 md:grid-cols-6 gap-1.5 md:gap-2">
-              {Object.keys(tagRoutes).map((tag) => (
-                <Link key={tag} to={tagRoutes[tag]}>
-                  <button className="w-full bg-white text-black font-bold shadow text-[10px] md:text-xs py-1.5 md:py-2 rounded hover:bg-gray-50 transition border border-gray-100">
-                    {tag}
-                  </button>
-                </Link>
-              ))}
-            </nav>
-            <div className="flex bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100">
-              <input
-                className="flex-grow px-3 md:px-4 py-2.5 md:py-3 bg-white text-black outline-none text-xs md:text-sm"
-                type="text"
-                placeholder="Search for Anything"
-              />
-              <button className="bg-gold hover:bg-gold transition text-white font-bold px-4 md:px-6 py-2.5 md:py-3 text-xs md:text-sm">
-                Search
-              </button>
-            </div>
-          </div>
+
+          {/* <div className="mt-5 md:mt-6 space-y-2 md:space-y-3">
+                  <nav className="hidden sm:grid grid-cols-3 md:grid-cols-6 gap-1.5 md:gap-2">
+                    {Object.keys(tagRoutes).map((tag) => (
+                      <Link key={tag} to={tagRoutes[tag]}>
+                        <button className="w-full bg-white text-black font-bold shadow text-[10px] md:text-xs py-1.5 md:py-2 rounded hover:bg-gray-50 transition border border-gray-100">
+                          {tag}
+                        </button>
+                      </Link>
+                    ))}
+                  </nav>
+                  <div className="flex bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100">
+                    <input
+                      className="flex-grow px-3 md:px-4 py-2.5 md:py-3 bg-white text-black outline-none text-xs md:text-sm"
+                      type="text"
+                      placeholder="Search for Anything"
+                    />
+                    <button className="bg-gold hover:bg-gold transition text-white font-bold px-4 md:px-6 py-2.5 md:py-3 text-xs md:text-sm">
+                      Search
+                    </button>
+                  </div>
+                </div> */}
         </div>
       </div>
 
-      {/* REVIEWS */}
+      {/* ══ SECTION 7: REVIEWS ══ */}
       <div className="bg-[#fbf7ef] py-6 md:py-8 px-4 sm:px-6 md:px-10 lg:px-12">
         <div className="mx-auto max-w-[1200px]">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-5 mb-5 md:mb-7">
-            <div className="bg-white rounded-2xl p-4 md:p-5 shadow-sm border border-gray-100">
-              <p className="font-bold text-black text-xs md:text-sm mb-2 md:mb-3">
+          {/* 3-col header */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-3 mb-5 md:mb-7">
+            {/* La Carta Team Reviews */}
+            <div className="bg-[#F7F6F2] rounded-xl p-4 md:p-5 shadow-sm border border-gold-light">
+              <p className="font-bold text-black text-sm md:text-sm text-center mb-2 md:mb-3 font-antigua">
                 La Carta Team Reviews
               </p>
               <div className="space-y-1.5 md:space-y-2">
                 {[
-                  { label: "Price", rating: 3 },
-                  { label: "Location", rating: 5 },
-                  { label: "Ambiance", rating: 5 },
-                  { label: "Services", rating: 5 },
+                  { label: "Price", rating: 4 },
+                  { label: "Location", rating: 4 },
+                  { label: "Ambiance", rating: 3 },
+                  { label: "Services", rating: 4 },
                 ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-2">
-                    <span className="text-[10px] md:text-xs text-gray-500 w-14 md:w-16 shrink-0">
+                  <div
+                    key={i}
+                    className="flex items-center justify-center gap-2"
+                  >
+                    <span className="text-[10px] text-end md:text-xs text-gray-500 w-14 md:w-16 shrink-0">
                       {item.label}
                     </span>
                     <StarRow count={item.rating} />
                   </div>
                 ))}
               </div>
-              <div className="flex items-center gap-2 md:gap-3 mt-3 md:mt-4 pt-2.5 md:pt-3 border-t border-gray-100">
-                <div className="font-extrabold text-lg md:text-xl font-antigua">
-                  LA C<span className="text-amber-500">Ā</span>RTA
-                </div>
-                <div>
-                  <p className="text-[10px] md:text-xs text-gray-400">
-                    ⭐ Star Resper
-                  </p>
-                  <p className="text-[10px] md:text-xs text-gray-400">
-                    Last visit
-                  </p>
-                </div>
+              <div className="flex items-center justify-center  mt-3 md:mt-4 pt-2.5  border-t-[1.5px] border-gold border-dotted">
+                <img src="/Group 1686551898.png" alt="" />
               </div>
             </div>
-            <div className="bg-white rounded-2xl p-4 md:p-5 shadow-sm border border-gray-100 text-center flex flex-col items-center justify-center min-h-[140px]">
-              <p className="text-[10px] md:text-xs uppercase tracking-widest text-black font-bold mb-1">
+
+            {/* Client Say's */}
+            <div className="relative rounded-xl px-6 py-6 md:px-10 md:py-8 text-center flex flex-col items-center space-y-8 border border-gold-light shadow-[inset_0_0_15px_rgba(209,187,107,0.5)] bg-gradient-to-b from-[#F7F6F2] to-[#EFEDE7]">
+              {/* Reviews Label */}
+              <p className="uppercase tracking-[0.35em] text-gray-600 text-xs md:text-sm ">
                 Feedback
               </p>
-              <h3 className="text-2xl md:text-3xl font-extrabold font-antigua text-black">
+              <h3 className="font-antigua text-2xl md:text-4xl text-gray-900 mb-6">
                 Client Say's
               </h3>
-              <div className="flex items-center gap-1.5 mt-2 justify-center">
-                <Star className="w-4 h-4 fill-amber-400 text-amber-400" />
-                <p className="text-xs md:text-sm font-bold text-gray-700">
-                  4.8 out of 5 — Based on 124 reviews
+              <div className="flex items-center gap-2 justify-center">
+                <p className="text-lg md:text-lg flex font-bold text-gray-800 ">
+                  <Star className="w-6 h-6 fill-gold-light text-gold" />
+                  4.8 OUT OF 5 — BASED ON 124 REVIEWS
                 </p>
               </div>
             </div>
-            <div className="bg-white rounded-2xl p-4 md:p-5 shadow-sm border border-gray-100 flex flex-col justify-between sm:col-span-2 md:col-span-1">
-              <div className="flex items-start gap-3">
-                <p className="text-4xl md:text-5xl font-extrabold text-black leading-none">
-                  5.3
-                </p>
-                <div className="flex-1 space-y-1 md:space-y-1.5 mt-1">
-                  {[90, 75, 50, 30, 15].map((w, i) => (
-                    <div
-                      key={i}
-                      className="h-1.5 md:h-2 rounded-full bg-gray-100 overflow-hidden"
-                    >
-                      <div
-                        className="h-full rounded-full bg-amber-400"
-                        style={{ width: `${w}%` }}
-                      />
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <p className="text-[10px] md:text-xs text-gray-400 mt-2">
-                out of rating
-              </p>
-              <button className="mt-2.5 md:mt-3 w-full bg-green text-white text-[10px] md:text-xs font-bold rounded-full py-2 md:py-2.5">
-                + Give Your Review
-              </button>
-            </div>
+
+            {/* Rating Breakdown */}
+            <div
+                          className="rounded-xl  px-4 py-4 md:px-5 md:py-5
+                         border border-gold-light
+                         bg-[#F7F6F2]
+                         shadow-[0_12px_40px_rgba(0,0,0,0.06)]
+                         flex flex-col gap-2"
+                        >
+                          <div className="flex flex-col md:flex-row items-start gap-2 ">
+                            {/* LEFT SIDE */}
+                            <div className="flex flex-col gap-1 items-center  text-center md:text-left w-full md:min-w-xl">
+                              <p className="text-6xl md:text-5xl font-antigua text-gold leading-none">
+                                5.5
+                              </p>
+            
+                              <p className="text-gray-600 text-sm ">66 Ratings</p>
+            
+                              <div className="flex items-center gap-2 text-gray-700 text-base">
+                                <img
+                                  src="https://www.svgrepo.com/show/475656/google-color.svg"
+                                  alt="Google"
+                                  className="w-3 h-3"
+                                />
+                                <span className="font-medium text-xs">On Google</span>
+                              </div>
+            
+                              <div className="text-sm text-gray-700">
+                                <span className="text-gold font-bold">3.5 ★</span>
+                                <span className="text-gray-500"> (100+)</span>
+                              </div>
+            
+                              <p className="text-[8px] text-gray-500">*As Of 2026-02-12</p>
+                            </div>
+            
+                            {/* RIGHT SIDE */}
+                            <div className="flex-1 space-y-1 w-full">
+                              {categories.map((item, i) => {
+                                const percentage = (item.rating / MAX_RATING) * 100;
+            
+                                return (
+                                  // <div key={i} className="flex items-center gap-2 justify-center ">
+                                  <div key={i} className="flex items-center gap-2 w-full">
+                                    {/* Label */}
+                                    <div className="w-28 flex shrink-0 justify-end items-center gap-1 text-gold text-sm">
+                                      <span>{item.label}</span>
+                                      <span>★</span>
+                                    </div>
+            
+                                    {/* Bar */}
+                                    <div className="flex-1 min-w-[120px] h-2 rounded-full bg-gray-300/70 overflow-hidden">
+                                      <div
+                                        className="h-full w-full rounded-full bg-gradient-to-r from-gold to-gold-light transition-all duration-500"
+                                        style={{ width: `${percentage}%` }}
+                                      />
+                                    </div>
+                                  </div>
+                                );
+                              })}
+                            </div>
+                          </div>
+            
+                          {/* BUTTON */}
+                          <Button
+                            className="w-full mt-4
+                           bg-gradient-to-r from-[#28B463] to-[#196F3D]
+                           text-white font-antigua md:text-lg text-sm
+                           py-5 rounded-full
+                           shadow-lg
+                           hover:scale-[1.02] transition duration-300"
+                          >
+                            ✎ Give Your Opinion
+                          </Button>
+                        </div>
           </div>
-          <div className="flex items-center justify-between mb-4 md:mb-5">
-            <button className="bg-gold text-white text-[10px] md:text-xs font-bold rounded-full px-3 md:px-4 py-1.5 md:py-2">
-              Filter
+        </div>
+      </div>
+
+      {/* Filter row */}
+      <div className="bg-[#fbf7ef] py-8 md:py-12 px-4 sm:px-6 md:px-10 lg:px-12">
+        <div className="mx-auto max-w-[950px]">
+          {/* Filter row */}
+          <div className="flex items-center justify-between mb-8">
+            <button className="bg-gradient-to-b from-gold to-gold-light text-white text-xs uppercase font-bold rounded-full px-6 py-2 flex items-center gap-2">
+              Trier
+              <span className="text-[10px]">▼</span>
             </button>
-            <p className="text-[10px] md:text-xs text-gray-400">
-              Showing 1-10 reviews
+
+            <p className="text-xs tracking-wide text-gray-800">
+              PAGE <span className="font-bold">1</span> OF{" "}
+              <span className="font-bold">3 – 42</span> REVIEWS
             </p>
           </div>
-          <div className="space-y-3 md:space-y-4">
+
+          {/* Review Cards */}
+          <div className="space-y-6">
             {reviews.map((r, i) => (
               <div
                 key={i}
-                className="bg-white rounded-2xl p-4 md:p-6 shadow-sm border border-gray-100"
+                className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200"
               >
-                <div className="flex items-start justify-between gap-3 md:gap-4 mb-2 md:mb-3">
+                {/* Header */}
+                <div className="flex items-start justify-between mb-4">
                   <div>
-                    <h4 className="font-extrabold text-black text-sm md:text-base">
+                    <h4 className="font-antigua sm:text-xl text-lg text-black">
                       {r.name}
                     </h4>
-                    <p className="text-[10px] md:text-xs text-gray-400">
-                      {r.date}
-                    </p>
+                    <p className="text-xs text-gray-500 mt-1">{r.location}</p>
                   </div>
+
                   <StarRow count={r.rating} />
                 </div>
-                <p className="text-xs md:text-sm text-gray-600 leading-relaxed">
+
+                {/* Review Text */}
+                <p className="text-sm font-medium text-gray-800 leading-relaxed">
                   {r.text}
                 </p>
-                <div className="flex items-center justify-between mt-3 md:mt-4 flex-wrap gap-2">
-                  <div className="flex items-center gap-2">
+
+                {/* Footer */}
+                <div className="flex items-center justify-between mt-6">
+                  <div className="flex items-center gap-3">
                     <img
                       src={r.avatar}
                       alt=""
-                      className="w-7 h-7 md:w-8 md:h-8 rounded-full object-cover"
+                      className="w-9 h-9 rounded-full object-cover"
                     />
-                    <span className="text-[10px] md:text-xs text-gray-500">
-                      {r.date}
-                    </span>
+                    <span className="text-xs text-gray-800">{r.location}</span>
                   </div>
-                  <button className="border border-red-300 text-red-500 text-[10px] md:text-xs font-bold rounded-full px-3 md:px-4 py-1 md:py-1.5 hover:bg-red-50 transition">
-                    {r.btnLabel}
+
+                  <button className="border border-red-light text-red-light text-xs font-medium rounded-full px-5 py-1.5 hover:bg-red-50 transition">
+                    Response
                   </button>
                 </div>
               </div>
@@ -1721,63 +1976,67 @@ export default function GastronomyDetails() {
         </div>
       </div>
 
-      {/* PREMIUM LISTING */}
-      <div className="bg-[#fbf7ef] py-6 md:py-8 px-4 sm:px-6 md:px-10 lg:px-12">
-        <div className="mx-auto max-w-[1200px]">
-          <div className="flex items-end justify-between mb-4 md:mb-5">
-            <h2 className="text-xl md:text-2xl font-extrabold font-antigua text-black">
+      {/* ══ SECTION 8: PREMIUM LISTING ══ */}
+      {/* <div className="bg-[#fbf7ef] py-6 md:py-8 px-4 sm:px-6 md:px-10 lg:px-12">
+              <div className="mx-auto max-w-[1200px]"> */}
+      <section className=" bg-[#fbf7ef] mx-auto px-6 py-6 md:py-8 md:px-10 pb-0 mb-0">
+        <div className="w-full sm:container sm:mx-auto">
+          <div className="flex-col sm:flex-row flex items-center justify-between">
+            <h2 className="text-xl md:text-3xl font-extrabold font-antigua text-black">
               Premium Listing
             </h2>
-            <div className="flex gap-1.5 md:gap-2">
-              <button className="bg-red text-white text-[10px] md:text-xs font-bold rounded-full px-3 md:px-4 py-1.5 md:py-2">
+            <div className="flex gap-1.5 md:gap-2 self-end ">
+              <button className="bg-gradient-to-b from-red to-red-light text-white text-[10px] md:text-xs font-bold rounded-full px-3 md:px-4 py-1.5 md:py-2 hover:bg-red transition">
                 Clear Filters
               </button>
-              <button className="bg-green text-white text-[10px] md:text-xs font-bold rounded-full px-3 md:px-4 py-1.5 md:py-2">
+              <button className="bg-gradient-to-r from-green to-green-light  text-white text-[10px] md:text-xs font-bold rounded-full px-3 md:px-4 py-1.5 md:py-2 hover:bg-green transition">
                 + Filters
               </button>
             </div>
           </div>
-          <HorizontalSlider items={sliderPlaces} />
+          <Horizontal2Slider items={sliderPlaces} />
         </div>
-      </div>
+        {/* </div> */}
+      </section>
 
-      {/* NEWSLETTER */}
-      <div
-        className="relative py-14 md:py-20 px-4 sm:px-6 md:px-10 lg:px-12 overflow-hidden"
-        style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1400')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
-        <div className="absolute inset-0 bg-black/65" />
-        <div className="relative mx-auto max-w-[700px] text-center">
-          <p className="text-[10px] md:text-xs uppercase tracking-widest font-bold text-amber-400 mb-2">
-            Stay Updated
-          </p>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white font-antigua mb-3 md:mb-4">
-            Cartagena Newsletter
-          </h2>
-          <p className="text-sm md:text-base text-white/80 mb-6 md:mb-8 leading-relaxed">
-            Subscribe to get exclusive restaurant deals, new menu announcements,
-            and food guides curated by our Cartagena gastronomy experts.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-2 md:gap-3 max-w-[500px] mx-auto">
-            <input
-              type="email"
-              placeholder="Your email address"
-              className="flex-1 px-4 py-3 rounded-full bg-white/10 border border-white/30 text-white placeholder-white/60 text-xs md:text-sm outline-none focus:border-amber-400 transition backdrop-blur-sm"
-            />
-            <button className="bg-gold text-white font-bold text-xs md:text-sm px-6 py-3 rounded-full shadow whitespace-nowrap">
-              Subscribe Now
-            </button>
-          </div>
-          <p className="text-[10px] text-white/40 mt-3">
-            No spam. Unsubscribe anytime.
-          </p>
-        </div>
-      </div>
+      {/* ══ SECTION 9: NEWSLETTER (Activity-specific, from image 2) ══ */}
+      <CartagenaNews />
+      {/* <div
+                   className="relative py-14 md:py-20 px-4 sm:px-6 md:px-10 lg:px-12 overflow-hidden"
+                   style={{
+                     backgroundImage:
+                       "url('https://images.unsplash.com/photo-1490818387583-1baba5e638af?w=1400')",
+                     backgroundSize: "cover",
+                     backgroundPosition: "center",
+                   }}
+                 >
+                   <div className="absolute inset-0 bg-black/60" />
+                   <div className="relative mx-auto max-w-[700px] text-center">
+                     <p className="text-[10px] md:text-xs uppercase tracking-widest font-bold text-amber-400 mb-2">
+                       Stay Updated
+                     </p>
+                     <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white font-antigua mb-3 md:mb-4">
+                       Cartagena Newsletter
+                     </h2>
+                     <p className="text-sm md:text-base text-white/80 mb-6 md:mb-8 leading-relaxed">
+                       Subscribe to get exclusive deals, activity updates, and insider tips
+                       from our local experts — straight to your inbox.
+                     </p>
+                     <div className="flex flex-col sm:flex-row gap-2 md:gap-3 max-w-[500px] mx-auto">
+                       <input
+                         type="email"
+                         placeholder="Your email address"
+                         className="flex-1 px-4 py-3 rounded-full bg-white/10 border border-white/30 text-white placeholder-white/60 text-xs md:text-sm outline-none focus:border-amber-400 transition backdrop-blur-sm"
+                       />
+                       <button className="bg-gold hover:bg-gold transition text-white font-bold text-xs md:text-sm px-6 py-3 rounded-full shadow whitespace-nowrap">
+                         Subscribe Now
+                       </button>
+                     </div>
+                     <p className="text-[10px] text-white/40 mt-3">
+                       No spam. Unsubscribe anytime.
+                     </p>
+                   </div>
+                 </div> */}
     </div>
   );
 }
