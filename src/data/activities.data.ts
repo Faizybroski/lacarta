@@ -68,7 +68,8 @@ export const activitiesData = {
       category: "Breakfast",
       image: "https://picsum.photos/600/400?random=7",
       rating: 1,
-      href: "/elite",
+      // href: "/elite",
+      href: "/Detailed-Activity",
     },
     {
       id: 1,
@@ -77,7 +78,8 @@ export const activitiesData = {
       category: "Breakfast",
       image: "https://picsum.photos/600/400?random=8",
       rating: 1,
-      href: "/elite",
+      // href: "/elite",
+      href: "/Detailed-Activity",
     },
     {
       id: 1,
@@ -86,7 +88,8 @@ export const activitiesData = {
       category: "Beef",
       image: "https://picsum.photos/600/400?random=9",
       rating: 2.5,
-      href: "/elite",
+      // href: "/elite",
+      href: "/Detailed-Activity",
     },
     {
       id: 1,
@@ -95,7 +98,8 @@ export const activitiesData = {
       category: "Sushi",
       image: "https://picsum.photos/600/400?random=10",
       rating: 3.7,
-      href: "/elite",
+      // href: "/elite",
+      href: "/Detailed-Activity",
     },
     {
       id: 1,
@@ -105,7 +109,8 @@ export const activitiesData = {
       category: "El Laguito",
       image: "https://picsum.photos/600/400?random=11",
       rating: 4.8,
-      href: "/elite",
+      // href: "/elite",
+      href: "/Detailed-Activity",
     },
   ],
 
