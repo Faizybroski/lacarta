@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import {
   Accordion,
   AccordionContent,
@@ -63,6 +63,27 @@ import {
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import MarkerClusterGroup from "react-leaflet-cluster";
+import L from "leaflet";
+import "leaflet/dist/leaflet.css";
+
+const position: [number, number] = [45.558, -73.712]; // example
+
+const customIcon = new L.Icon({
+  iconUrl: "/marker.png",
+  iconSize: [30, 30],
+  iconAnchor: [15, 30],
+});
+
+const locations = [
+  {
+    id: 1,
+    name: "Market habitats locatifs",
+    price: "$1,653 per month",
+    position: [45.558, -73.712],
+  },
+];
 
 const heroImages = [
   "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1200",
@@ -296,6 +317,14 @@ export default function RealEstateDetails() {
     });
   };
 
+  const markerRef = useRef<L.Marker>(null);
+
+  useEffect(() => {
+    if (markerRef.current) {
+      markerRef.current.openPopup();
+    }
+  }, []);
+
   return (
     <div className="bg-white font-sans w-full overflow-x-hidden">
       {/* <a href="https://wa.me/573151234567" target="_blank" rel="noopener noreferrer" className="fixed bottom-6 right-6 z-50 w-12 h-12 md:w-14 md:h-14 bg-green rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition-all hover:scale-110">
@@ -397,7 +426,7 @@ export default function RealEstateDetails() {
 
       {/* ══ MAIN IMAGE SLIDER ══ */}
       <div className="px-4 sm:px-6 md:px-10 lg:px-14 pb-4 ">
-        <div className="container mx-auto max-w-[1100px] py-6 border border-gray-200 rounded-lg">
+        <div className="container mx-auto max-w-[1100px] py-6 border border-gray-200 rounded-lg shadow">
           <div className="relative rounded-2xl overflow-hidden shadow-md h-[240px] sm:h-[320px] md:h-[420px] lg:h-[470px]">
             <img
               src={heroImages[activeImg]}
@@ -617,7 +646,7 @@ export default function RealEstateDetails() {
                           >
                             <item.icon
                               size={16}
-                              className="text-amber-500 shrink-0"
+                              className="text-gray-500 shrink-0"
                             />
 
                             <div className="text-sm">
@@ -671,8 +700,8 @@ export default function RealEstateDetails() {
                     label: "Real estate developer(s)",
                     content: (
                       <div className="flex items-center gap-4 bg-gray-50 rounded-xl p-4 mb-4">
-                        <div className="w-12 h-12 rounded-lg bg-amber-100 flex items-center justify-center">
-                          <Building2 size={20} className="text-amber-600" />
+                        <div className="w-12 h-12 rounded-lg bg-gray-100 flex items-center justify-center">
+                          <Building2 size={20} className="text-gray-600" />
                         </div>
 
                         <div className="flex-1">
@@ -684,7 +713,7 @@ export default function RealEstateDetails() {
                             Established 2008 — Cartagena, Colombia
                           </p>
 
-                          <p className="text-sm text-amber-600 font-semibold mt-1">
+                          <p className="text-sm text-gray-600 font-semibold mt-1">
                             12 active projects
                           </p>
                         </div>
@@ -714,7 +743,7 @@ export default function RealEstateDetails() {
                     label: "Address",
                     content: (
                       <div className="flex items-start gap-3 pb-4">
-                        <MapPin size={18} className="text-amber-500 mt-1" />
+                        <MapPin size={18} className="text-gray-500 mt-1" />
 
                         <div>
                           <p className="font-semibold text-gray-900">
@@ -754,8 +783,8 @@ export default function RealEstateDetails() {
                             key={i}
                             className="flex flex-col items-center gap-2 bg-gray-50 rounded-xl p-4 text-center"
                           >
-                            <div className="w-10 h-10 rounded-lg bg-amber-50 flex items-center justify-center">
-                              <item.icon size={18} className="text-amber-500" />
+                            <div className="w-10 h-10 rounded-lg bg-gray-50 flex items-center justify-center">
+                              <item.icon size={18} className="text-gray-500" />
                             </div>
 
                             <p className="text-sm text-gray-700 font-medium">
@@ -814,8 +843,8 @@ export default function RealEstateDetails() {
                           <div key={i} className="bg-gray-50 rounded-xl p-4">
                             <div className="flex items-center justify-between mb-2">
                               <div className="flex items-center gap-3">
-                                <div className="w-8 h-8 rounded-full bg-amber-100 flex items-center justify-center">
-                                  <User size={14} className="text-amber-600" />
+                                <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center">
+                                  <User size={14} className="text-gray-600" />
                                 </div>
 
                                 <p className="font-semibold text-gray-900">
@@ -1215,7 +1244,61 @@ export default function RealEstateDetails() {
             className="rounded-2xl overflow-hidden border border-gray-200 relative"
             style={{ height: "300px" }}
           >
-            <iframe
+            {/* <div className="w-full h-[450px] rounded-xl overflow-hidden">
+              <MapContainer
+                center={position}
+                zoom={12}
+                scrollWheelZoom
+                className="h-full w-full"
+              > */}
+            <div className="h-[500px] w-full">
+              <MapContainer
+                center={[45.558, -73.712]}
+                zoom={12}
+                className="h-full w-full"
+              >
+                {/* <TileLayer
+                  attribution="© OpenStreetMap contributors"
+                  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                /> */}
+                <TileLayer
+                  attribution="© OpenStreetMap contributors © CARTO"
+                  url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
+                />
+                <Marker ref={markerRef} position={position}>
+                  <Popup closeButton={false} autoClose={false}>
+                    <div className="space-y-1">
+                      <h3 className="font-semibold">
+                        Market habitats locatifs
+                      </h3>
+                      <p className="text-sm text-gray-500">Condos</p>
+                      <p className="text-xs text-gray-500">You are here</p>
+                      <p className="font-bold">$1,653 per month</p>
+                    </div>
+                  </Popup>
+                </Marker>
+
+                {/* <MarkerClusterGroup>
+                  {locations.map((loc) => (
+                    <Marker
+                      key={loc.id}
+                      position={loc.position}
+                      icon={customIcon}
+                    >
+                      <Popup open={true}>
+                        <div className="space-y-1">
+                          <h3 className="font-semibold">{loc.name}</h3>
+                          <p className="text-sm text-gray-500">Condos</p>
+                          <p className="font-bold">{loc.price}</p>
+                        </div>
+                      </Popup>
+                    </Marker>
+                  ))}
+                </MarkerClusterGroup> */}
+              </MapContainer>
+            </div>
+
+            {/* <iframe
               title="Area Map"
               className="w-full h-full border-0"
               loading="lazy"
@@ -1230,7 +1313,7 @@ export default function RealEstateDetails() {
               <button className="mt-2 bg-green text-white text-[9px] font-bold px-4 py-1.5 rounded-full w-full hover:opacity-90 transition">
                 View Project
               </button>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
@@ -1245,55 +1328,59 @@ export default function RealEstateDetails() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {alsoSeenProjects.map((item, i) => (
               <Card
-                key={i}
-                className="overflow-hidden rounded-sm group cursor-pointer shadow-lg hover:shadow-xl transition"
-              >
-                {/* image */}
-                <div className="relative h-[170px] overflow-hidden">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
-                  />
+  key={i}
+  className="overflow-hidden rounded-md group cursor-pointer shadow hover:shadow-xl transition duration-300"
+>
+  {/* IMAGE */}
+  <div className="relative h-[230px] overflow-hidden">
+    <img
+      src={item.image}
+      alt={item.title}
+      className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+    />
 
-                  <Button
-                    size="icon"
-                    variant="secondary"
-                    className="absolute top-3 right-3 rounded-full bg-amber-400 hover:bg-amber-500"
-                  >
-                    <Heart size={16} className="text-black" />
-                  </Button>
-                </div>
+    {/* Favorite Button */}
+    <button className="absolute top-4 right-4 w-12 h-12 rounded-full bg-yellow-400 flex items-center justify-center shadow-md hover:bg-yellow-500 transition">
+      <Heart size={20} className="text-black" />
+    </button>
+  </div>
 
-                <CardContent className="p-4 space-y-2">
-                  <p className="font-semibold text-sm text-black">
-                    {item.title}
-                  </p>
+  {/* CONTENT */}
+  <CardContent className="p-3 space-y-2">
+    {/* Title */}
+    <div>
+    <h3 className="font-semibold text-lg text-gray-900">
+      {item.title}
+    </h3>
 
-                  <p className="text-sm text-muted-foreground">{item.sub}</p>
+    {/* Location */}
+    <p className="text-gray-500 text-sm">
+      {item.sub}
+    </p>
+    </div>
 
-                  <p className="text-sm text-muted-foreground">{item.type}</p>
+    {/* Property Type */}
+    <p className="text-gray-500 text-sm">
+      {item.type}
+    </p>
 
-                  <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                    <span className="flex items-center gap-1">
-                      <BedDouble size={14} /> {item.beds}
-                    </span>
+    {/* Features list */}
+    <ul className="text-gray-500 text-sm list-disc pl-4 space-y-1">
+      <li>103 units</li>
+      <li>1 to 3 bedrooms</li>
+      <li>Move-in-ready</li>
+    </ul>
 
-                    <span className="flex items-center gap-1">
-                      <Bath size={14} /> {item.baths}
-                    </span>
-                  </div>
+    {/* Price */}
+    <p className="text-gray-900 font-semibold pt-2 text-sm">
+      Starting at {item.price}
+      <span className="text-gray-500 font-medium">/month</span>
+    </p>
 
-                  <p className="text-sm font-semibold pt-1 text-black">
-                    Starting at {item.price}
-                    <span className="text-muted-foreground font-medium">
-                      /month
-                    </span>
-                  </p>
-
-                  <StarRow count={item.rating} />
-                </CardContent>
-              </Card>
+    {/* Rating */}
+    <StarRow count={item.rating} />
+  </CardContent>
+</Card>
             ))}
           </div>
           {/* <div className="relative">

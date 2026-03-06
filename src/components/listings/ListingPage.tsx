@@ -55,7 +55,7 @@ export default function ListingPage({ categories = [] }) {
                 </CardHeader>
 
                 <CardContent className="text-center p-0">
-                  <h3 className="text-lg font-extrabold text-black font-antigua">
+                  <h3 className="text-lg font-extrabold text-black font-antigua uppercase">
                     {cat.title}
                   </h3>
                 </CardContent>

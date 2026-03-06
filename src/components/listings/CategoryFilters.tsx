@@ -20,16 +20,16 @@ export default function CategoryFilters({
   return (
     <div className="mb-2 sm:mt-0 mt-12 flex flex-wrap items-center justify-between gap-2">
       {/* LEFT FILTER TABS */}
-      <div className="sm:flex sm:flex-wrap  hidden">
+      <div className="sm:flex sm:flex-wrap hidden">
         {FILTERS.map((filter) => (
           <button
             key={filter}
             onClick={() => setActiveFilter(filter)}
-            className={`font-antigua rounded-full px-7 py-1 text-sm font-bold transition
+            className={`inline-flex items-center justify-center whitespace-nowrap font-antigua rounded-full px-5 py-1 text-sm font-bold transition
               ${
                 activeFilter === filter
                   ? "bg-gradient-to-r from-gold  to-gold-light text-white"
-                  : "text-black hover:bg-gray-100"
+                  : "text-gray-600 hover:bg-gray-100"
               }`}
           >
             {filter}

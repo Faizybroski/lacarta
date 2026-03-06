@@ -37,7 +37,7 @@ export default function RealestatePage() {
           <WaltSection />
           <EstateCard
             {...realEsteteData}
-            columns={"grid gap-6 md:grid-cols-3"}
+            columns={"grid gap-6  md:grid-cols-3 sm:grid-cols-2 "}
           />
         </div>
       </div>

@@ -232,3 +232,22 @@
     scrollbar-width: none; /* Firefox */
   }
 }
+
+.marker-cluster-small {
+  background-color: rgba(100, 100, 100, 0.6);
+}
+
+.marker-cluster div {
+  background-color: #555;
+  color: white;
+  font-weight: bold;
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.leaflet-popup-tip {
+  display: none;
+}

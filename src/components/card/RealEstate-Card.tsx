@@ -42,7 +42,7 @@ export default function EstateCard({ details = [], columns }) {
                 </CardHeader>
 
                 <CardContent className="space-y-1 p-3">
-                  <h3 className="text-lg text-black font-semibold">
+                  <h3 className="text-lg text-black font-semibold truncate">
                     {item.title}
                   </h3>
                   <h5 className="text-sm text-black/60 font-semibold">
@@ -67,11 +67,11 @@ export default function EstateCard({ details = [], columns }) {
                     Starting at ${item.price}/month
                   </h5>
 
-                  <div className="flex gap-10 items-center my-2">
+                  <div className="flex md:gap-10 sm:gap-5 gap-5 items-center my-2">
                     {/* {[...Array(5)].map((_, i) => (
                       <Star key={i} className="text-black" />
                     ))} */}
-                    <span className="flex gap-2">
+                    <span className="flex gap-1 sm:gap-1">
                       {[1, 2, 3, 4, 5].map((star) => (
                         <Star
                           key={star}
