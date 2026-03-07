@@ -43,9 +43,9 @@ export default function TopNewsCartagena() {
       </h2> */}
 
         <div className="max-w-7xl mx-auto  px-4 sm:px-6">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap10 md:gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-3 md:gap-12 items-center">
             {/* LEFT SIDE - HERO CAROUSEL */}
-            <div className="md:col-span-8 relative">
+            <div className="md:col-span-12 lg:col-span-8 relative">
               <Card className="relative overflow-hidden rounded-2xl shadow-none border-0">
                 <img
                   src={slides[current].image}
@@ -86,7 +86,7 @@ export default function TopNewsCartagena() {
             </div>
 
             {/* RIGHT SIDE - ARTICLE LIST */}
-            <div className="md:col-span-4 space-y-8 md:space-y-14">
+            <div className="md:col-span-12 lg:col-span-4 space-y-8 md:space-y-14">
               {[
                 {
                   ttile: "the most luxurious hotel of cartagena",
@@ -104,7 +104,7 @@ export default function TopNewsCartagena() {
               ].map((item, i) => (
                 <div
                   key={i}
-                  className="flex justify-between items-center gap-4 md:gap-6 mt-10 sm:mt-0"
+                  className="flex justify-between items-center  mt-10 lg:mt-0"
                 >
                   <div>
                     <p className="text-xs sm:text-sm text-muted-foreground">

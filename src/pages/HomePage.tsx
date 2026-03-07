@@ -1104,8 +1104,8 @@ const HomePage = () => {
                 Gringos.
               </p>
 
-              <Button className="px-6 py-3 text-white w-full sm:w-auto font-bold rounded bg-gradient-to-r from-[#3BCF8E] via-[#2EB872] to-[#1E9E5A] hover:brightness-110 transition">
-                <a href="https://lacarta.co/cartagena/resources/">resources</a>
+              <Button className="px-6 py-3 text-white w-full sm:w-full font-bold rounded bg-gradient-to-r from-green to-green-light hover:brightness-110 transition">
+                <a href="https://lacarta.co/cartagena/resources/">Resources</a>
               </Button>
             </div>
 

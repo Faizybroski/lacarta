@@ -500,7 +500,7 @@ const Layout = ({ children }) => {
           ></div>
 
           <div className="relative z-10">
-            <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-11 gap-12">
+            <div className="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-11 gap-12">
               {/* Left: Logo + Text + Social */}
               <div className="md:col-span-3">
                 <Link to="/">
@@ -522,7 +522,7 @@ const Layout = ({ children }) => {
               </div>
 
               {/* About */}
-              <div className="hidden md:block md:col-span-2 py-5">
+              <div className="hidden lg:block md:col-span-2 py-5">
                 <h5 className="font-bold mb-6">About</h5>
                 <ul className="space-y-2 text-white">
                   {[
@@ -544,7 +544,7 @@ const Layout = ({ children }) => {
               </div>
 
               {/* Cartagena */}
-              <div className="hidden md:block md:col-span-2 py-5">
+              <div className="hidden lg:block md:col-span-2 py-5">
                 <h5 className="font-bold mb-6">Cartagena</h5>
                 <ul className="space-y-2 text-white">
                   {FooterNavLinks.map(({ label, path }) => (
@@ -558,7 +558,7 @@ const Layout = ({ children }) => {
               </div>
 
               {/* Help */}
-              <div className="md:block text-center md:text-start md:col-span-2 py-5">
+              <div className="lg:block text-center lg:text-start md:col-span-2 py-5">
                 <h5 className="font-bold mb-6">Help</h5>
                 <ul className="space-y-2 text-white">
                   {[
@@ -580,7 +580,7 @@ const Layout = ({ children }) => {
               </div>
 
               {/* Weather Card */}
-              <div className="hidden md:flex justify-end md:col-span-2 py-5">
+              <div className="hidden lg:flex justify-end md:col-span-2 py-5">
                 <div className="w-[320px] h-[260px] rounded-sm bg-gradient-to-br from-[#62B8F6] to-[#396C90] text-white shadow-xl pt-6 pb-0 flex flex-col text-center">
                   <div className="px-8">
                     <h4 className="text-2xl font-bold">Cartagena, CO</h4>
@@ -605,7 +605,7 @@ const Layout = ({ children }) => {
               </div>
             </div>
 
-            <div className="container hidden md:block mx-auto px-4 mt-20 text-sm text-white">
+            <div className="container hidden lg:block mx-auto px-4 mt-20 text-sm text-white">
               <div className="flex flex-col md:flex-row items-center justify-between gap-2">
                 <span>
                   Follow Us

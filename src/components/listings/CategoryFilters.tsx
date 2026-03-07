@@ -20,7 +20,7 @@ export default function CategoryFilters({
   return (
     <div className="mb-2 sm:mt-0 mt-12 flex flex-wrap items-center justify-between gap-2">
       {/* LEFT FILTER TABS */}
-      <div className="sm:flex sm:flex-wrap hidden">
+      <div className="lg:flex lg:flex-wrap hidden">
         {FILTERS.map((filter) => (
           <button
             key={filter}
