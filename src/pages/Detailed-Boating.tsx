@@ -1491,130 +1491,130 @@ export default function BoatingDetails() {
 
       {/* ══ SECTION 7: REVIEWS ══ */}
       <div className="bg-[#fbf7ef] py-6 md:py-8 px-4 sm:px-6 md:px-10 lg:px-12">
-        <div className="mx-auto max-w-[1200px]">
-          {/* 3-col header */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-3 mb-5 md:mb-7">
-            {/* La Carta Team Reviews */}
-            <div className="bg-[#F7F6F2] rounded-xl p-4 md:p-5 shadow-sm border border-gold-light">
-              <p className="font-bold text-black text-sm md:text-sm text-center mb-2 md:mb-3 font-antigua">
-                La Carta Team Reviews
-              </p>
-              <div className="space-y-1.5 md:space-y-2">
-                {[
-                  { label: "Price", rating: 4 },
-                  { label: "Location", rating: 4 },
-                  { label: "Ambiance", rating: 3 },
-                  { label: "Services", rating: 4 },
-                ].map((item, i) => (
+              <div className="mx-auto max-w-[1200px]">
+                {/* 3-col header */}
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-3 mb-5 md:mb-7">
+                  {/* La Carta Team Reviews */}
+                  <div className="bg-[#F7F6F2] rounded-xl p-4 md:p-5 shadow-sm border border-gold-light">
+                    <p className="font-bold text-black text-sm md:text-sm text-center mb-2 md:mb-3 font-antigua">
+                      La Carta Team Reviews
+                    </p>
+                    <div className="space-y-1.5 md:space-y-2">
+                      {[
+                        { label: "Price", rating: 4 },
+                        { label: "Location", rating: 4 },
+                        { label: "Ambiance", rating: 3 },
+                        { label: "Services", rating: 4 },
+                      ].map((item, i) => (
+                        <div
+                          key={i}
+                          className="flex items-center justify-center gap-2"
+                        >
+                          <span className="text-[10px] text-end md:text-xs text-gray-500 w-14 md:w-16 shrink-0">
+                            {item.label}
+                          </span>
+                          <StarRow count={item.rating} />
+                        </div>
+                      ))}
+                    </div>
+                    <div className="flex items-center justify-center  mt-3 md:mt-4 pt-2.5  border-t-[1.5px] border-gold border-dotted">
+                      <img src="/Group 1686551898.png" alt="" />
+                    </div>
+                  </div>
+      
+                  {/* Client Say's */}
+                  <div className="relative rounded-xl px-6 py-6 md:px-10 md:py-8 text-center flex flex-col items-center space-y-8 border border-gold-light shadow-[inset_0_0_15px_rgba(209,187,107,0.5)] bg-gradient-to-b from-[#F7F6F2] to-[#EFEDE7]">
+                    {/* Reviews Label */}
+                    <p className="uppercase tracking-[0.35em] text-gray-600 text-xs md:text-sm ">
+                      Feedback
+                    </p>
+                    <h3 className="font-antigua text-2xl md:text-4xl text-gray-900 mb-6">
+                      Client Say's
+                    </h3>
+                    <div className="flex items-center gap-2 justify-center">
+                      <p className="text-lg md:text-lg flex font-bold text-gray-800 ">
+                        <Star className="w-6 h-6 fill-gold-light text-gold" />
+                        4.8 OUT OF 5 — BASED ON 124 REVIEWS
+                      </p>
+                    </div>
+                  </div>
+      
+                  {/* Rating Breakdown */}
                   <div
-                    key={i}
-                    className="flex items-center justify-center gap-2"
+                    className="rounded-xl  px-4 py-4 md:px-5 md:py-5
+                               border border-gold-light
+                               bg-[#F7F6F2]
+                               shadow-[0_12px_40px_rgba(0,0,0,0.06)]
+                               flex flex-col gap-2"
                   >
-                    <span className="text-[10px] text-end md:text-xs text-gray-500 w-14 md:w-16 shrink-0">
-                      {item.label}
-                    </span>
-                    <StarRow count={item.rating} />
-                  </div>
-                ))}
-              </div>
-              <div className="flex items-center justify-center  mt-3 md:mt-4 pt-2.5  border-t-[1.5px] border-gold border-dotted">
-                <img src="/Group 1686551898.png" alt="" />
-              </div>
-            </div>
-
-            {/* Client Say's */}
-            <div className="relative rounded-xl px-6 py-6 md:px-10 md:py-8 text-center flex flex-col items-center space-y-8 border border-gold-light shadow-[inset_0_0_15px_rgba(209,187,107,0.5)] bg-gradient-to-b from-[#F7F6F2] to-[#EFEDE7]">
-              {/* Reviews Label */}
-              <p className="uppercase tracking-[0.35em] text-gray-600 text-xs md:text-sm ">
-                Feedback
-              </p>
-              <h3 className="font-antigua text-2xl md:text-4xl text-gray-900 mb-6">
-                Client Say's
-              </h3>
-              <div className="flex items-center gap-2 justify-center">
-                <p className="text-lg md:text-lg flex font-bold text-gray-800 ">
-                  <Star className="w-6 h-6 fill-gold-light text-gold" />
-                  4.8 OUT OF 5 — BASED ON 124 REVIEWS
-                </p>
-              </div>
-            </div>
-
-            {/* Rating Breakdown */}
-            <div
-              className="rounded-xl  px-4 py-4 md:px-5 md:py-5
-                         border border-gold-light
-                         bg-[#F7F6F2]
-                         shadow-[0_12px_40px_rgba(0,0,0,0.06)]
-                         flex flex-col gap-2"
-            >
-              <div className="flex flex-col md:flex-row items-start gap-2 ">
-                {/* LEFT SIDE */}
-                <div className="flex flex-col gap-1 items-center  text-center md:text-left w-full md:min-w-xl">
-                  <p className="text-6xl md:text-5xl font-antigua text-gold leading-none">
-                    5.5
-                  </p>
-
-                  <p className="text-gray-600 text-sm ">66 Ratings</p>
-
-                  <div className="flex items-center gap-2 text-gray-700 text-base">
-                    <img
-                      src="https://www.svgrepo.com/show/475656/google-color.svg"
-                      alt="Google"
-                      className="w-3 h-3"
-                    />
-                    <span className="font-medium text-xs">On Google</span>
-                  </div>
-
-                  <div className="text-sm text-gray-700">
-                    <span className="text-gold font-bold">3.5 ★</span>
-                    <span className="text-gray-500"> (100+)</span>
-                  </div>
-
-                  <p className="text-[8px] text-gray-500">*As Of 2026-02-12</p>
-                </div>
-
-                {/* RIGHT SIDE */}
-                <div className="flex-1 space-y-1 w-full">
-                  {categories.map((item, i) => {
-                    const percentage = (item.rating / MAX_RATING) * 100;
-
-                    return (
-                      // <div key={i} className="flex items-center gap-2 justify-center ">
-                      <div key={i} className="flex items-center gap-2 w-full">
-                        {/* Label */}
-                        <div className="w-28 flex shrink-0 justify-end items-center gap-1 text-gold text-sm">
-                          <span>{item.label}</span>
-                          <span>★</span>
-                        </div>
-
-                        {/* Bar */}
-                        <div className="flex-1 min-w-[120px] h-2 rounded-full bg-gray-300/70 overflow-hidden">
-                          <div
-                            className="h-full w-full rounded-full bg-gradient-to-r from-gold to-gold-light transition-all duration-500"
-                            style={{ width: `${percentage}%` }}
+                    <div className="flex flex-col lg:flex-row min-[1024px]:max-[1178px]:flex-col items-start gap-2 ">
+                      {/* LEFT SIDE */}
+                      <div className="flex flex-col gap-1 items-center  text-center  w-full md:min-w-xl">
+                        <p className="text-6xl md:text-5xl font-antigua text-gold leading-none">
+                          5.5
+                        </p>
+      
+                        <p className="text-gray-600 text-sm ">66 Ratings</p>
+      
+                        <div className="flex items-center gap-2 text-gray-700 text-base">
+                          <img
+                            src="https://www.svgrepo.com/show/475656/google-color.svg"
+                            alt="Google"
+                            className="w-3 h-3"
                           />
+                          <span className="font-medium text-xs">On Google</span>
                         </div>
+      
+                        <div className="text-sm text-gray-700">
+                          <span className="text-gold font-bold">3.5 ★</span>
+                          <span className="text-gray-500"> (100+)</span>
+                        </div>
+      
+                        <p className="text-[8px] text-gray-500">*As Of 2026-02-12</p>
                       </div>
-                    );
-                  })}
+      
+                      {/* RIGHT SIDE */}
+                      <div className="flex-1 space-y-1 w-full">
+                        {categories.map((item, i) => {
+                          const percentage = (item.rating / MAX_RATING) * 100;
+      
+                          return (
+                            // <div key={i} className="flex items-center gap-2 justify-center ">
+                            <div key={i} className="flex items-center gap-2 w-full">
+                              {/* Label */}
+                              <div className="w-28 flex shrink-0 justify-end items-center gap-1 text-gold text-sm">
+                                <span>{item.label}</span>
+                                <span>★</span>
+                              </div>
+      
+                              {/* Bar */}
+                              <div className="flex-1 min-w-[120px] h-2 rounded-full bg-gray-300/70 overflow-hidden">
+                                <div
+                                  className="h-full w-full rounded-full bg-gradient-to-r from-gold to-gold-light transition-all duration-500"
+                                  style={{ width: `${percentage}%` }}
+                                />
+                              </div>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+      
+                    {/* BUTTON */}
+                    <Button
+                      className="w-full mt-4
+                                 bg-gradient-to-r from-[#28B463] to-[#196F3D]
+                                 text-white font-antigua md:text-lg text-sm
+                                 py-5 rounded-full
+                                 shadow-lg
+                                 hover:scale-[1.02] transition duration-300"
+                    >
+                      ✎ Give Your Opinion
+                    </Button>
+                  </div>
                 </div>
               </div>
-
-              {/* BUTTON */}
-              <Button
-                className="w-full mt-4
-                           bg-gradient-to-r from-[#28B463] to-[#196F3D]
-                           text-white font-antigua md:text-lg text-sm
-                           py-5 rounded-full
-                           shadow-lg
-                           hover:scale-[1.02] transition duration-300"
-              >
-                ✎ Give Your Opinion
-              </Button>
             </div>
-          </div>
-        </div>
-      </div>
 
       {/* Filter row */}
       <div className="bg-[#fbf7ef] py-8 md:py-12 px-4 sm:px-6 md:px-10 lg:px-12">

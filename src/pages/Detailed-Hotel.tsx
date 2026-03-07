@@ -1487,7 +1487,7 @@ export default function DetailedHotel() {
       <div className="bg-[#fbf7ef] py-6 md:py-8 px-4 sm:px-6 md:px-10 lg:px-12">
         <div className="mx-auto max-w-[1200px]">
           {/* 3-col header */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-3 mb-5 md:mb-7">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-3 mb-5 md:mb-7">
             {/* La Carta Team Reviews */}
             <div className="bg-[#F7F6F2] rounded-xl p-4 md:p-5 shadow-sm border border-gold-light">
               <p className="font-bold text-black text-sm md:text-sm text-center mb-2 md:mb-3 font-antigua">
@@ -1541,9 +1541,9 @@ export default function DetailedHotel() {
                          shadow-[0_12px_40px_rgba(0,0,0,0.06)]
                          flex flex-col gap-2"
             >
-              <div className="flex flex-col md:flex-row items-start gap-2 ">
+              <div className="flex flex-col lg:flex-row min-[1024px]:max-[1178px]:flex-col items-start gap-2 ">
                 {/* LEFT SIDE */}
-                <div className="flex flex-col gap-1 items-center  text-center md:text-left w-full md:min-w-xl">
+                <div className="flex flex-col gap-1 items-center  text-center  w-full md:min-w-xl">
                   <p className="text-6xl md:text-5xl font-antigua text-gold leading-none">
                     5.5
                   </p>

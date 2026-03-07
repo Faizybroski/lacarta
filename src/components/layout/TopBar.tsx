@@ -10,13 +10,13 @@ export function TopBar() {
       </div>
 
       {/* CENTER */}
-      <div className="hidden md:block font-medium text-center">
+      <div className="hidden lg:block font-medium text-center">
         Download our FREE Cartagena Travel Guide!
       </div>
 
       {/* RIGHT */}
       <div className="flex items-center gap-4">
-        <span className="hidden sm:inline cursor-pointer hover:underline">
+        <span className="hidden lg:inline cursor-pointer hover:underline">
           Advertise With Us
         </span>
 

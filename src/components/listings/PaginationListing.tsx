@@ -49,7 +49,7 @@ export default function PaginationListing({
   return (
     <section className="mx-auto px-6 py-4 md:px-10 pb-0 mb-0">
       <div className="w-full sm:container sm:mx-auto">
-        <h2 className="mt-10 text-4xl font-antigua font-bold text-black">
+        <h2 className="mt-10 text-2xl md:text-3xl lg:text-4xl font-antigua font-bold text-black">
           {text}
         </h2>
 

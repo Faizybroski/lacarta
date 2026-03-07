@@ -432,7 +432,7 @@ const Layout = ({ children }) => {
         {/* WhatsApp floating button */}
         <div className="fixed bottom-6 right-4 sm:right-6 z-[999] flex items-center gap-2">
           <div>
-            <span className="bg-white text-black font-bold px-3 py-1 rounded shadow text-sm hidden md:block">
+            <span className="bg-white text-black font-bold px-3 py-1 rounded shadow text-sm hidden lg:block">
               Need help? Chat with us
             </span>
           </div>
