@@ -938,7 +938,15 @@ const HomePage = () => {
             title="Top Hotels of Cartagena"
             author="Natalia"
             time="21 min"
-            className=""
+            className="hidden md:block"
+          />
+          <Card
+            image={sqImage}
+            category="HOTELS"
+            title="Top Hotels of Cartagena"
+            author="Natalia"
+            time="21 min"
+            className="sm:block md:hidden hidden"
           />
           <Card
             image={artpic}
@@ -946,7 +954,7 @@ const HomePage = () => {
             title="The Best Street Art of Cartagena"
             author="Juan Pablo"
             time="5 min"
-            className="mt-5  row-span-2 sm:row-span-1"
+            className="lg:mt-5  row-span-2 sm:row-span-1"
           />
         </div>
         <div
